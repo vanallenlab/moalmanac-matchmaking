@@ -34,7 +34,7 @@ The following column names are required for the somatic variants input file. Col
 Accepted values for `alteration_type` include `Missense`, `Nonsense`, `Nonstop`, `Frameshift`, `Splice Site`, `Deletion`, and `Insertion`. 
 
 | feature | alteration_type | alteration | sample_name |
-| -- | -- | -- | -- | -- |
+| -- | -- | -- | -- | 
 | ERCC2 | Missense | p.R647C | A-001 |
 | TP53 | Nonsense | p.E258*	| A-001 |
 | EGFR | Frameshift | p.E543fs | A-002 |
