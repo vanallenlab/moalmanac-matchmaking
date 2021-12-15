@@ -38,8 +38,6 @@ def compare(samples, dataframe, comparison_column):
     results = []
     for case in samples:
         for comparison in samples:
-            if case == comparison:
-                continue
             case_group = dataframe[dataframe[SAMPLE_COLUMN].eq(case)]
             comparison_group = dataframe[dataframe[SAMPLE_COLUMN].eq(comparison)]
             case_values = case_group[comparison_column].tolist()
@@ -63,15 +61,13 @@ if __name__ == "__main__":
                                      description="Perform pairwise comparison of samples to identify overlap")
     parser.add_argument('--input', '-i', required=True, help="input file")
     parser.add_argument('--column', '-c', required=True, default='therapy_name', help='column with comparison values')
-    parser.add_argument('--samples', '-s', required=False, help='dataframe of sample names, will subset if passed')
+    parser.add_argument('--samples', '-s', required=True, help='dataframe of sample names, will subset if passed')
     parser.add_argument('--output', '-o', required=False, default="samples.pairwise.txt", help="output name")
     args = parser.parse_args()
 
     data = read_tsv(args.input, usecols=[SAMPLE_COLUMN, args.column])
     all_samples = import_samples(args.samples)
-
-    if args.samples:
-        data = subset_by_samples(data, all_samples)
+    data = subset_by_samples(data, all_samples)
 
     compared_data = compare(all_samples, data, args.column)
     write_data(compared_data, args.output)
