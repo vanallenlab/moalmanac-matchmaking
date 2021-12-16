@@ -1,4 +1,4 @@
-feature	partner	sample_id
+feature	partner	sample_name
 CCDC30	YBX1	A101D_SKIN
 JMJD6	RPTOR	A101D_SKIN
 AKAP6	LARS	A172_CENTRAL_NERVOUS_SYSTEM
