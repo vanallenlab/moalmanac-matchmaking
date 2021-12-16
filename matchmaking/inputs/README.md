@@ -9,3 +9,5 @@ To run matchmaking, the following inputs must be configured for your cohort:
 A pairwise comparison must also be performed on samples and their labels. Please follow the following steps to configure your inputs to run matchmaking,
 1. Follow instructions under [`formatted/`](formatted/) to format your samples and molecular features
 2. Follow instructions under [`annotated/`](annotated/) to annotate molecular features after formatting
+
+The [`datasources/`](datasources/) folder contains back ups of MOAlmanac and CGC, as used in the present study.
