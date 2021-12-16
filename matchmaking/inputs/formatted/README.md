@@ -8,6 +8,14 @@ Input data must be formatted for annotation by the Molecular Oncology Almanac fo
 
 Samples also must be compared in a pairwise fashion to annotate for which samples share a label. This can be done with the `pairwise-comparison.py` script in this directory. File are passed to each script individually, so there is not an enforced naming convention. 
 
+Formatted example data, as used in the present study, are also found in this directory,
+- samples to consider: `samples.summary.txt`
+- somatic variants: `samples.somatic_variants.txt`
+- called copy number alterations: `samples.copy_numbers.txt`
+- fusions: `samples.fusions.txt`
+- labeled samples: `samples.sensitive_therapies.txt`
+- pairwise comparisons between labeled samples: `samples.pairwise.txt`
+
 ## Samples
 A tab-delimited text file containing all samples to consider must be prepared. Samples should be labeled with the column `sample_name` and the file can contain as many other annotations or columns as you would like for your own organization, they will not be used by the code in this repository.
 
