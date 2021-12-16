@@ -1,5 +1,5 @@
 # Matchmaking inputs
-To run matchmaking, the following inputs must be configured for your cohort.
+To run matchmaking, the following inputs must be configured for your cohort:
 - `somatic_variants`
 - `copy_number_alterations`
 - `fusions`
