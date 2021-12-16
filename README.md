@@ -1,5 +1,9 @@
 # Matchmaking from Molecular Oncology Almanac
-Template repository to perform profile-to-cell line matchmaking
+Template repository to perform profile-to-profile matchmaking. 
+
+Matchmaking is a framework to identify genomically similar molecular profiles and evaluate that similarity profile based on shared labels, such as drug sensitivity. This repository contains data for cancer cell lines as represented in the [present study](https://www.nature.com/articles/s43018-021-00243-3), and can be revised to perform matchmaking on other cohorts.
+
+Documentation detailing how to use code within this repository can be found in the [`matchmaking/`](matchmaking) folder.
 
 ## Installation
 ### Download
@@ -32,10 +36,9 @@ To make the virtual environment available to jupyter notebooks, execute the foll
 ipython kernel install --user --name=matchmaking
 ```
 
-### Setting font to arial
-
-
 ## Citation
 Please cite our paper if using any information or code from this repository  
 > [Reardon, B., Moore, N.D., Moore, N.S., *et al*. Integrating molecular profiles into clinical frameworks through the Molecular Oncology Almanac to prospectively guide precision oncology. *Nat Cancer* (2021). https://doi.org/10.1038/s43018-021-00243-3](https://www.nature.com/articles/s43018-021-00243-3)
 
+A protocol has also been published to accompany the above study, detailing how matchmaking is performed,
+> [Reardon, B. & Van Allen, E. M. Molecular profile to cancer cell line matchmaking. Protocol Exchange https://doi.org/10.21203/rs.3.pex-1539/v1 (2021).](https://protocolexchange.researchsquare.com/article/pex-1539/v1)
