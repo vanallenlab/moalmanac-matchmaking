@@ -92,6 +92,7 @@ Fusions are processed twice, once using provided feature partner values for each
 - `feature_match_2`, 1 if feature is a gene associated with a Rearrangement within MOAlmanac and 0 otherwise
 - `feature_match_3`, 1 if feature is a gene associated with a Rearrangement and Fusion within MOAlmanac and 0 otherwise
 - `feature_match_4`, 1 if feature and the fusion partner are both catalogued as a fusion pair within MOAlmanac and 0 otherwise
+- `feature_match`, valued 1-4 and reflects the sum of other feature_match columns, used for faster compute in matchmaking
 - `evidence`, [associated evidence](https://github.com/vanallenlab/moalmanac/blob/main/docs/description-of-outputs.md#associated-evidence-predictive-implication) with the molecular feature
 
 ## Annotated fusions, gene 2
@@ -105,6 +106,7 @@ Fusions are processed twice, once using provided feature partner values for each
 - `feature_match_2`, 1 if feature is a gene associated with a Rearrangement within MOAlmanac and 0 otherwise
 - `feature_match_3`, 1 if feature is a gene associated with a Rearrangement and Fusion within MOAlmanac and 0 otherwise
 - `feature_match_4`, 1 if feature and the fusion partner are both catalogued as a fusion pair within MOAlmanac and 0 otherwise
+- `feature_match`, valued 1-4 and reflects the sum of other feature_match columns, used for faster compute in matchmaking
 - `evidence`, [associated evidence](https://github.com/vanallenlab/moalmanac/blob/main/docs/description-of-outputs.md#associated-evidence-predictive-implication) with the molecular feature
 
 ## Annotated fusions
@@ -119,4 +121,5 @@ Fusions are processed twice, once using provided feature partner values for each
 - `feature_match_2`, 1 if feature is a gene associated with a Rearrangement within MOAlmanac and 0 otherwise
 - `feature_match_3`, 1 if feature is a gene associated with a Rearrangement and Fusion within MOAlmanac and 0 otherwise
 - `feature_match_4`, 1 if feature and the fusion partner are both catalogued as a fusion pair within MOAlmanac and 0 otherwise
+- `feature_match`, valued 1-4 and reflects the sum of other feature_match columns, used for faster compute in matchmaking
 - `evidence`, [associated evidence](https://github.com/vanallenlab/moalmanac/blob/main/docs/description-of-outputs.md#associated-evidence-predictive-implication) with the molecular feature

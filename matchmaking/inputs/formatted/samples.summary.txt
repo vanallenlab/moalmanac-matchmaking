@@ -1,453 +1,378 @@
-sample_name	sample_alias-broad	sample_alias-sanger	primary_site	tumor_type	tumor_type_refined	sanger_cancer_type	sanger_cancer_type_detail
-NIHOVCAR3_OVARY	ACH-000001	SIDM00105	Ovary	ovary	ovary	Ovarian Carcinoma	High Grade Ovarian Serous Adenocarcinoma
-LS513_LARGE_INTESTINE	ACH-000007	SIDM00677	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Cecum Adenocarcinoma
-A101D_SKIN	ACH-000008	SIDM00801	Skin	melanoma	melanoma	Melanoma	Melanoma
-C2BBE1_LARGE_INTESTINE	ACH-000009	SIDM01233	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Colon Adenocarcinoma
-HCC827_LUNG	ACH-000012	SIDM01067	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
-NCIH1581_LUNG	ACH-000015	SIDM00748	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Large Cell Lung Carcinoma
-T24_URINARY_TRACT	ACH-000018	SIDM01184	Urinary_Tract	urinary_tract	urinary_tract	Bladder Carcinoma	Bladder Carcinoma
-NCIH1693_LUNG	ACH-000021	SIDM00742	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
-PATU8988T_PANCREAS	ACH-000023	SIDM00453	Pancreas	pancreas	pancreas	Pancreatic Carcinoma	Pancreatic Adenocarcinoma
-PC14_LUNG	ACH-000030	SIDM00237	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
-NCIH1650_LUNG	ACH-000035	SIDM00745	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Bronchiolo-Alveolar Lung Carcinoma
-U118MG_CENTRAL_NERVOUS_SYSTEM	ACH-000040	SIDM01193	Central_Nervous_System	glioma	glioma	Glioma	Astrocytoma
-PANC0203_PANCREAS	ACH-000042	SIDM01139	Pancreas	pancreas	pancreas	Pancreatic Carcinoma	Pancreatic Adenocarcinoma
-GCIY_STOMACH	ACH-000047	SIDM00274	Stomach	stomach	stomach	Gastric Carcinoma	Gastric Adenocarcinoma
-A673_BONE	ACH-000052	SIDM00848	Bone	Ewings_Sarcoma	Ewings_sarcoma	Ewing's Sarcoma	Ewing's Sarcoma
-D283MED_CENTRAL_NERVOUS_SYSTEM	ACH-000055	SIDM00888	Central_Nervous_System	medulloblastoma	medulloblastoma	Other Solid Carcinomas	Medulloblastoma 
-RERFLCMS_LUNG	ACH-000062	SIDM00355	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
-HS683_CENTRAL_NERVOUS_SYSTEM	ACH-000067	SIDM00666	Central_Nervous_System	glioma	glioma	Glioma	Oligodendroglioma
-U87MG_CENTRAL_NERVOUS_SYSTEM	ACH-000075	SIDM01189	Central_Nervous_System	glioma	glioma	Glioblastoma	Glioblastoma
-MHHNB11_AUTONOMIC_GANGLIA	ACH-000078	SIDM00387	Autonomic_Ganglia	neuroblastoma	neuroblastoma	Neuroblastoma	Neuroblastoma
-G292CLONEA141B1_BONE	ACH-000082	SIDM00858	Bone	osteosarcoma	osteosarcoma	Osteosarcoma	Osteosarcoma
-SKES1_BONE	ACH-000087	SIDM01111	Bone	Ewings_Sarcoma	Ewings_sarcoma	Ewing's Sarcoma	Ewing's Sarcoma
-NCIH2452_PLEURA	ACH-000092	SIDM00722	Pleura	mesothelioma	mesothelioma	Mesothelioma	Pleural Biphasic Mesothelioma
-HPAFII_PANCREAS	ACH-000094	SIDM00669	Pancreas	pancreas	pancreas	Pancreatic Carcinoma	Pancreatic Ductal Adenocarcinoma
-GAMG_CENTRAL_NERVOUS_SYSTEM	ACH-000098	SIDM01055	Central_Nervous_System	glioma	glioma	Glioblastoma	Glioblastoma
-SIMA_AUTONOMIC_GANGLIA	ACH-000099	SIDM00395	Autonomic_Ganglia	neuroblastoma	neuroblastoma	Neuroblastoma	Neuroblastoma
-RH41_SOFT_TISSUE	ACH-000100	SIDM00426	Soft_Tissue	soft_tissue	soft_tissue	Rhabdomyosarcoma	Alveolar Rhabdomyosarcoma
-GMS10_CENTRAL_NERVOUS_SYSTEM	ACH-000102	SIDM01074	Central_Nervous_System	glioma	glioma	Glioblastoma	Glioblastoma
-CAOV4_OVARY	ACH-000103	SIDM00918	Ovary	ovary	ovary	Ovarian Carcinoma	High Grade Ovarian Serous Adenocarcinoma
-CAPAN2_PANCREAS	ACH-000107	SIDM00943	Pancreas	pancreas	pancreas	Pancreatic Carcinoma	Pancreatic Ductal Adenocarcinoma
-KP3_PANCREAS	ACH-000108	SIDM00571	Pancreas	pancreas	pancreas	Pancreatic Carcinoma	Pancreatic Adenosquamous Carcinoma
-NCIH3255_LUNG	ACH-000109	SIDM00046	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
-HCC1187_BREAST	ACH-000111	SIDM00885	Breast	breast	breast	Breast Carcinoma	Ductal Breast Carcinoma
-SU8686_PANCREAS	ACH-000114	SIDM01188	Pancreas	pancreas	pancreas	Pancreatic Carcinoma	Pancreatic Adenocarcinoma
-VCAP_PROSTATE	ACH-000115	SIDM01077	Prostate	prostate	prostate	Prostate Carcinoma	Prostate Carcinoma
-OAW28_OVARY	ACH-000116	SIDM00481	Ovary	ovary	ovary	Ovarian Carcinoma	High Grade Ovarian Serous Adenocarcinoma
-EFM192A_BREAST	ACH-000117	SIDM01002	Breast	breast	breast	Breast Carcinoma	Breast Carcinoma
-HUPT3_PANCREAS	ACH-000118	SIDM00533	Pancreas	pancreas	pancreas	Pancreatic Carcinoma	Pancreatic Adenocarcinoma
-NCIH2405_LUNG	ACH-000121	SIDM00724	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
-NCIH1341_LUNG	ACH-000129	SIDM00646	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
-JHOS2_OVARY	ACH-000132	SIDM00305	Ovary	ovary	ovary	Ovarian Carcinoma	High Grade Ovarian Serous Adenocarcinoma
-CFPAC1_PANCREAS	ACH-000138	SIDM00130	Pancreas	pancreas	pancreas	Pancreatic Carcinoma	Pancreatic Ductal Adenocarcinoma
-PANC0327_PANCREAS	ACH-000139	SIDM01138	Pancreas	pancreas	pancreas	Pancreatic Carcinoma	Pancreatic Adenocarcinoma
-CAL29_URINARY_TRACT	ACH-000142	SIDM00936	Urinary_Tract	urinary_tract	urinary_tract	Bladder Carcinoma	Bladder Carcinoma
-RERFGC1B_STOMACH	ACH-000144	SIDM00358	Stomach	stomach	stomach	Gastric Carcinoma	Gastric Adenocarcinoma
-SKLMS1_SOFT_TISSUE	ACH-000145	SIDM01109	Soft_Tissue	soft_tissue	soft_tissue	Other Solid Carcinomas	Vulvar Leiomyosarcoma
-T47D_BREAST	ACH-000147	SIDM00097	Breast	breast	breast	Breast Carcinoma	Invasive Ductal Carcinoma not Otherwise Specified
-HS578T_BREAST	ACH-000148	SIDM00135	Breast	breast	breast	Breast Carcinoma	Invasive Ductal Carcinoma not Otherwise Specified
-SKNSH_AUTONOMIC_GANGLIA	ACH-000149	SIDM01098	Autonomic_Ganglia	neuroblastoma	neuroblastoma	Neuroblastoma	Neuroblastoma
-NCIH2052_PLEURA	ACH-000153	SIDM00713	Pleura	mesothelioma	mesothelioma	Mesothelioma	Pleural Sarcomatoid Mesothelioma
-SW1990_PANCREAS	ACH-000155	SIDM01165	Pancreas	pancreas	pancreas	Pancreatic Carcinoma	Pancreatic Adenocarcinoma
-OSRC2_KIDNEY	ACH-000159	SIDM00239	Kidney	kidney	kidney	Kidney Carcinoma	Renal Cell Carcinoma
-CORL105_LUNG	ACH-000161	SIDM00513	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
-RD_SOFT_TISSUE	ACH-000169	SIDM00847	Soft_Tissue	soft_tissue	soft_tissue	Rhabdomyosarcoma	Embryonal Rhabdomyosarcoma
-VMRCRCZ_KIDNEY	ACH-000171	SIDM00317	Kidney	kidney	kidney	Kidney Carcinoma	Renal Cell Carcinoma
-CAL62_THYROID	ACH-000174	SIDM00931	Thyroid	thyroid	thyroid	Thyroid Gland Carcinoma	Anaplastic Thyroid Carcinoma
-LOUNH91_LUNG	ACH-000176	SIDM00341	Lung	lung_NSC	lung_NSC	Squamous Cell Lung Carcinoma	Squamous Cell Lung Carcinoma
-HS766T_PANCREAS	ACH-000178	SIDM00664	Pancreas	pancreas	pancreas	Pancreatic Carcinoma	Pancreatic Adenocarcinoma
-SCC9_UPPER_AERODIGESTIVE_TRACT	ACH-000181	SIDM01080	Upper_Aerodigestive_Tract	upper_aerodigestive	upper_aerodigestive	Oral Cavity Carcinoma	Tongue Squamous Cell Carcinoma
-NCIH2444_LUNG	ACH-000186	SIDM00723	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Non-Small Cell Lung Carcinoma
-CORL311_LUNG	ACH-000187	SIDM00509	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
-SCC25_UPPER_AERODIGESTIVE_TRACT	ACH-000188	SIDM01082	Upper_Aerodigestive_Tract	upper_aerodigestive	upper_aerodigestive	Oral Cavity Carcinoma	Tongue Squamous Cell Carcinoma
-RCC10RGB_KIDNEY	ACH-000189	SIDM00235	Kidney	kidney	kidney	Kidney Carcinoma	Renal Cell Carcinoma
-BHT101_THYROID	ACH-000191	SIDM00987	Thyroid	thyroid	thyroid	Thyroid Gland Carcinoma	Anaplastic Thyroid Carcinoma
-MFE280_ENDOMETRIUM	ACH-000192	SIDM00335	Endometrium	endometrium	endometrium	Endometrial Carcinoma	Endometrial Adenocarcinoma
-HCC1599_BREAST	ACH-000196	SIDM00877	Breast	breast	breast	Breast Carcinoma	Ductal Breast Carcinoma
-NMCG1_CENTRAL_NERVOUS_SYSTEM	ACH-000200	SIDM00575	Central_Nervous_System	glioma	glioma	Glioma	Astrocytoma
-A204_SOFT_TISSUE	ACH-000201	SIDM00798	Soft_Tissue	soft_tissue	soft_tissue	Rhabdomyosarcoma	Embryonal Rhabdomyosarcoma
-DETROIT562_UPPER_AERODIGESTIVE_TRACT	ACH-000207	SIDM00831	Upper_Aerodigestive_Tract	upper_aerodigestive	upper_aerodigestive	Head and Neck Carcinoma	Pharyngeal Squamous Cell Carcinoma
-CADOES1_BONE	ACH-000210	SIDM00961	Bone	Ewings_Sarcoma	Ewings_sarcoma	Ewing's Sarcoma	Ewing's Sarcoma
-DAOY_CENTRAL_NERVOUS_SYSTEM	ACH-000211	SIDM00887	Central_Nervous_System	medulloblastoma	medulloblastoma	Other Solid Carcinomas	Medulloblastoma 
-CAL120_BREAST	ACH-000212	SIDM00940	Breast	breast	breast	Breast Carcinoma	Breast Carcinoma
-JHH6_LIVER	ACH-000217	SIDM00615	Liver	liver	liver	Hepatocellular Carcinoma	Hepatocellular Carcinoma
-A375_SKIN	ACH-000219	SIDM00795	Skin	melanoma	melanoma	Melanoma	Amelanotic Melanoma
-ASPC1_PANCREAS	ACH-000222	SIDM00899	Pancreas	pancreas	pancreas	Pancreatic Carcinoma	Pancreatic Ductal Adenocarcinoma
-HCC1937_BREAST	ACH-000223	SIDM00874	Breast	breast	breast	Breast Carcinoma	Ductal Breast Carcinoma
-ECC12_STOMACH	ACH-000225	SIDM00279	Stomach	stomach	stomach	Gastric Carcinoma	Gastric Small Cell Carcinoma
-BICR31_UPPER_AERODIGESTIVE_TRACT	ACH-000228	SIDM00078	Upper_Aerodigestive_Tract	upper_aerodigestive	upper_aerodigestive	Oral Cavity Carcinoma	Tongue Squamous Cell Carcinoma
-KALS1_CENTRAL_NERVOUS_SYSTEM	ACH-000231	SIDM00613	Central_Nervous_System	glioma	glioma	Glioblastoma	Glioblastoma
-PANC0403_PANCREAS	ACH-000235	SIDM01137	Pancreas	pancreas	pancreas	Pancreatic Carcinoma	Pancreatic Ductal Adenocarcinoma
-SW1417_LARGE_INTESTINE	ACH-000236	SIDM00812	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Colon Adenocarcinoma
-SCC4_UPPER_AERODIGESTIVE_TRACT	ACH-000238	SIDM01081	Upper_Aerodigestive_Tract	upper_aerodigestive	upper_aerodigestive	Oral Cavity Carcinoma	Tongue Squamous Cell Carcinoma
-RT4_URINARY_TRACT	ACH-000242	SIDM01085	Urinary_Tract	urinary_tract	urinary_tract	Bladder Carcinoma	Bladder Carcinoma
-DANG_PANCREAS	ACH-000243	SIDM00950	Pancreas	pancreas	pancreas	Pancreatic Carcinoma	Pancreatic Adenocarcinoma
-DKMG_CENTRAL_NERVOUS_SYSTEM	ACH-000244	SIDM00947	Central_Nervous_System	glioma	glioma	Glioblastoma	Glioblastoma
-AU565_BREAST	ACH-000248	SIDM00898	Breast	breast	breast	Breast Carcinoma	Breast Adenocarcinoma
-CL11_LARGE_INTESTINE	ACH-000249	SIDM00944	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Colon Adenocarcinoma
-KMRC20_KIDNEY	ACH-000250	SIDM00609	Kidney	kidney	kidney	Kidney Carcinoma	Clear Cell Renal Cell Carcinoma
-LS1034_LARGE_INTESTINE	ACH-000252	SIDM00681	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Cecum Adenocarcinoma
-SCC15_UPPER_AERODIGESTIVE_TRACT	ACH-000254	SIDM01083	Upper_Aerodigestive_Tract	upper_aerodigestive	upper_aerodigestive	Oral Cavity Carcinoma	Tongue Squamous Cell Carcinoma
-CORL279_LUNG	ACH-000257	SIDM00511	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
-DU4475_BREAST	ACH-000258	SIDM01001	Breast	breast	breast	Breast Carcinoma	Breast Carcinoma
-KELLY_AUTONOMIC_GANGLIA	ACH-000259	SIDM01009	Autonomic_Ganglia	neuroblastoma	neuroblastoma	Neuroblastoma	Neuroblastoma
-CALU6_LUNG	ACH-000264	SIDM00921	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Non-Small Cell Lung Carcinoma
-KP4_PANCREAS	ACH-000265	SIDM00301	Pancreas	pancreas	pancreas	Pancreatic Carcinoma	Pancreatic Carcinoma
-AM38_CENTRAL_NERVOUS_SYSTEM	ACH-000269	SIDM00492	Central_Nervous_System	glioma	glioma	Glioblastoma	Glioblastoma
-HPAC_PANCREAS	ACH-000270	SIDM00670	Pancreas	pancreas	pancreas	Pancreatic Carcinoma	Pancreatic Adenocarcinoma
-HCC38_BREAST	ACH-000276	SIDM00675	Breast	breast	breast	Breast Carcinoma	Ductal Breast Carcinoma
-HCC1419_BREAST	ACH-000277	SIDM00882	Breast	breast	breast	Breast Carcinoma	Ductal Breast Carcinoma
-NCIH1755_LUNG	ACH-000282	SIDM00738	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
-BT549_BREAST	ACH-000288	SIDM00122	Breast	breast	breast	Breast Carcinoma	Invasive Ductal Carcinoma not Otherwise Specified
-NCIH209_LUNG	ACH-000290	SIDM00706	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
-OV90_OVARY	ACH-000291	SIDM01141	Ovary	ovary	ovary	Ovarian Carcinoma	Ovarian Adenocarcinoma
-NCIH841_LUNG	ACH-000292	SIDM01134	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
-KLE_ENDOMETRIUM	ACH-000293	SIDM00686	Endometrium	endometrium	endometrium	Endometrial Carcinoma	Endometrial Adenocarcinoma
-NCIH2029_LUNG	ACH-000298	SIDM00735	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
-SNU5_STOMACH	ACH-000303	SIDM01144	Stomach	stomach	stomach	Gastric Carcinoma	Gastric Carcinoma
-WM115_SKIN	ACH-000304	SIDM01000	Skin	melanoma	melanoma	Melanoma	Melanoma
-ECGI10_OESOPHAGUS	ACH-000305	SIDM00278	Oesophagus	esophagus	esophagus	Esophageal Squamous Cell Carcinoma	Esophageal Squamous Cell Carcinoma
-EFO21_OVARY	ACH-000308	SIDM01052	Ovary	ovary	ovary	Ovarian Carcinoma	Ovarian Cystadenocarcinoma
-SKLU1_LUNG	ACH-000309	SIDM01108	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
-NCIH2122_LUNG	ACH-000311	SIDM00702	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
-TE10_OESOPHAGUS	ACH-000318	SIDM00349	Oesophagus	esophagus	esophagus	Esophageal Squamous Cell Carcinoma	Esophageal Squamous Cell Carcinoma
-MPP89_PLEURA	ACH-000319	SIDM00222	Pleura	mesothelioma	mesothelioma	Mesothelioma	Pleural Epithelioid Mesothelioma
-PSN1_PANCREAS	ACH-000320	SIDM00469	Pancreas	pancreas	pancreas	Pancreatic Carcinoma	Pancreatic Adenocarcinoma
-HT144_SKIN	ACH-000322	SIDM00695	Skin	melanoma	melanoma	Melanoma	Melanoma
-CCFSTTG1_CENTRAL_NERVOUS_SYSTEM	ACH-000329	SIDM00131	Central_Nervous_System	glioma	glioma	Glioma	Astrocytoma
-EFM19_BREAST	ACH-000330	SIDM01056	Breast	breast	breast	Breast Carcinoma	Ductal Breast Carcinoma
-YAPC_PANCREAS	ACH-000332	SIDM00411	Pancreas	pancreas	pancreas	Pancreatic Carcinoma	Pancreatic Carcinoma
-MSTO211H_PLEURA	ACH-000335	SIDM00640	Pleura	mesothelioma	mesothelioma	Mesothelioma	Pleural Biphasic Mesothelioma
-SKNFI_AUTONOMIC_GANGLIA	ACH-000341	SIDM01099	Autonomic_Ganglia	neuroblastoma	neuroblastoma	Neuroblastoma	Neuroblastoma
-NCIH522_LUNG	ACH-000343	SIDM00116	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
-QGP1_PANCREAS	ACH-000347	SIDM00360	Pancreas	pancreas	pancreas	Other Solid Carcinomas	Pancreatic Somatostatinoma
-RPMI7951_SKIN	ACH-000348	SIDM01087	Skin	melanoma	melanoma	Melanoma	Melanoma
-HCC1500_BREAST	ACH-000349	SIDM00879	Breast	breast	breast	Breast Carcinoma	Ductal Breast Carcinoma
-COLO678_LARGE_INTESTINE	ACH-000350	SIDM00957	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Colon Carcinoma
-MKN1_STOMACH	ACH-000351	SIDM00271	Stomach	stomach	stomach	Gastric Carcinoma	Gastric Adenosquamous Carcinoma
-HCC1428_BREAST	ACH-000352	SIDM00881	Breast	breast	breast	Breast Carcinoma	Breast Adenocarcinoma
-TE15_OESOPHAGUS	ACH-000353	SIDM00249	Oesophagus	esophagus	esophagus	Esophageal Squamous Cell Carcinoma	Esophageal Squamous Cell Carcinoma
-CAPAN1_PANCREAS	ACH-000354	SIDM00934	Pancreas	pancreas	pancreas	Pancreatic Carcinoma	Pancreatic Ductal Adenocarcinoma
-NCIH82_LUNG	ACH-000355	SIDM01131	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
-MKN45_STOMACH	ACH-000356	SIDM00247	Stomach	stomach	stomach	Gastric Carcinoma	Gastric Adenocarcinoma
-NCIH69_LUNG	ACH-000358	SIDM01121	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
-MG63_BONE	ACH-000359	SIDM00525	Bone	osteosarcoma	osteosarcoma	Osteosarcoma	Osteosarcoma
-NCIH508_LARGE_INTESTINE	ACH-000360	SIDM00777	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Cecum Adenocarcinoma
-SKHEP1_LIVER	ACH-000361	SIDM01110	Liver	liver	liver	Hepatocellular Carcinoma	Hepatocellular Carcinoma
-U2OS_BONE	ACH-000364	SIDM01191	Bone	osteosarcoma	osteosarcoma	Osteosarcoma	Osteosarcoma
-SKNDZ_AUTONOMIC_GANGLIA	ACH-000366	SIDM01100	Autonomic_Ganglia	neuroblastoma	neuroblastoma	Neuroblastoma	Neuroblastoma
-HCC1143_BREAST	ACH-000374	SIDM00866	Breast	breast	breast	Breast Carcinoma	Ductal Breast Carcinoma
-SF295_CENTRAL_NERVOUS_SYSTEM	ACH-000376	SIDM00084	Central_Nervous_System	glioma	glioma	Glioblastoma	Glioblastoma
-NCIH647_LUNG	ACH-000378	SIDM01125	Lung	lung_NSC	lung_NSC	Other Solid Carcinomas	Adenosquamous Lung Carcinoma
-NCIH1781_LUNG	ACH-000379	SIDM00754	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Bronchiolo-Alveolar Lung Carcinoma
-T84_LARGE_INTESTINE	ACH-000381	SIDM00782	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Colon Adenocarcinoma
-OE33_OESOPHAGUS	ACH-000383	SIDM00477	Oesophagus	esophagus	esophagus	Esophageal Carcinoma	Barrett s Adenocarcinoma
-SW780_URINARY_TRACT	ACH-000384	SIDM01160	Urinary_Tract	urinary_tract	urinary_tract	Bladder Carcinoma	Bladder Carcinoma
-H4_CENTRAL_NERVOUS_SYSTEM	ACH-000389	SIDM00852	Central_Nervous_System	glioma	glioma	Glioma	Astrocytoma
-MHHES1_BONE	ACH-000391	SIDM00386	Bone	Ewings_Sarcoma	Ewings_sarcoma	Ewing's Sarcoma	Ewing's Sarcoma
-CALU3_LUNG	ACH-000392	SIDM00922	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
-NCIH2081_LUNG	ACH-000394	SIDM00710	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
-NCIH520_LUNG	ACH-000395	SIDM01130	Lung	lung_NSC	lung_NSC	Squamous Cell Lung Carcinoma	Squamous Cell Lung Carcinoma
-J82_URINARY_TRACT	ACH-000396	SIDM00693	Urinary_Tract	urinary_tract	urinary_tract	Bladder Carcinoma	Bladder Carcinoma
-NCIH2196_LUNG	ACH-000399	SIDM00731	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
-SKCO1_LARGE_INTESTINE	ACH-000400	SIDM01096	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Colon Adenocarcinoma
-COLO800_SKIN	ACH-000401	SIDM00515	Skin	melanoma	melanoma	Melanoma	Melanoma
-NCIH747_LARGE_INTESTINE	ACH-000403	SIDM00778	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Cecum Adenocarcinoma
-TE5_OESOPHAGUS	ACH-000408	SIDM00347	Oesophagus	esophagus	esophagus	Esophageal Squamous Cell Carcinoma	Esophageal Squamous Cell Carcinoma
-NCIH838_LUNG	ACH-000416	SIDM01150	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
-PANC0813_PANCREAS	ACH-000417	SIDM01136	Pancreas	pancreas	pancreas	Pancreatic Carcinoma	Pancreatic Ductal Adenocarcinoma
-SNU449_LIVER	ACH-000420	SIDM01194	Liver	liver	liver	Hepatocellular Carcinoma	Hepatocellular Carcinoma
-SW837_LARGE_INTESTINE	ACH-000421	SIDM00833	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Rectal Adenocarcinoma
-SKMEL3_SKIN	ACH-000423	SIDM01105	Skin	melanoma	melanoma	Melanoma	Melanoma
-TC71_BONE	ACH-000424	SIDM00419	Bone	Ewings_Sarcoma	Ewings_sarcoma	Ewing's Sarcoma	Ewing's Sarcoma
-UACC62_SKIN	ACH-000425	SIDM00107	Skin	melanoma	melanoma	Melanoma	Melanoma
-NCIN87_STOMACH	ACH-000427	SIDM01147	Stomach	stomach	stomach	Gastric Carcinoma	Gastric Tubular Adenocarcinoma
-UO31_KIDNEY	ACH-000428	SIDM00112	Kidney	kidney	kidney	Kidney Carcinoma	Renal Cell Carcinoma
-A704_KIDNEY	ACH-000429	SIDM00849	Kidney	kidney	kidney	Kidney Carcinoma	Renal Cell Carcinoma
-TYKNU_OVARY	ACH-000430	SIDM00321	Ovary	ovary	ovary	Ovarian Carcinoma	High Grade Ovarian Serous Adenocarcinoma
-NCIH1694_LUNG	ACH-000431	SIDM00741	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
-CAKI1_KIDNEY	ACH-000433	SIDM00941	Kidney	kidney	kidney	Kidney Carcinoma	Clear Cell Renal Cell Carcinoma
-NCIH1915_LUNG	ACH-000434	SIDM00763	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Non-Small Cell Lung Carcinoma
-SW1088_CENTRAL_NERVOUS_SYSTEM	ACH-000437	SIDM01155	Central_Nervous_System	glioma	glioma	Glioma	Astrocytoma
-LU65_LUNG	ACH-000438	SIDM00547	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Giant Cell Lung Carcinoma
-SH4_SKIN	ACH-000441	SIDM01079	Skin	melanoma	melanoma	Melanoma	Melanoma
-RERFLCSQ1_LUNG	ACH-000442	SIDM00354	Lung	lung_NSC	lung_NSC	Squamous Cell Lung Carcinoma	Squamous Cell Lung Carcinoma
-OVKATE_OVARY	ACH-000443	SIDM00466	Ovary	ovary	ovary	Ovarian Carcinoma	High Grade Ovarian Serous Adenocarcinoma
-NCIH2228_LUNG	ACH-000447	SIDM00729	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
-NCIH1666_LUNG	ACH-000448	SIDM00743	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Bronchiolo-Alveolar Lung Carcinoma
-MESSA_SOFT_TISSUE	ACH-000449	SIDM00625	Soft_Tissue	soft_tissue	soft_tissue	Other Solid Carcinomas	Uterine Corpus Sarcoma
-MELHO_SKIN	ACH-000450	SIDM00337	Skin	melanoma	melanoma	Melanoma	Melanoma
-NCIH2085_LUNG	ACH-000451	SIDM00709	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Non-Small Cell Lung Carcinoma
-TE8_OESOPHAGUS	ACH-000452	SIDM00326	Oesophagus	esophagus	esophagus	Esophageal Squamous Cell Carcinoma	Esophageal Squamous Cell Carcinoma
-CAL54_KIDNEY	ACH-000457	SIDM00932	Kidney	kidney	kidney	Kidney Carcinoma	Renal Cell Carcinoma
-NCIH460_LUNG	ACH-000463	SIDM00144	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Large Cell Lung Carcinoma
-SKMEL1_SKIN	ACH-000465	SIDM01107	Skin	melanoma	melanoma	Melanoma	Melanoma
-YH13_CENTRAL_NERVOUS_SYSTEM	ACH-000469	SIDM00316	Central_Nervous_System	glioma	glioma	Glioblastoma	Glioblastoma
-SW1463_LARGE_INTESTINE	ACH-000470	SIDM00834	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Rectal Adenocarcinoma
-HSC2_UPPER_AERODIGESTIVE_TRACT	ACH-000472	SIDM00590	Upper_Aerodigestive_Tract	upper_aerodigestive	upper_aerodigestive	Oral Cavity Carcinoma	Oral Cavity Squamous Cell Carcinoma
-HUH1_LIVER	ACH-000475	SIDM00586	Liver	liver	liver	Hepatocellular Carcinoma	Hepatocellular Carcinoma
-JHH4_LIVER	ACH-000476	SIDM00616	Liver	liver	liver	Hepatocellular Carcinoma	Hepatocellular Carcinoma
-HUH7_LIVER	ACH-000480	SIDM00585	Liver	liver	liver	Hepatocellular Carcinoma	Hepatocellular Carcinoma
-NCIH2170_LUNG	ACH-000481	SIDM00716	Lung	lung_NSC	lung_NSC	Squamous Cell Lung Carcinoma	Squamous Cell Lung Carcinoma
-RERFLCKJ_LUNG	ACH-000482	SIDM00356	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
-SNU182_LIVER	ACH-000483	SIDM01151	Liver	liver	liver	Hepatocellular Carcinoma	Hepatocellular Carcinoma
-VMRCRCW_KIDNEY	ACH-000484	SIDM00318	Kidney	kidney	kidney	Kidney Carcinoma	Renal Cell Carcinoma
-KU1919_URINARY_TRACT	ACH-000486	SIDM01033	Urinary_Tract	urinary_tract	urinary_tract	Bladder Carcinoma	Bladder Carcinoma
-TE11_OESOPHAGUS	ACH-000488	SIDM00348	Oesophagus	esophagus	esophagus	Esophageal Squamous Cell Carcinoma	Esophageal Squamous Cell Carcinoma
-SW1116_LARGE_INTESTINE	ACH-000489	SIDM00835	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Colon Adenocarcinoma
-NCIH716_LARGE_INTESTINE	ACH-000491	SIDM00779	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Cecum Adenocarcinoma
-NCIH1792_LUNG	ACH-000496	SIDM00771	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
-LS123_LARGE_INTESTINE	ACH-000501	SIDM00776	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Colon Adenocarcinoma
-SNB75_CENTRAL_NERVOUS_SYSTEM	ACH-000504	SIDM00095	Central_Nervous_System	glioma	glioma	Glioblastoma	Glioblastoma
-NCIH146_LUNG	ACH-000506	SIDM00698	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
-CORL88_LUNG	ACH-000508	SIDM00506	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
-NCIH1299_LUNG	ACH-000510	SIDM00649	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Large Cell Lung Carcinoma
-NCIH1092_LUNG	ACH-000514	SIDM00653	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
-HCC33_LUNG	ACH-000515	SIDM01071	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
-CAL78_BONE	ACH-000516	SIDM00929	Bone	chondrosarcoma	chondrosarcoma	Chondrosarcoma	Chondrosarcoma
-CAL33_UPPER_AERODIGESTIVE_TRACT	ACH-000518	SIDM00942	Upper_Aerodigestive_Tract	upper_aerodigestive	upper_aerodigestive	Oral Cavity Carcinoma	Tongue Squamous Cell Carcinoma
-NCIH2030_LUNG	ACH-000521	SIDM00715	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
-UMUC3_URINARY_TRACT	ACH-000522	SIDM01182	Urinary_Tract	urinary_tract	urinary_tract	Bladder Carcinoma	Bladder Carcinoma
-KURAMOCHI_OVARY	ACH-000524	SIDM00554	Ovary	ovary	ovary	Ovarian Carcinoma	High Grade Ovarian Serous Adenocarcinoma
-NCIH2171_LUNG	ACH-000525	SIDM00733	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
-OVISE_OVARY	ACH-000527	SIDM00564	Ovary	ovary	ovary	Ovarian Carcinoma	Ovarian Clear Cell Adenocarcinoma
-ABC1_LUNG	ACH-000528	SIDM00494	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
-DMS114_LUNG	ACH-000530	SIDM00865	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
-SNU61_LARGE_INTESTINE	ACH-000532	SIDM00194	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Rectal Adenocarcinoma
-BXPC3_PANCREAS	ACH-000535	SIDM00132	Pancreas	pancreas	pancreas	Pancreatic Carcinoma	Pancreatic Ductal Adenocarcinoma
-BT20_BREAST	ACH-000536	SIDM00893	Breast	breast	breast	Breast Carcinoma	Breast Adenocarcinoma
-OE21_OESOPHAGUS	ACH-000544	SIDM00478	Oesophagus	esophagus	esophagus	Esophageal Squamous Cell Carcinoma	Esophageal Squamous Cell Carcinoma
-VMCUB1_URINARY_TRACT	ACH-000545	SIDM00414	Urinary_Tract	urinary_tract	urinary_tract	Bladder Carcinoma	Bladder Carcinoma
-HSC4_UPPER_AERODIGESTIVE_TRACT	ACH-000546	SIDM00588	Upper_Aerodigestive_Tract	upper_aerodigestive	upper_aerodigestive	Oral Cavity Carcinoma	Tongue Squamous Cell Carcinoma
-HT1197_URINARY_TRACT	ACH-000547	SIDM00676	Urinary_Tract	urinary_tract	urinary_tract	Bladder Carcinoma	Bladder Carcinoma
-BHY_UPPER_AERODIGESTIVE_TRACT	ACH-000548	SIDM00986	Upper_Aerodigestive_Tract	upper_aerodigestive	upper_aerodigestive	Oral Cavity Carcinoma	Head and Neck Squamous Cell Carcinoma
-HT29_LARGE_INTESTINE	ACH-000552	SIDM00136	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Rectosigmoid Adenocarcinoma
-A498_KIDNEY	ACH-000555	SIDM00124	Kidney	kidney	kidney	Kidney Carcinoma	Renal Cell Carcinoma
-A172_CENTRAL_NERVOUS_SYSTEM	ACH-000558	SIDM00799	Central_Nervous_System	glioma	glioma	Glioblastoma	Glioblastoma
-NCIH1836_LUNG	ACH-000559	SIDM00770	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
-ECC10_STOMACH	ACH-000560	SIDM00280	Stomach	stomach	stomach	Gastric Carcinoma	Gastric Small Cell Carcinoma
-TT_OESOPHAGUS	ACH-000561	SIDM00322	Na	esophagus	esophagus	Esophageal Squamous Cell Carcinoma	Esophageal Squamous Cell Carcinoma
-HCC78_LUNG	ACH-000562	SIDM01068	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
-EBC1_LUNG	ACH-000563	SIDM00486	Lung	lung_NSC	lung_NSC	Squamous Cell Lung Carcinoma	Squamous Cell Lung Carcinoma
-RCM1_LARGE_INTESTINE	ACH-000565	SIDM00359	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Rectal Adenocarcinoma
-SW1710_URINARY_TRACT	ACH-000566	SIDM00420	Urinary_Tract	urinary_tract	urinary_tract	Bladder Carcinoma	Bladder Carcinoma
-ISTMES1_PLEURA	ACH-000569	SIDM00224	Pleura	mesothelioma	mesothelioma	Mesothelioma	Pleural Epithelioid Mesothelioma
-YKG1_CENTRAL_NERVOUS_SYSTEM	ACH-000570	SIDM00315	Central_Nervous_System	glioma	glioma	Glioblastoma	Glioblastoma
-T98G_CENTRAL_NERVOUS_SYSTEM	ACH-000571	SIDM01171	Central_Nervous_System	glioma	glioma	Glioblastoma	Glioblastoma
-G361_SKIN	ACH-000572	SIDM00857	Skin	melanoma	melanoma	Melanoma	Melanoma
-FUOV1_OVARY	ACH-000574	SIDM01040	Ovary	ovary	ovary	Ovarian Carcinoma	High Grade Ovarian Serous Adenocarcinoma
-JHH2_LIVER	ACH-000577	SIDM00617	Liver	liver	liver	Hepatocellular Carcinoma	Hepatocellular Carcinoma
-C32_SKIN	ACH-000580	SIDM00890	Skin	melanoma	melanoma	Melanoma	Amelanotic Melanoma
-SNU16_STOMACH	ACH-000581	SIDM01145	Stomach	stomach	stomach	Gastric Carcinoma	Gastric Carcinoma
-JHOS4_OVARY	ACH-000584	SIDM00303	Ovary	ovary	ovary	Ovarian Carcinoma	High Grade Ovarian Serous Adenocarcinoma
-EPLC272H_LUNG	ACH-000585	SIDM01044	Lung	lung_NSC	lung_NSC	Other Solid Carcinomas	Lung Mucoepidermoid Carcinoma
-NCIH1876_LUNG	ACH-000586	SIDM00766	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
-NCIH1975_LUNG	ACH-000587	SIDM00759	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
-NCIH1437_LUNG	ACH-000589	SIDM00734	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
-LN229_CENTRAL_NERVOUS_SYSTEM	ACH-000595	SIDM00684	Central_Nervous_System	glioma	glioma	Glioblastoma	Glioblastoma
-LCLC97TM1_LUNG	ACH-000596	SIDM00344	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Large Cell Lung Carcinoma
-PATU8902_PANCREAS	ACH-000599	SIDM00455	Pancreas	pancreas	pancreas	Pancreatic Carcinoma	Pancreatic Adenocarcinoma
-MIAPACA2_PANCREAS	ACH-000601	SIDM00505	Pancreas	pancreas	pancreas	Pancreatic Carcinoma	Pancreatic Ductal Adenocarcinoma
-BEN_LUNG	ACH-000603	SIDM00990	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Non-Small Cell Lung Carcinoma
-TE6_OESOPHAGUS	ACH-000605	SIDM00328	Oesophagus	esophagus	esophagus	Esophageal Squamous Cell Carcinoma	Esophageal Squamous Cell Carcinoma
-SF126_CENTRAL_NERVOUS_SYSTEM	ACH-000609	SIDM00382	Central_Nervous_System	glioma	glioma	Glioblastoma	Glioblastoma
-NCIH2227_LUNG	ACH-000610	SIDM00730	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
-HOS_BONE	ACH-000613	SIDM00806	Bone	osteosarcoma	osteosarcoma	Osteosarcoma	Osteosarcoma
-RVH421_SKIN	ACH-000614	SIDM00401	Skin	melanoma	melanoma	Melanoma	Melanoma
-SKMEL28_SKIN	ACH-000615	SIDM00081	Skin	melanoma	melanoma	Melanoma	Cutaneous Melanoma
-HS746T_STOMACH	ACH-000616	SIDM00665	Stomach	stomach	stomach	Gastric Carcinoma	Gastric Adenocarcinoma
-OVCAR4_OVARY	ACH-000617	SIDM00092	Ovary	ovary	ovary	Ovarian Carcinoma	High Grade Ovarian Serous Adenocarcinoma
-JHH1_LIVER	ACH-000620	SIDM00618	Liver	liver	liver	Hepatocellular Carcinoma	Hepatocellular Carcinoma
-MDAMB157_BREAST	ACH-000621	SIDM00529	Breast	breast	breast	Breast Carcinoma	Breast Carcinoma
-KNS42_CENTRAL_NERVOUS_SYSTEM	ACH-000622	SIDM00607	Central_Nervous_System	glioma	glioma	Glioblastoma	Glioblastoma
-HCC1806_BREAST	ACH-000624	SIDM00875	Breast	breast	breast	Breast Carcinoma	Squamous Cell Breast Carcinoma Acantholytic Variant
-HEP3B217_LIVER	ACH-000625	SIDM00672	Liver	liver	liver	Hepatocellular Carcinoma	Hepatocellular Carcinoma
-LCLC103H_LUNG	ACH-000627	SIDM00345	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Large Cell Lung Carcinoma
-NCIH596_LUNG	ACH-000628	SIDM01127	Lung	lung_NSC	lung_NSC	Other Solid Carcinomas	Adenosquamous Lung Carcinoma
-KS1_CENTRAL_NERVOUS_SYSTEM	ACH-000631	SIDM00555	Central_Nervous_System	glioma	glioma	Glioblastoma	Glioblastoma
-FU97_STOMACH	ACH-000633	SIDM00503	Stomach	stomach	stomach	Gastric Carcinoma	Gastric Adenocarcinoma
-KYSE520_OESOPHAGUS	ACH-000637	SIDM01025	Oesophagus	esophagus	esophagus	Esophageal Squamous Cell Carcinoma	Esophageal Squamous Cell Carcinoma
-NCIH441_LUNG	ACH-000638	SIDM00925	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Papillary Lung Adenocarcinoma
-NCIH211_LUNG	ACH-000639	SIDM00704	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
-SKMEL31_SKIN	ACH-000640	SIDM01104	Skin	melanoma	melanoma	Melanoma	Melanoma
-HDQP1_BREAST	ACH-000643	SIDM01062	Breast	breast	breast	Breast Carcinoma	Breast Carcinoma
-TE1_OESOPHAGUS	ACH-000647	SIDM00369	Oesophagus	esophagus	esophagus	Esophageal Squamous Cell Carcinoma	Esophageal Squamous Cell Carcinoma
-NCIH28_PLEURA	ACH-000648	SIDM00720	Pleura	mesothelioma	mesothelioma	Mesothelioma	Pleural Sarcomatoid Mesothelioma
-IGR37_SKIN	ACH-000650	SIDM01066	Skin	melanoma	melanoma	Melanoma	Melanoma
-SW620_LARGE_INTESTINE	ACH-000651	SIDM00841	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Colon Adenocarcinoma
-SUIT2_PANCREAS	ACH-000652	SIDM00371	Pancreas	pancreas	pancreas	Pancreatic Carcinoma	Pancreatic Ductal Adenocarcinoma
-SF268_CENTRAL_NERVOUS_SYSTEM	ACH-000655	SIDM00085	Central_Nervous_System	glioma	glioma	Glioma	Astrocytoma
-A2780_OVARY	ACH-000657	SIDM00210	Ovary	ovary	ovary	Ovarian Carcinoma	Ovarian Endometrioid Adenocarcinoma
-CORL23_LUNG	ACH-000662	SIDM00512	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Large Cell Lung Carcinoma
-OVTOKO_OVARY	ACH-000663	SIDM00425	Ovary	ovary	ovary	Ovarian Carcinoma	Ovarian Clear Cell Adenocarcinoma
-SKMES1_LUNG	ACH-000665	SIDM01103	Lung	lung_NSC	lung_NSC	Squamous Cell Lung Carcinoma	Squamous Cell Lung Carcinoma
-NCIH1355_LUNG	ACH-000666	SIDM00645	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
-HCC44_LUNG	ACH-000667	SIDM01069	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
-HCC70_BREAST	ACH-000668	SIDM00673	Breast	breast	breast	Breast Carcinoma	Ductal Breast Carcinoma
-SW900_LUNG	ACH-000669	SIDM01158	Lung	lung_NSC	lung_NSC	Squamous Cell Lung Carcinoma	Squamous Cell Lung Carcinoma
-SBC5_LUNG	ACH-000670	SIDM00368	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
-IALM_LUNG	ACH-000672	SIDM00306	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Large Cell Lung Carcinoma
-NUGC4_STOMACH	ACH-000674	SIDM00570	Stomach	stomach	stomach	Gastric Carcinoma	Signet Ring Cell Gastric Adenocarcinoma
-NCIH1734_LUNG	ACH-000675	SIDM00739	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
-SW1573_LUNG	ACH-000677	SIDM01163	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Bronchiolo-Alveolar Lung Carcinoma
-MKN7_STOMACH	ACH-000678	SIDM00560	Stomach	stomach	stomach	Gastric Carcinoma	Gastric Tubular Adenocarcinoma
-OE19_OESOPHAGUS	ACH-000679	SIDM00479	Oesophagus	esophagus	esophagus	Esophageal Carcinoma	Esophageal Adenocarcinoma
-SW948_LARGE_INTESTINE	ACH-000680	SIDM00832	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Colon Adenocarcinoma
-A549_LUNG	ACH-000681	SIDM00903	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
-OV7_OVARY	ACH-000688	SIDM00474	Ovary	ovary	ovary	Ovarian Carcinoma	Ovarian Carcinoma
-RH18_SOFT_TISSUE	ACH-000689	SIDM00454	Soft_Tissue	soft_tissue	soft_tissue	Rhabdomyosarcoma	Embryonal Rhabdomyosarcoma
-HCC2157_BREAST	ACH-000691	SIDM00774	Breast	breast	breast	Breast Carcinoma	Ductal Breast Carcinoma
-KYSE180_OESOPHAGUS	ACH-000693	SIDM01030	Oesophagus	esophagus	esophagus	Esophageal Squamous Cell Carcinoma	Esophageal Squamous Cell Carcinoma
-OVCAR8_OVARY	ACH-000696	SIDM00090	Ovary	ovary	ovary	Ovarian Carcinoma	High Grade Ovarian Serous Adenocarcinoma
-DMS53_LUNG	ACH-000698	SIDM00523	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
-HCC1395_BREAST	ACH-000699	SIDM00884	Breast	breast	breast	Breast Carcinoma	Ductal Breast Carcinoma
-DMS79_LUNG	ACH-000703	SIDM00524	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
-OAW42_OVARY	ACH-000704	SIDM00480	Ovary	ovary	ovary	Ovarian Carcinoma	Ovarian Cystadenocarcinoma
-EKVX_LUNG	ACH-000706	SIDM00119	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Non-Small Cell Lung Carcinoma
-JIMT1_BREAST	ACH-000711	SIDM01037	Breast	breast	breast	Breast Carcinoma	Breast Carcinoma
-CAOV3_OVARY	ACH-000713	SIDM00919	Ovary	ovary	ovary	Ovarian Carcinoma	High Grade Ovarian Serous Adenocarcinoma
-TT2609C02_THYROID	ACH-000716	SIDM00418	Thyroid	thyroid	thyroid	Thyroid Gland Carcinoma	Follicular Thyroid Carcinoma
-COLO680N_OESOPHAGUS	ACH-000717	SIDM00956	Oesophagus	esophagus	esophagus	Esophageal Squamous Cell Carcinoma	Esophageal Squamous Cell Carcinoma
-NCIH2291_LUNG	ACH-000718	SIDM00728	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
-RMGI_OVARY	ACH-000719	SIDM00352	Ovary	ovary	ovary	Ovarian Carcinoma	Ovarian Clear Cell Adenocarcinoma
-TCCSUP_URINARY_TRACT	ACH-000720	SIDM01190	Urinary_Tract	urinary_tract	urinary_tract	Bladder Carcinoma	Bladder Carcinoma
-SNUC1_LARGE_INTESTINE	ACH-000722	SIDM01197	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Colon Adenocarcinoma
-HT1376_URINARY_TRACT	ACH-000724	SIDM00678	Urinary_Tract	urinary_tract	urinary_tract	Bladder Carcinoma	Bladder Carcinoma
-HCC202_BREAST	ACH-000725	SIDM00870	Breast	breast	breast	Breast Carcinoma	Ductal Breast Carcinoma
-NCIH2066_LUNG	ACH-000727	SIDM00711	Lung			Squamous Cell Lung Carcinoma	Squamous Cell Lung Carcinoma
-NCIH1963_LUNG	ACH-000729	SIDM00760	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
-SKMEL5_SKIN	ACH-000730	SIDM00080	Skin	melanoma	melanoma	Melanoma	Cutaneous Melanoma
-NCIH1838_LUNG	ACH-000733	SIDM00769	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
-GB1_CENTRAL_NERVOUS_SYSTEM	ACH-000738	SIDM00581	Central_Nervous_System	glioma	glioma	Glioblastoma	Glioblastoma
-A253_SALIVARY_GLAND	ACH-000740	SIDM00796	Salivary_Gland	other	upper_aerodigestive	Head and Neck Carcinoma	Salivary Gland Squamous Cell Carcinoma
-CORL95_LUNG	ACH-000743	SIDM00521	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
-NCIH1623_LUNG	ACH-000744	SIDM00747	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
-NCIH1703_LUNG	ACH-000747	SIDM00740	Lung	lung_NSC	lung_NSC	Squamous Cell Lung Carcinoma	Squamous Cell Lung Carcinoma
-SJSA1_BONE	ACH-000748	SIDM01112	Bone	osteosarcoma	osteosarcoma	Osteosarcoma	Osteosarcoma
-DMS273_LUNG	ACH-000749	SIDM00522	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
-NCIH196_LUNG	ACH-000752	SIDM00761	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
-HCC2218_BREAST	ACH-000755	SIDM00772	Breast	breast	breast	Breast Carcinoma	Ductal Breast Carcinoma
-GI1_CENTRAL_NERVOUS_SYSTEM	ACH-000756	SIDM00273	Central_Nervous_System	glioma	glioma	Glioblastoma	Gliosarcoma
-MDAMB175VII_BREAST	ACH-000759	SIDM00633	Breast	breast	breast	Breast Carcinoma	Invasive Ductal Carcinoma not Otherwise Specified
-NCIH1648_LUNG	ACH-000766	SIDM00746	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
-NCIH526_LUNG	ACH-000767	SIDM01128	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
-LK2_LUNG	ACH-000769	SIDM00548	Lung	lung_NSC	lung_NSC	Squamous Cell Lung Carcinoma	Squamous Cell Lung Carcinoma
-TE441T_SOFT_TISSUE	ACH-000772	SIDM01173	Soft_Tissue	soft_tissue	soft_tissue	Rhabdomyosarcoma	Rhabdomyosarcoma
-NCIH727_LUNG	ACH-000775	SIDM01119	Lung	other	other	Other Solid Carcinomas	Lung Carcinoid Tumor
-ONS76_CENTRAL_NERVOUS_SYSTEM	ACH-000776	SIDM00567	Central_Nervous_System	medulloblastoma	medulloblastoma	Other Solid Carcinomas	Medulloblastoma 
-HSC3_UPPER_AERODIGESTIVE_TRACT	ACH-000778	SIDM00589	Upper_Aerodigestive_Tract	upper_aerodigestive	upper_aerodigestive	Oral Cavity Carcinoma	Tongue Squamous Cell Carcinoma
-NCIH1105_LUNG	ACH-000780	SIDM00652	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
-NCIH2023_LUNG	ACH-000781	SIDM00753	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Non-Small Cell Lung Carcinoma
-CAMA1_BREAST	ACH-000783	SIDM00920	Breast	breast	breast	Breast Carcinoma	Breast Adenocarcinoma
-KYSE70_OESOPHAGUS	ACH-000784	SIDM01024	Oesophagus	esophagus	esophagus	Esophageal Squamous Cell Carcinoma	Esophageal Squamous Cell Carcinoma
-LXF289_LUNG	ACH-000787	SIDM00339	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
-A2058_SKIN	ACH-000788	SIDM00797	Skin	melanoma	melanoma	Melanoma	Amelanotic Melanoma
-NCIH810_LUNG	ACH-000789	SIDM01116	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Large Cell Lung Carcinoma
-SHP77_LUNG	ACH-000790	SIDM01078	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
-BFTC909_KIDNEY	ACH-000792	SIDM00988	Kidney	kidney	kidney	Kidney Carcinoma	Renal Cell Carcinoma
-KATOIII_STOMACH	ACH-000793	SIDM00687	Stomach	stomach	stomach	Gastric Carcinoma	Signet Ring Cell Gastric Adenocarcinoma
-CL40_LARGE_INTESTINE	ACH-000798	SIDM00960	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Colon Adenocarcinoma
-NCIH446_LUNG	ACH-000800	SIDM00965	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
-BFTC905_URINARY_TRACT	ACH-000802	SIDM00989	Urinary_Tract	urinary_tract	urinary_tract	Bladder Carcinoma	Bladder Carcinoma
-COLO668_LUNG	ACH-000803	SIDM00143	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
-KYSE410_OESOPHAGUS	ACH-000809	SIDM01028	Oesophagus	esophagus	esophagus	Esophageal Squamous Cell Carcinoma	Esophageal Squamous Cell Carcinoma
-SKMEL30_SKIN	ACH-000810	SIDM00392	Skin	melanoma	melanoma	Melanoma	Cutaneous Melanoma
-SKOV3_OVARY	ACH-000811	SIDM00079	Ovary	ovary	ovary	Ovarian Carcinoma	Ovarian Serous Cystadenocarcinoma
-COLO783_SKIN	ACH-000812	SIDM00955	Skin	melanoma	melanoma	Melanoma	Melanoma
-NCIH524_LUNG	ACH-000816	SIDM01129	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
-BT483_BREAST	ACH-000818	SIDM00892	Breast	breast	breast	Breast Carcinoma	Invasive Ductal Carcinoma not Otherwise Specified
-LN18_CENTRAL_NERVOUS_SYSTEM	ACH-000819	SIDM00685	Central_Nervous_System	glioma	glioma	Glioblastoma	Glioblastoma
-KYSE140_OESOPHAGUS	ACH-000823	SIDM01032	Oesophagus	esophagus	esophagus	Esophageal Squamous Cell Carcinoma	Esophageal Squamous Cell Carcinoma
-KYSE510_OESOPHAGUS	ACH-000824	SIDM01026	Oesophagus	esophagus	esophagus	Esophageal Squamous Cell Carcinoma	Esophageal Squamous Cell Carcinoma
-HOP92_LUNG	ACH-000825	SIDM00134	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Non-Small Cell Lung Carcinoma
-CAL12T_LUNG	ACH-000826	SIDM00939	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Non-Small Cell Lung Carcinoma
-WM793_SKIN	ACH-000827	SIDM00973	Skin	melanoma	melanoma	Melanoma	Melanoma
-ZR7530_BREAST	ACH-000828	SIDM00971	Breast	breast	breast	Breast Carcinoma	Invasive Ductal Carcinoma not Otherwise Specified
-NCIH1436_LUNG	ACH-000830	SIDM00697	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
-GCT_SOFT_TISSUE	ACH-000835	SIDM00853	Soft_Tissue	soft_tissue	soft_tissue	Other Solid Carcinomas	Malignant Fibrous Histiocytoma
-HCC366_LUNG	ACH-000840	SIDM01070	Lung	lung_NSC	lung_NSC	Other Solid Carcinomas	Adenosquamous Lung Carcinoma
-NCIH2087_LUNG	ACH-000841	SIDM00708	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
-HARA_LUNG	ACH-000843	SIDM00598	Lung	lung_NSC	lung_NSC	Squamous Cell Lung Carcinoma	Squamous Cell Lung Carcinoma
-FADU_UPPER_AERODIGESTIVE_TRACT	ACH-000846	SIDM00860	Upper_Aerodigestive_Tract	upper_aerodigestive	upper_aerodigestive	Head and Neck Carcinoma	Hypopharyngeal Squamous Cell Carcinoma
-HGC27_STOMACH	ACH-000847	SIDM00290	Stomach	stomach	stomach	Gastric Carcinoma	Gastric Carcinoma
-JHH7_LIVER	ACH-000848	SIDM00614	Liver	liver	liver	Hepatocellular Carcinoma	Hepatocellular Carcinoma
-MDAMB468_BREAST	ACH-000849	SIDM00628	Breast	breast	breast	Breast Carcinoma	Breast Adenocarcinoma
-NCIH1435_LUNG	ACH-000852	SIDM00658	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Non-Small Cell Lung Carcinoma
-NCIH661_LUNG	ACH-000853	SIDM01122	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Large Cell Lung Carcinoma
-KYSE150_OESOPHAGUS	ACH-000855	SIDM01031	Oesophagus	esophagus	esophagus	Esophageal Squamous Cell Carcinoma	Esophageal Squamous Cell Carcinoma
-CAL851_BREAST	ACH-000857	SIDM00928	Breast	breast	breast	Breast Carcinoma	Breast Carcinoma
-KNS62_LUNG	ACH-000858	SIDM00606	Lung	lung_NSC	lung_NSC	Squamous Cell Lung Carcinoma	Squamous Cell Lung Carcinoma
-HCC1954_BREAST	ACH-000859	SIDM00872	Breast	breast	breast	Breast Carcinoma	Ductal Breast Carcinoma
-NCIH358_LUNG	ACH-000860	SIDM00718	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Bronchiolo-Alveolar Lung Carcinoma
-HOP62_LUNG	ACH-000861	SIDM00133	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
-DBTRG05MG_CENTRAL_NERVOUS_SYSTEM	ACH-000863	SIDM00867	Central_Nervous_System	glioma	glioma	Glioblastoma	Glioblastoma
-COLO684_ENDOMETRIUM	ACH-000864	SIDM00142	Endometrium	endometrium	endometrium	Endometrial Carcinoma	Endometrial Adenocarcinoma
-KYSE450_OESOPHAGUS	ACH-000865	SIDM01027	Oesophagus	esophagus	esophagus	Esophageal Squamous Cell Carcinoma	Esophageal Squamous Cell Carcinoma
-NCIH1048_LUNG	ACH-000866	SIDM00654	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
-CHAGOK1_LUNG	ACH-000867	SIDM00924	Lung	lung_NSC	lung_NSC	Other Solid Carcinomas	Bronchogenic Carcinoma
-NCIH1568_LUNG	ACH-000869	SIDM00750	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
-NCIH510_LUNG	ACH-000871	SIDM00927	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
-KYSE270_OESOPHAGUS	ACH-000873	SIDM01029	Oesophagus	esophagus	esophagus	Esophageal Squamous Cell Carcinoma	Esophageal Squamous Cell Carcinoma
-HCC15_LUNG	ACH-000878	SIDM01072	Lung	lung_NSC	lung_NSC	Squamous Cell Lung Carcinoma	Squamous Cell Lung Carcinoma
-AGS_STOMACH	ACH-000880	SIDM00850	Stomach	stomach	stomach	Gastric Carcinoma	Gastric Adenocarcinoma
-MELJUSO_SKIN	ACH-000881	SIDM00336	Skin	melanoma	melanoma	Melanoma	Cutaneous Melanoma
-IGR1_SKIN	ACH-000882	SIDM01060	Skin	melanoma	melanoma	Melanoma	Melanoma
-SW1783_CENTRAL_NERVOUS_SYSTEM	ACH-000883	SIDM01164	Central_Nervous_System	glioma	glioma	Glioma	Anaplastic Astrocytoma
-NCIH2009_LUNG	ACH-000886	SIDM00756	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
-NCIH1793_LUNG	ACH-000888	SIDM00755	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
-SW1271_LUNG	ACH-000890	SIDM01156	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
-NCIH1563_LUNG	ACH-000892	SIDM00751	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
-NCIH1651_LUNG	ACH-000893	SIDM00744	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
-NCIH1869_LUNG	ACH-000894	SIDM00768	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Non-Small Cell Lung Carcinoma
-NCIH23_LUNG	ACH-000900	SIDM00138	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
-CAL148_BREAST	ACH-000902	SIDM00938	Breast	breast	breast	Breast Carcinoma	Breast Carcinoma
-FTC133_THYROID	ACH-000903	SIDM00213	Thyroid	thyroid	thyroid	Thyroid Gland Carcinoma	Follicular Thyroid Carcinoma
-ES2_OVARY	ACH-000906	SIDM00861	Ovary	ovary	ovary	Ovarian Carcinoma	Ovarian Clear Cell Adenocarcinoma
-MDAMB453_BREAST	ACH-000910	SIDM00272	Breast	breast	breast	Breast Carcinoma	Breast Adenocarcinoma
-NUGC3_STOMACH	ACH-000911	SIDM00572	Stomach	stomach	stomach	Gastric Carcinoma	Gastric Adenocarcinoma
-IPC298_SKIN	ACH-000915	SIDM01059	Skin	melanoma	melanoma	Melanoma	Cutaneous Melanoma
-NCIH1573_LUNG	ACH-000916	SIDM00749	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
-TE4_OESOPHAGUS	ACH-000917	SIDM00250	Oesophagus	esophagus	esophagus	Esophageal Squamous Cell Carcinoma	Esophageal Squamous Cell Carcinoma
-IM95_STOMACH	ACH-000919	SIDM00602	Stomach	stomach	stomach	Gastric Carcinoma	Gastric Adenocarcinoma
-NCIH2172_LUNG	ACH-000924	SIDM00926	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Non-Small Cell Lung Carcinoma
-HT55_LARGE_INTESTINE	ACH-000926	SIDM00541	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Colon Carcinoma
-BT474_BREAST	ACH-000927	SIDM00963	Breast	breast	breast	Breast Carcinoma	Invasive Ductal Carcinoma not Otherwise Specified
-NCIH2110_LUNG	ACH-000929	SIDM00703	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Non-Small Cell Lung Carcinoma
-HCC1569_BREAST	ACH-000930	SIDM00878	Breast	breast	breast	Breast Carcinoma	Ductal Breast Carcinoma
-AN3CA_ENDOMETRIUM	ACH-000940	SIDM00901	Endometrium	endometrium	endometrium	Endometrial Carcinoma	Endometrial Adenocarcinoma
-NCIH650_LUNG	ACH-000945	SIDM01124	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
-OVK18_OVARY	ACH-000947	SIDM00238	Ovary	ovary	ovary	Ovarian Carcinoma	Ovarian Endometrioid Adenocarcinoma
-TGBC11TKB_STOMACH	ACH-000949	SIDM00251	Stomach	stomach	stomach	Gastric Carcinoma	Gastric Carcinoma
-NCIH2342_LUNG	ACH-000951	SIDM00727	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
-SNU407_LARGE_INTESTINE	ACH-000955	SIDM00214	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Colon Adenocarcinoma
-LS180_LARGE_INTESTINE	ACH-000957	SIDM00680	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Colon Adenocarcinoma
-OC314_OVARY	ACH-000962	SIDM00220	Ovary	ovary	ovary	Ovarian Carcinoma	Ovarian Serous Adenocarcinoma
-CCK81_LARGE_INTESTINE	ACH-000963	SIDM00487	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Colon Adenocarcinoma
-IGROV1_OVARY	ACH-000966	SIDM00151	Ovary	ovary	ovary	Ovarian Carcinoma	Ovarian Endometrioid Adenocarcinoma
-COLO792_SKIN	ACH-000968	SIDM00140	Skin	melanoma	melanoma	Melanoma	Melanoma
-SNUC5_LARGE_INTESTINE	ACH-000970	SIDM00498	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Cecum Adenocarcinoma
-HCT116_LARGE_INTESTINE	ACH-000971	SIDM00783	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Colon Carcinoma
-HUCCT1_BILIARY_TRACT	ACH-000976	SIDM00587	Biliary_Tract	bile_duct	bile_duct	Biliary Tract Carcinoma	Intrahepatic Cholangiocarcinoma
-DU145_PROSTATE	ACH-000979	SIDM00120	Prostate	prostate	prostate	Prostate Carcinoma	Prostate Carcinoma
-LS411N_LARGE_INTESTINE	ACH-000985	SIDM00660	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Cecum Adenocarcinoma
-HT115_LARGE_INTESTINE	ACH-000986	SIDM00534	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Colon Carcinoma
-SNU175_LARGE_INTESTINE	ACH-000989	SIDM00216	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Colon Adenocarcinoma
-SNU81_LARGE_INTESTINE	ACH-000991	SIDM00193	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Colon Adenocarcinoma
-CW2_LARGE_INTESTINE	ACH-000998	SIDM00282	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Colon Adenocarcinoma
-BECKER_CENTRAL_NERVOUS_SYSTEM	ACH-001016	SIDM00490	Central_Nervous_System	glioma	glioma	Glioma	Astrocytoma
-C3A_LIVER	ACH-001021	SIDM01237	Liver	liver	liver	Hepatocellular Carcinoma	Hepatoblastoma
-CGTHW1_THYROID	ACH-001023	SIDM01248	Thyroid	thyroid	thyroid	Thyroid Gland Carcinoma	Squamous Cell Thyroid Gland Carcinoma
-CHL1_SKIN	ACH-001024	SIDM01228	Skin	melanoma	melanoma	Melanoma	Melanoma
-COLO205_LARGE_INTESTINE	ACH-001039	SIDM00826	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Colon Adenocarcinoma
-CPCN_LUNG	ACH-001049	SIDM00953	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
-EVSAT_BREAST	ACH-001065	SIDM01042	Breast	breast	breast	Breast Carcinoma	Breast Carcinoma
-HLE_LIVER	ACH-001089	SIDM00064	Liver	liver	liver	Hepatocellular Carcinoma	Hepatocellular Carcinoma
-HN_UPPER_AERODIGESTIVE_TRACT	ACH-001090	SIDM01061	Upper_Aerodigestive_Tract	upper_aerodigestive	upper_aerodigestive	Oral Cavity Carcinoma	Oral Cavity Squamous Cell Carcinoma
-MOGGCCM_CENTRAL_NERVOUS_SYSTEM	ACH-001125	SIDM00532	Central_Nervous_System	glioma	glioma	Glioma	Anaplastic Astrocytoma
-MOGGUVW_CENTRAL_NERVOUS_SYSTEM	ACH-001126	SIDM00504	Central_Nervous_System	glioma	glioma	Glioma	Anaplastic Astrocytoma
-NCIH2141_LUNG	ACH-001138	SIDM00699	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
-OVCAR5_OVARY	ACH-001151	SIDM00091	Ovary	ovary	ovary	Ovarian Carcinoma	High Grade Ovarian Serous Adenocarcinoma
-SJRH30_SOFT_TISSUE	ACH-001189	SIDM01095	Soft_Tissue	soft_tissue	soft_tissue	Rhabdomyosarcoma	Alveolar Rhabdomyosarcoma
-SKMEL2_SKIN	ACH-001190	SIDM00082	Skin	melanoma	melanoma	Melanoma	Melanoma
-VMRCLCD_LUNG	ACH-001233	SIDM00320	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
+sample_name	sample_alias-ccle	sample_alias-sanger	primary_site	tumor_type	tumor_type_refined	sanger_cancer_type	sanger_cancer_type_detail
+ACH-000001	NIHOVCAR3_OVARY	SIDM00105	Ovary	ovary	ovary	Ovarian Carcinoma	High Grade Ovarian Serous Adenocarcinoma
+ACH-000007	LS513_LARGE_INTESTINE	SIDM00677	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Cecum Adenocarcinoma
+ACH-000008	A101D_SKIN	SIDM00801	Skin	melanoma	melanoma	Melanoma	Melanoma
+ACH-000009	C2BBE1_LARGE_INTESTINE	SIDM01233	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Colon Adenocarcinoma
+ACH-000012	HCC827_LUNG	SIDM01067	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
+ACH-000015	NCIH1581_LUNG	SIDM00748	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Large Cell Lung Carcinoma
+ACH-000023	PATU8988T_PANCREAS	SIDM00453	Pancreas	pancreas	pancreas	Pancreatic Carcinoma	Pancreatic Adenocarcinoma
+ACH-000030	PC14_LUNG	SIDM00237	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
+ACH-000035	NCIH1650_LUNG	SIDM00745	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Bronchiolo-Alveolar Lung Carcinoma
+ACH-000040	U118MG_CENTRAL_NERVOUS_SYSTEM	SIDM01193	Central_Nervous_System	glioma	glioma	Glioma	Astrocytoma
+ACH-000042	PANC0203_PANCREAS	SIDM01139	Pancreas	pancreas	pancreas	Pancreatic Carcinoma	Pancreatic Adenocarcinoma
+ACH-000047	GCIY_STOMACH	SIDM00274	Stomach	stomach	stomach	Gastric Carcinoma	Gastric Adenocarcinoma
+ACH-000052	A673_BONE	SIDM00848	Bone	Ewings_Sarcoma	Ewings_sarcoma	Ewing's Sarcoma	Ewing's Sarcoma
+ACH-000055	D283MED_CENTRAL_NERVOUS_SYSTEM	SIDM00888	Central_Nervous_System	medulloblastoma	medulloblastoma	Other Solid Carcinomas	Medulloblastoma 
+ACH-000062	RERFLCMS_LUNG	SIDM00355	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
+ACH-000067	HS683_CENTRAL_NERVOUS_SYSTEM	SIDM00666	Central_Nervous_System	glioma	glioma	Glioma	Oligodendroglioma
+ACH-000078	MHHNB11_AUTONOMIC_GANGLIA	SIDM00387	Autonomic_Ganglia	neuroblastoma	neuroblastoma	Neuroblastoma	Neuroblastoma
+ACH-000082	G292CLONEA141B1_BONE	SIDM00858	Bone	osteosarcoma	osteosarcoma	Osteosarcoma	Osteosarcoma
+ACH-000087	SKES1_BONE	SIDM01111	Bone	Ewings_Sarcoma	Ewings_sarcoma	Ewing's Sarcoma	Ewing's Sarcoma
+ACH-000092	NCIH2452_PLEURA	SIDM00722	Pleura	mesothelioma	mesothelioma	Mesothelioma	Pleural Biphasic Mesothelioma
+ACH-000094	HPAFII_PANCREAS	SIDM00669	Pancreas	pancreas	pancreas	Pancreatic Carcinoma	Pancreatic Ductal Adenocarcinoma
+ACH-000098	GAMG_CENTRAL_NERVOUS_SYSTEM	SIDM01055	Central_Nervous_System	glioma	glioma	Glioblastoma	Glioblastoma
+ACH-000099	SIMA_AUTONOMIC_GANGLIA	SIDM00395	Autonomic_Ganglia	neuroblastoma	neuroblastoma	Neuroblastoma	Neuroblastoma
+ACH-000100	RH41_SOFT_TISSUE	SIDM00426	Soft_Tissue	soft_tissue	soft_tissue	Rhabdomyosarcoma	Alveolar Rhabdomyosarcoma
+ACH-000102	GMS10_CENTRAL_NERVOUS_SYSTEM	SIDM01074	Central_Nervous_System	glioma	glioma	Glioblastoma	Glioblastoma
+ACH-000103	CAOV4_OVARY	SIDM00918	Ovary	ovary	ovary	Ovarian Carcinoma	High Grade Ovarian Serous Adenocarcinoma
+ACH-000107	CAPAN2_PANCREAS	SIDM00943	Pancreas	pancreas	pancreas	Pancreatic Carcinoma	Pancreatic Ductal Adenocarcinoma
+ACH-000109	NCIH3255_LUNG	SIDM00046	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
+ACH-000111	HCC1187_BREAST	SIDM00885	Breast	breast	breast	Breast Carcinoma	Ductal Breast Carcinoma
+ACH-000114	SU8686_PANCREAS	SIDM01188	Pancreas	pancreas	pancreas	Pancreatic Carcinoma	Pancreatic Adenocarcinoma
+ACH-000115	VCAP_PROSTATE	SIDM01077	Prostate	prostate	prostate	Prostate Carcinoma	Prostate Carcinoma
+ACH-000117	EFM192A_BREAST	SIDM01002	Breast	breast	breast	Breast Carcinoma	Breast Carcinoma
+ACH-000121	NCIH2405_LUNG	SIDM00724	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
+ACH-000129	NCIH1341_LUNG	SIDM00646	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
+ACH-000132	JHOS2_OVARY	SIDM00305	Ovary	ovary	ovary	Ovarian Carcinoma	High Grade Ovarian Serous Adenocarcinoma
+ACH-000138	CFPAC1_PANCREAS	SIDM00130	Pancreas	pancreas	pancreas	Pancreatic Carcinoma	Pancreatic Ductal Adenocarcinoma
+ACH-000139	PANC0327_PANCREAS	SIDM01138	Pancreas	pancreas	pancreas	Pancreatic Carcinoma	Pancreatic Adenocarcinoma
+ACH-000142	CAL29_URINARY_TRACT	SIDM00936	Urinary_Tract	urinary_tract	urinary_tract	Bladder Carcinoma	Bladder Carcinoma
+ACH-000144	RERFGC1B_STOMACH	SIDM00358	Stomach	stomach	stomach	Gastric Carcinoma	Gastric Adenocarcinoma
+ACH-000145	SKLMS1_SOFT_TISSUE	SIDM01109	Soft_Tissue	soft_tissue	soft_tissue	Other Solid Carcinomas	Vulvar Leiomyosarcoma
+ACH-000147	T47D_BREAST	SIDM00097	Breast	breast	breast	Breast Carcinoma	Invasive Ductal Carcinoma not Otherwise Specified
+ACH-000148	HS578T_BREAST	SIDM00135	Breast	breast	breast	Breast Carcinoma	Invasive Ductal Carcinoma not Otherwise Specified
+ACH-000149	SKNSH_AUTONOMIC_GANGLIA	SIDM01098	Autonomic_Ganglia	neuroblastoma	neuroblastoma	Neuroblastoma	Neuroblastoma
+ACH-000159	OSRC2_KIDNEY	SIDM00239	Kidney	kidney	kidney	Kidney Carcinoma	Renal Cell Carcinoma
+ACH-000161	CORL105_LUNG	SIDM00513	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
+ACH-000171	VMRCRCZ_KIDNEY	SIDM00317	Kidney	kidney	kidney	Kidney Carcinoma	Renal Cell Carcinoma
+ACH-000174	CAL62_THYROID	SIDM00931	Thyroid	thyroid	thyroid	Thyroid Gland Carcinoma	Anaplastic Thyroid Carcinoma
+ACH-000176	LOUNH91_LUNG	SIDM00341	Lung	lung_NSC	lung_NSC	Squamous Cell Lung Carcinoma	Squamous Cell Lung Carcinoma
+ACH-000181	SCC9_UPPER_AERODIGESTIVE_TRACT	SIDM01080	Upper_Aerodigestive_Tract	upper_aerodigestive	upper_aerodigestive	Oral Cavity Carcinoma	Tongue Squamous Cell Carcinoma
+ACH-000187	CORL311_LUNG	SIDM00509	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
+ACH-000188	SCC25_UPPER_AERODIGESTIVE_TRACT	SIDM01082	Upper_Aerodigestive_Tract	upper_aerodigestive	upper_aerodigestive	Oral Cavity Carcinoma	Tongue Squamous Cell Carcinoma
+ACH-000189	RCC10RGB_KIDNEY	SIDM00235	Kidney	kidney	kidney	Kidney Carcinoma	Renal Cell Carcinoma
+ACH-000191	BHT101_THYROID	SIDM00987	Thyroid	thyroid	thyroid	Thyroid Gland Carcinoma	Anaplastic Thyroid Carcinoma
+ACH-000192	MFE280_ENDOMETRIUM	SIDM00335	Endometrium	endometrium	endometrium	Endometrial Carcinoma	Endometrial Adenocarcinoma
+ACH-000196	HCC1599_BREAST	SIDM00877	Breast	breast	breast	Breast Carcinoma	Ductal Breast Carcinoma
+ACH-000200	NMCG1_CENTRAL_NERVOUS_SYSTEM	SIDM00575	Central_Nervous_System	glioma	glioma	Glioma	Astrocytoma
+ACH-000201	A204_SOFT_TISSUE	SIDM00798	Soft_Tissue	soft_tissue	soft_tissue	Rhabdomyosarcoma	Embryonal Rhabdomyosarcoma
+ACH-000210	CADOES1_BONE	SIDM00961	Bone	Ewings_Sarcoma	Ewings_sarcoma	Ewing's Sarcoma	Ewing's Sarcoma
+ACH-000211	DAOY_CENTRAL_NERVOUS_SYSTEM	SIDM00887	Central_Nervous_System	medulloblastoma	medulloblastoma	Other Solid Carcinomas	Medulloblastoma 
+ACH-000212	CAL120_BREAST	SIDM00940	Breast	breast	breast	Breast Carcinoma	Breast Carcinoma
+ACH-000217	JHH6_LIVER	SIDM00615	Liver	liver	liver	Hepatocellular Carcinoma	Hepatocellular Carcinoma
+ACH-000219	A375_SKIN	SIDM00795	Skin	melanoma	melanoma	Melanoma	Amelanotic Melanoma
+ACH-000231	KALS1_CENTRAL_NERVOUS_SYSTEM	SIDM00613	Central_Nervous_System	glioma	glioma	Glioblastoma	Glioblastoma
+ACH-000235	PANC0403_PANCREAS	SIDM01137	Pancreas	pancreas	pancreas	Pancreatic Carcinoma	Pancreatic Ductal Adenocarcinoma
+ACH-000236	SW1417_LARGE_INTESTINE	SIDM00812	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Colon Adenocarcinoma
+ACH-000242	RT4_URINARY_TRACT	SIDM01085	Urinary_Tract	urinary_tract	urinary_tract	Bladder Carcinoma	Bladder Carcinoma
+ACH-000243	DANG_PANCREAS	SIDM00950	Pancreas	pancreas	pancreas	Pancreatic Carcinoma	Pancreatic Adenocarcinoma
+ACH-000244	DKMG_CENTRAL_NERVOUS_SYSTEM	SIDM00947	Central_Nervous_System	glioma	glioma	Glioblastoma	Glioblastoma
+ACH-000248	AU565_BREAST	SIDM00898	Breast	breast	breast	Breast Carcinoma	Breast Adenocarcinoma
+ACH-000249	CL11_LARGE_INTESTINE	SIDM00944	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Colon Adenocarcinoma
+ACH-000250	KMRC20_KIDNEY	SIDM00609	Kidney	kidney	kidney	Kidney Carcinoma	Clear Cell Renal Cell Carcinoma
+ACH-000252	LS1034_LARGE_INTESTINE	SIDM00681	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Cecum Adenocarcinoma
+ACH-000254	SCC15_UPPER_AERODIGESTIVE_TRACT	SIDM01083	Upper_Aerodigestive_Tract	upper_aerodigestive	upper_aerodigestive	Oral Cavity Carcinoma	Tongue Squamous Cell Carcinoma
+ACH-000257	CORL279_LUNG	SIDM00511	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
+ACH-000258	DU4475_BREAST	SIDM01001	Breast	breast	breast	Breast Carcinoma	Breast Carcinoma
+ACH-000259	KELLY_AUTONOMIC_GANGLIA	SIDM01009	Autonomic_Ganglia	neuroblastoma	neuroblastoma	Neuroblastoma	Neuroblastoma
+ACH-000264	CALU6_LUNG	SIDM00921	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Non-Small Cell Lung Carcinoma
+ACH-000265	KP4_PANCREAS	SIDM00301	Pancreas	pancreas	pancreas	Pancreatic Carcinoma	Pancreatic Carcinoma
+ACH-000269	AM38_CENTRAL_NERVOUS_SYSTEM	SIDM00492	Central_Nervous_System	glioma	glioma	Glioblastoma	Glioblastoma
+ACH-000270	HPAC_PANCREAS	SIDM00670	Pancreas	pancreas	pancreas	Pancreatic Carcinoma	Pancreatic Adenocarcinoma
+ACH-000277	HCC1419_BREAST	SIDM00882	Breast	breast	breast	Breast Carcinoma	Ductal Breast Carcinoma
+ACH-000282	NCIH1755_LUNG	SIDM00738	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
+ACH-000288	BT549_BREAST	SIDM00122	Breast	breast	breast	Breast Carcinoma	Invasive Ductal Carcinoma not Otherwise Specified
+ACH-000290	NCIH209_LUNG	SIDM00706	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
+ACH-000291	OV90_OVARY	SIDM01141	Ovary	ovary	ovary	Ovarian Carcinoma	Ovarian Adenocarcinoma
+ACH-000292	NCIH841_LUNG	SIDM01134	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
+ACH-000303	SNU5_STOMACH	SIDM01144	Stomach	stomach	stomach	Gastric Carcinoma	Gastric Carcinoma
+ACH-000304	WM115_SKIN	SIDM01000	Skin	melanoma	melanoma	Melanoma	Melanoma
+ACH-000305	ECGI10_OESOPHAGUS	SIDM00278	Oesophagus	esophagus	esophagus	Esophageal Squamous Cell Carcinoma	Esophageal Squamous Cell Carcinoma
+ACH-000308	EFO21_OVARY	SIDM01052	Ovary	ovary	ovary	Ovarian Carcinoma	Ovarian Cystadenocarcinoma
+ACH-000309	SKLU1_LUNG	SIDM01108	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
+ACH-000311	NCIH2122_LUNG	SIDM00702	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
+ACH-000319	MPP89_PLEURA	SIDM00222	Pleura	mesothelioma	mesothelioma	Mesothelioma	Pleural Epithelioid Mesothelioma
+ACH-000320	PSN1_PANCREAS	SIDM00469	Pancreas	pancreas	pancreas	Pancreatic Carcinoma	Pancreatic Adenocarcinoma
+ACH-000322	HT144_SKIN	SIDM00695	Skin	melanoma	melanoma	Melanoma	Melanoma
+ACH-000329	CCFSTTG1_CENTRAL_NERVOUS_SYSTEM	SIDM00131	Central_Nervous_System	glioma	glioma	Glioma	Astrocytoma
+ACH-000330	EFM19_BREAST	SIDM01056	Breast	breast	breast	Breast Carcinoma	Ductal Breast Carcinoma
+ACH-000335	MSTO211H_PLEURA	SIDM00640	Pleura	mesothelioma	mesothelioma	Mesothelioma	Pleural Biphasic Mesothelioma
+ACH-000341	SKNFI_AUTONOMIC_GANGLIA	SIDM01099	Autonomic_Ganglia	neuroblastoma	neuroblastoma	Neuroblastoma	Neuroblastoma
+ACH-000343	NCIH522_LUNG	SIDM00116	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
+ACH-000347	QGP1_PANCREAS	SIDM00360	Pancreas	pancreas	pancreas	Other Solid Carcinomas	Pancreatic Somatostatinoma
+ACH-000348	RPMI7951_SKIN	SIDM01087	Skin	melanoma	melanoma	Melanoma	Melanoma
+ACH-000349	HCC1500_BREAST	SIDM00879	Breast	breast	breast	Breast Carcinoma	Ductal Breast Carcinoma
+ACH-000351	MKN1_STOMACH	SIDM00271	Stomach	stomach	stomach	Gastric Carcinoma	Gastric Adenosquamous Carcinoma
+ACH-000353	TE15_OESOPHAGUS	SIDM00249	Oesophagus	esophagus	esophagus	Esophageal Squamous Cell Carcinoma	Esophageal Squamous Cell Carcinoma
+ACH-000354	CAPAN1_PANCREAS	SIDM00934	Pancreas	pancreas	pancreas	Pancreatic Carcinoma	Pancreatic Ductal Adenocarcinoma
+ACH-000355	NCIH82_LUNG	SIDM01131	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
+ACH-000356	MKN45_STOMACH	SIDM00247	Stomach	stomach	stomach	Gastric Carcinoma	Gastric Adenocarcinoma
+ACH-000358	NCIH69_LUNG	SIDM01121	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
+ACH-000359	MG63_BONE	SIDM00525	Bone	osteosarcoma	osteosarcoma	Osteosarcoma	Osteosarcoma
+ACH-000360	NCIH508_LARGE_INTESTINE	SIDM00777	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Cecum Adenocarcinoma
+ACH-000361	SKHEP1_LIVER	SIDM01110	Liver	liver	liver	Hepatocellular Carcinoma	Hepatocellular Carcinoma
+ACH-000364	U2OS_BONE	SIDM01191	Bone	osteosarcoma	osteosarcoma	Osteosarcoma	Osteosarcoma
+ACH-000366	SKNDZ_AUTONOMIC_GANGLIA	SIDM01100	Autonomic_Ganglia	neuroblastoma	neuroblastoma	Neuroblastoma	Neuroblastoma
+ACH-000376	SF295_CENTRAL_NERVOUS_SYSTEM	SIDM00084	Central_Nervous_System	glioma	glioma	Glioblastoma	Glioblastoma
+ACH-000378	NCIH647_LUNG	SIDM01125	Lung	lung_NSC	lung_NSC	Other Solid Carcinomas	Adenosquamous Lung Carcinoma
+ACH-000379	NCIH1781_LUNG	SIDM00754	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Bronchiolo-Alveolar Lung Carcinoma
+ACH-000383	OE33_OESOPHAGUS	SIDM00477	Oesophagus	esophagus	esophagus	Esophageal Carcinoma	Barrett s Adenocarcinoma
+ACH-000384	SW780_URINARY_TRACT	SIDM01160	Urinary_Tract	urinary_tract	urinary_tract	Bladder Carcinoma	Bladder Carcinoma
+ACH-000389	H4_CENTRAL_NERVOUS_SYSTEM	SIDM00852	Central_Nervous_System	glioma	glioma	Glioma	Astrocytoma
+ACH-000391	MHHES1_BONE	SIDM00386	Bone	Ewings_Sarcoma	Ewings_sarcoma	Ewing's Sarcoma	Ewing's Sarcoma
+ACH-000392	CALU3_LUNG	SIDM00922	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
+ACH-000394	NCIH2081_LUNG	SIDM00710	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
+ACH-000395	NCIH520_LUNG	SIDM01130	Lung	lung_NSC	lung_NSC	Squamous Cell Lung Carcinoma	Squamous Cell Lung Carcinoma
+ACH-000396	J82_URINARY_TRACT	SIDM00693	Urinary_Tract	urinary_tract	urinary_tract	Bladder Carcinoma	Bladder Carcinoma
+ACH-000399	NCIH2196_LUNG	SIDM00731	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
+ACH-000400	SKCO1_LARGE_INTESTINE	SIDM01096	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Colon Adenocarcinoma
+ACH-000401	COLO800_SKIN	SIDM00515	Skin	melanoma	melanoma	Melanoma	Melanoma
+ACH-000403	NCIH747_LARGE_INTESTINE	SIDM00778	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Cecum Adenocarcinoma
+ACH-000416	NCIH838_LUNG	SIDM01150	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
+ACH-000417	PANC0813_PANCREAS	SIDM01136	Pancreas	pancreas	pancreas	Pancreatic Carcinoma	Pancreatic Ductal Adenocarcinoma
+ACH-000420	SNU449_LIVER	SIDM01194	Liver	liver	liver	Hepatocellular Carcinoma	Hepatocellular Carcinoma
+ACH-000423	SKMEL3_SKIN	SIDM01105	Skin	melanoma	melanoma	Melanoma	Melanoma
+ACH-000424	TC71_BONE	SIDM00419	Bone	Ewings_Sarcoma	Ewings_sarcoma	Ewing's Sarcoma	Ewing's Sarcoma
+ACH-000425	UACC62_SKIN	SIDM00107	Skin	melanoma	melanoma	Melanoma	Melanoma
+ACH-000427	NCIN87_STOMACH	SIDM01147	Stomach	stomach	stomach	Gastric Carcinoma	Gastric Tubular Adenocarcinoma
+ACH-000428	UO31_KIDNEY	SIDM00112	Kidney	kidney	kidney	Kidney Carcinoma	Renal Cell Carcinoma
+ACH-000429	A704_KIDNEY	SIDM00849	Kidney	kidney	kidney	Kidney Carcinoma	Renal Cell Carcinoma
+ACH-000430	TYKNU_OVARY	SIDM00321	Ovary	ovary	ovary	Ovarian Carcinoma	High Grade Ovarian Serous Adenocarcinoma
+ACH-000431	NCIH1694_LUNG	SIDM00741	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
+ACH-000433	CAKI1_KIDNEY	SIDM00941	Kidney	kidney	kidney	Kidney Carcinoma	Clear Cell Renal Cell Carcinoma
+ACH-000437	SW1088_CENTRAL_NERVOUS_SYSTEM	SIDM01155	Central_Nervous_System	glioma	glioma	Glioma	Astrocytoma
+ACH-000438	LU65_LUNG	SIDM00547	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Giant Cell Lung Carcinoma
+ACH-000441	SH4_SKIN	SIDM01079	Skin	melanoma	melanoma	Melanoma	Melanoma
+ACH-000442	RERFLCSQ1_LUNG	SIDM00354	Lung	lung_NSC	lung_NSC	Squamous Cell Lung Carcinoma	Squamous Cell Lung Carcinoma
+ACH-000443	OVKATE_OVARY	SIDM00466	Ovary	ovary	ovary	Ovarian Carcinoma	High Grade Ovarian Serous Adenocarcinoma
+ACH-000447	NCIH2228_LUNG	SIDM00729	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
+ACH-000448	NCIH1666_LUNG	SIDM00743	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Bronchiolo-Alveolar Lung Carcinoma
+ACH-000449	MESSA_SOFT_TISSUE	SIDM00625	Soft_Tissue	soft_tissue	soft_tissue	Other Solid Carcinomas	Uterine Corpus Sarcoma
+ACH-000450	MELHO_SKIN	SIDM00337	Skin	melanoma	melanoma	Melanoma	Melanoma
+ACH-000452	TE8_OESOPHAGUS	SIDM00326	Oesophagus	esophagus	esophagus	Esophageal Squamous Cell Carcinoma	Esophageal Squamous Cell Carcinoma
+ACH-000457	CAL54_KIDNEY	SIDM00932	Kidney	kidney	kidney	Kidney Carcinoma	Renal Cell Carcinoma
+ACH-000463	NCIH460_LUNG	SIDM00144	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Large Cell Lung Carcinoma
+ACH-000465	SKMEL1_SKIN	SIDM01107	Skin	melanoma	melanoma	Melanoma	Melanoma
+ACH-000469	YH13_CENTRAL_NERVOUS_SYSTEM	SIDM00316	Central_Nervous_System	glioma	glioma	Glioblastoma	Glioblastoma
+ACH-000470	SW1463_LARGE_INTESTINE	SIDM00834	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Rectal Adenocarcinoma
+ACH-000472	HSC2_UPPER_AERODIGESTIVE_TRACT	SIDM00590	Upper_Aerodigestive_Tract	upper_aerodigestive	upper_aerodigestive	Oral Cavity Carcinoma	Oral Cavity Squamous Cell Carcinoma
+ACH-000476	JHH4_LIVER	SIDM00616	Liver	liver	liver	Hepatocellular Carcinoma	Hepatocellular Carcinoma
+ACH-000480	HUH7_LIVER	SIDM00585	Liver	liver	liver	Hepatocellular Carcinoma	Hepatocellular Carcinoma
+ACH-000481	NCIH2170_LUNG	SIDM00716	Lung	lung_NSC	lung_NSC	Squamous Cell Lung Carcinoma	Squamous Cell Lung Carcinoma
+ACH-000482	RERFLCKJ_LUNG	SIDM00356	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
+ACH-000483	SNU182_LIVER	SIDM01151	Liver	liver	liver	Hepatocellular Carcinoma	Hepatocellular Carcinoma
+ACH-000484	VMRCRCW_KIDNEY	SIDM00318	Kidney	kidney	kidney	Kidney Carcinoma	Renal Cell Carcinoma
+ACH-000486	KU1919_URINARY_TRACT	SIDM01033	Urinary_Tract	urinary_tract	urinary_tract	Bladder Carcinoma	Bladder Carcinoma
+ACH-000488	TE11_OESOPHAGUS	SIDM00348	Oesophagus	esophagus	esophagus	Esophageal Squamous Cell Carcinoma	Esophageal Squamous Cell Carcinoma
+ACH-000489	SW1116_LARGE_INTESTINE	SIDM00835	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Colon Adenocarcinoma
+ACH-000491	NCIH716_LARGE_INTESTINE	SIDM00779	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Cecum Adenocarcinoma
+ACH-000496	NCIH1792_LUNG	SIDM00771	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
+ACH-000501	LS123_LARGE_INTESTINE	SIDM00776	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Colon Adenocarcinoma
+ACH-000504	SNB75_CENTRAL_NERVOUS_SYSTEM	SIDM00095	Central_Nervous_System	glioma	glioma	Glioblastoma	Glioblastoma
+ACH-000508	CORL88_LUNG	SIDM00506	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
+ACH-000510	NCIH1299_LUNG	SIDM00649	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Large Cell Lung Carcinoma
+ACH-000516	CAL78_BONE	SIDM00929	Bone	chondrosarcoma	chondrosarcoma	Chondrosarcoma	Chondrosarcoma
+ACH-000518	CAL33_UPPER_AERODIGESTIVE_TRACT	SIDM00942	Upper_Aerodigestive_Tract	upper_aerodigestive	upper_aerodigestive	Oral Cavity Carcinoma	Tongue Squamous Cell Carcinoma
+ACH-000521	NCIH2030_LUNG	SIDM00715	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
+ACH-000522	UMUC3_URINARY_TRACT	SIDM01182	Urinary_Tract	urinary_tract	urinary_tract	Bladder Carcinoma	Bladder Carcinoma
+ACH-000524	KURAMOCHI_OVARY	SIDM00554	Ovary	ovary	ovary	Ovarian Carcinoma	High Grade Ovarian Serous Adenocarcinoma
+ACH-000525	NCIH2171_LUNG	SIDM00733	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
+ACH-000527	OVISE_OVARY	SIDM00564	Ovary	ovary	ovary	Ovarian Carcinoma	Ovarian Clear Cell Adenocarcinoma
+ACH-000528	ABC1_LUNG	SIDM00494	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
+ACH-000535	BXPC3_PANCREAS	SIDM00132	Pancreas	pancreas	pancreas	Pancreatic Carcinoma	Pancreatic Ductal Adenocarcinoma
+ACH-000536	BT20_BREAST	SIDM00893	Breast	breast	breast	Breast Carcinoma	Breast Adenocarcinoma
+ACH-000544	OE21_OESOPHAGUS	SIDM00478	Oesophagus	esophagus	esophagus	Esophageal Squamous Cell Carcinoma	Esophageal Squamous Cell Carcinoma
+ACH-000546	HSC4_UPPER_AERODIGESTIVE_TRACT	SIDM00588	Upper_Aerodigestive_Tract	upper_aerodigestive	upper_aerodigestive	Oral Cavity Carcinoma	Tongue Squamous Cell Carcinoma
+ACH-000548	BHY_UPPER_AERODIGESTIVE_TRACT	SIDM00986	Upper_Aerodigestive_Tract	upper_aerodigestive	upper_aerodigestive	Oral Cavity Carcinoma	Head and Neck Squamous Cell Carcinoma
+ACH-000552	HT29_LARGE_INTESTINE	SIDM00136	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Rectosigmoid Adenocarcinoma
+ACH-000555	A498_KIDNEY	SIDM00124	Kidney	kidney	kidney	Kidney Carcinoma	Renal Cell Carcinoma
+ACH-000558	A172_CENTRAL_NERVOUS_SYSTEM	SIDM00799	Central_Nervous_System	glioma	glioma	Glioblastoma	Glioblastoma
+ACH-000559	NCIH1836_LUNG	SIDM00770	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
+ACH-000560	ECC10_STOMACH	SIDM00280	Stomach	stomach	stomach	Gastric Carcinoma	Gastric Small Cell Carcinoma
+ACH-000561	TT_OESOPHAGUS	SIDM00322	Na	esophagus	esophagus	Esophageal Squamous Cell Carcinoma	Esophageal Squamous Cell Carcinoma
+ACH-000562	HCC78_LUNG	SIDM01068	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
+ACH-000563	EBC1_LUNG	SIDM00486	Lung	lung_NSC	lung_NSC	Squamous Cell Lung Carcinoma	Squamous Cell Lung Carcinoma
+ACH-000566	SW1710_URINARY_TRACT	SIDM00420	Urinary_Tract	urinary_tract	urinary_tract	Bladder Carcinoma	Bladder Carcinoma
+ACH-000569	ISTMES1_PLEURA	SIDM00224	Pleura	mesothelioma	mesothelioma	Mesothelioma	Pleural Epithelioid Mesothelioma
+ACH-000570	YKG1_CENTRAL_NERVOUS_SYSTEM	SIDM00315	Central_Nervous_System	glioma	glioma	Glioblastoma	Glioblastoma
+ACH-000571	T98G_CENTRAL_NERVOUS_SYSTEM	SIDM01171	Central_Nervous_System	glioma	glioma	Glioblastoma	Glioblastoma
+ACH-000572	G361_SKIN	SIDM00857	Skin	melanoma	melanoma	Melanoma	Melanoma
+ACH-000574	FUOV1_OVARY	SIDM01040	Ovary	ovary	ovary	Ovarian Carcinoma	High Grade Ovarian Serous Adenocarcinoma
+ACH-000577	JHH2_LIVER	SIDM00617	Liver	liver	liver	Hepatocellular Carcinoma	Hepatocellular Carcinoma
+ACH-000580	C32_SKIN	SIDM00890	Skin	melanoma	melanoma	Melanoma	Amelanotic Melanoma
+ACH-000581	SNU16_STOMACH	SIDM01145	Stomach	stomach	stomach	Gastric Carcinoma	Gastric Carcinoma
+ACH-000584	JHOS4_OVARY	SIDM00303	Ovary	ovary	ovary	Ovarian Carcinoma	High Grade Ovarian Serous Adenocarcinoma
+ACH-000585	EPLC272H_LUNG	SIDM01044	Lung	lung_NSC	lung_NSC	Other Solid Carcinomas	Lung Mucoepidermoid Carcinoma
+ACH-000586	NCIH1876_LUNG	SIDM00766	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
+ACH-000587	NCIH1975_LUNG	SIDM00759	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
+ACH-000589	NCIH1437_LUNG	SIDM00734	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
+ACH-000596	LCLC97TM1_LUNG	SIDM00344	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Large Cell Lung Carcinoma
+ACH-000601	MIAPACA2_PANCREAS	SIDM00505	Pancreas	pancreas	pancreas	Pancreatic Carcinoma	Pancreatic Ductal Adenocarcinoma
+ACH-000603	BEN_LUNG	SIDM00990	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Non-Small Cell Lung Carcinoma
+ACH-000605	TE6_OESOPHAGUS	SIDM00328	Oesophagus	esophagus	esophagus	Esophageal Squamous Cell Carcinoma	Esophageal Squamous Cell Carcinoma
+ACH-000610	NCIH2227_LUNG	SIDM00730	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
+ACH-000614	RVH421_SKIN	SIDM00401	Skin	melanoma	melanoma	Melanoma	Melanoma
+ACH-000615	SKMEL28_SKIN	SIDM00081	Skin	melanoma	melanoma	Melanoma	Cutaneous Melanoma
+ACH-000616	HS746T_STOMACH	SIDM00665	Stomach	stomach	stomach	Gastric Carcinoma	Gastric Adenocarcinoma
+ACH-000617	OVCAR4_OVARY	SIDM00092	Ovary	ovary	ovary	Ovarian Carcinoma	High Grade Ovarian Serous Adenocarcinoma
+ACH-000620	JHH1_LIVER	SIDM00618	Liver	liver	liver	Hepatocellular Carcinoma	Hepatocellular Carcinoma
+ACH-000621	MDAMB157_BREAST	SIDM00529	Breast	breast	breast	Breast Carcinoma	Breast Carcinoma
+ACH-000624	HCC1806_BREAST	SIDM00875	Breast	breast	breast	Breast Carcinoma	Squamous Cell Breast Carcinoma Acantholytic Variant
+ACH-000625	HEP3B217_LIVER	SIDM00672	Liver	liver	liver	Hepatocellular Carcinoma	Hepatocellular Carcinoma
+ACH-000628	NCIH596_LUNG	SIDM01127	Lung	lung_NSC	lung_NSC	Other Solid Carcinomas	Adenosquamous Lung Carcinoma
+ACH-000631	KS1_CENTRAL_NERVOUS_SYSTEM	SIDM00555	Central_Nervous_System	glioma	glioma	Glioblastoma	Glioblastoma
+ACH-000633	FU97_STOMACH	SIDM00503	Stomach	stomach	stomach	Gastric Carcinoma	Gastric Adenocarcinoma
+ACH-000637	KYSE520_OESOPHAGUS	SIDM01025	Oesophagus	esophagus	esophagus	Esophageal Squamous Cell Carcinoma	Esophageal Squamous Cell Carcinoma
+ACH-000638	NCIH441_LUNG	SIDM00925	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Papillary Lung Adenocarcinoma
+ACH-000639	NCIH211_LUNG	SIDM00704	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
+ACH-000643	HDQP1_BREAST	SIDM01062	Breast	breast	breast	Breast Carcinoma	Breast Carcinoma
+ACH-000647	TE1_OESOPHAGUS	SIDM00369	Oesophagus	esophagus	esophagus	Esophageal Squamous Cell Carcinoma	Esophageal Squamous Cell Carcinoma
+ACH-000648	NCIH28_PLEURA	SIDM00720	Pleura	mesothelioma	mesothelioma	Mesothelioma	Pleural Sarcomatoid Mesothelioma
+ACH-000650	IGR37_SKIN	SIDM01066	Skin	melanoma	melanoma	Melanoma	Melanoma
+ACH-000652	SUIT2_PANCREAS	SIDM00371	Pancreas	pancreas	pancreas	Pancreatic Carcinoma	Pancreatic Ductal Adenocarcinoma
+ACH-000655	SF268_CENTRAL_NERVOUS_SYSTEM	SIDM00085	Central_Nervous_System	glioma	glioma	Glioma	Astrocytoma
+ACH-000657	A2780_OVARY	SIDM00210	Ovary	ovary	ovary	Ovarian Carcinoma	Ovarian Endometrioid Adenocarcinoma
+ACH-000663	OVTOKO_OVARY	SIDM00425	Ovary	ovary	ovary	Ovarian Carcinoma	Ovarian Clear Cell Adenocarcinoma
+ACH-000665	SKMES1_LUNG	SIDM01103	Lung	lung_NSC	lung_NSC	Squamous Cell Lung Carcinoma	Squamous Cell Lung Carcinoma
+ACH-000666	NCIH1355_LUNG	SIDM00645	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
+ACH-000667	HCC44_LUNG	SIDM01069	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
+ACH-000668	HCC70_BREAST	SIDM00673	Breast	breast	breast	Breast Carcinoma	Ductal Breast Carcinoma
+ACH-000669	SW900_LUNG	SIDM01158	Lung	lung_NSC	lung_NSC	Squamous Cell Lung Carcinoma	Squamous Cell Lung Carcinoma
+ACH-000670	SBC5_LUNG	SIDM00368	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
+ACH-000672	IALM_LUNG	SIDM00306	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Large Cell Lung Carcinoma
+ACH-000674	NUGC4_STOMACH	SIDM00570	Stomach	stomach	stomach	Gastric Carcinoma	Signet Ring Cell Gastric Adenocarcinoma
+ACH-000675	NCIH1734_LUNG	SIDM00739	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
+ACH-000679	OE19_OESOPHAGUS	SIDM00479	Oesophagus	esophagus	esophagus	Esophageal Carcinoma	Esophageal Adenocarcinoma
+ACH-000680	SW948_LARGE_INTESTINE	SIDM00832	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Colon Adenocarcinoma
+ACH-000681	A549_LUNG	SIDM00903	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
+ACH-000688	OV7_OVARY	SIDM00474	Ovary	ovary	ovary	Ovarian Carcinoma	Ovarian Carcinoma
+ACH-000689	RH18_SOFT_TISSUE	SIDM00454	Soft_Tissue	soft_tissue	soft_tissue	Rhabdomyosarcoma	Embryonal Rhabdomyosarcoma
+ACH-000691	HCC2157_BREAST	SIDM00774	Breast	breast	breast	Breast Carcinoma	Ductal Breast Carcinoma
+ACH-000693	KYSE180_OESOPHAGUS	SIDM01030	Oesophagus	esophagus	esophagus	Esophageal Squamous Cell Carcinoma	Esophageal Squamous Cell Carcinoma
+ACH-000696	OVCAR8_OVARY	SIDM00090	Ovary	ovary	ovary	Ovarian Carcinoma	High Grade Ovarian Serous Adenocarcinoma
+ACH-000698	DMS53_LUNG	SIDM00523	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
+ACH-000699	HCC1395_BREAST	SIDM00884	Breast	breast	breast	Breast Carcinoma	Ductal Breast Carcinoma
+ACH-000704	OAW42_OVARY	SIDM00480	Ovary	ovary	ovary	Ovarian Carcinoma	Ovarian Cystadenocarcinoma
+ACH-000706	EKVX_LUNG	SIDM00119	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Non-Small Cell Lung Carcinoma
+ACH-000713	CAOV3_OVARY	SIDM00919	Ovary	ovary	ovary	Ovarian Carcinoma	High Grade Ovarian Serous Adenocarcinoma
+ACH-000716	TT2609C02_THYROID	SIDM00418	Thyroid	thyroid	thyroid	Thyroid Gland Carcinoma	Follicular Thyroid Carcinoma
+ACH-000717	COLO680N_OESOPHAGUS	SIDM00956	Oesophagus	esophagus	esophagus	Esophageal Squamous Cell Carcinoma	Esophageal Squamous Cell Carcinoma
+ACH-000718	NCIH2291_LUNG	SIDM00728	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
+ACH-000719	RMGI_OVARY	SIDM00352	Ovary	ovary	ovary	Ovarian Carcinoma	Ovarian Clear Cell Adenocarcinoma
+ACH-000722	SNUC1_LARGE_INTESTINE	SIDM01197	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Colon Adenocarcinoma
+ACH-000724	HT1376_URINARY_TRACT	SIDM00678	Urinary_Tract	urinary_tract	urinary_tract	Bladder Carcinoma	Bladder Carcinoma
+ACH-000725	HCC202_BREAST	SIDM00870	Breast	breast	breast	Breast Carcinoma	Ductal Breast Carcinoma
+ACH-000729	NCIH1963_LUNG	SIDM00760	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
+ACH-000730	SKMEL5_SKIN	SIDM00080	Skin	melanoma	melanoma	Melanoma	Cutaneous Melanoma
+ACH-000738	GB1_CENTRAL_NERVOUS_SYSTEM	SIDM00581	Central_Nervous_System	glioma	glioma	Glioblastoma	Glioblastoma
+ACH-000740	A253_SALIVARY_GLAND	SIDM00796	Salivary_Gland	other	upper_aerodigestive	Head and Neck Carcinoma	Salivary Gland Squamous Cell Carcinoma
+ACH-000744	NCIH1623_LUNG	SIDM00747	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
+ACH-000747	NCIH1703_LUNG	SIDM00740	Lung	lung_NSC	lung_NSC	Squamous Cell Lung Carcinoma	Squamous Cell Lung Carcinoma
+ACH-000748	SJSA1_BONE	SIDM01112	Bone	osteosarcoma	osteosarcoma	Osteosarcoma	Osteosarcoma
+ACH-000749	DMS273_LUNG	SIDM00522	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
+ACH-000752	NCIH196_LUNG	SIDM00761	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
+ACH-000755	HCC2218_BREAST	SIDM00772	Breast	breast	breast	Breast Carcinoma	Ductal Breast Carcinoma
+ACH-000756	GI1_CENTRAL_NERVOUS_SYSTEM	SIDM00273	Central_Nervous_System	glioma	glioma	Glioblastoma	Gliosarcoma
+ACH-000759	MDAMB175VII_BREAST	SIDM00633	Breast	breast	breast	Breast Carcinoma	Invasive Ductal Carcinoma not Otherwise Specified
+ACH-000766	NCIH1648_LUNG	SIDM00746	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
+ACH-000767	NCIH526_LUNG	SIDM01128	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
+ACH-000769	LK2_LUNG	SIDM00548	Lung	lung_NSC	lung_NSC	Squamous Cell Lung Carcinoma	Squamous Cell Lung Carcinoma
+ACH-000772	TE441T_SOFT_TISSUE	SIDM01173	Soft_Tissue	soft_tissue	soft_tissue	Rhabdomyosarcoma	Rhabdomyosarcoma
+ACH-000776	ONS76_CENTRAL_NERVOUS_SYSTEM	SIDM00567	Central_Nervous_System	medulloblastoma	medulloblastoma	Other Solid Carcinomas	Medulloblastoma 
+ACH-000778	HSC3_UPPER_AERODIGESTIVE_TRACT	SIDM00589	Upper_Aerodigestive_Tract	upper_aerodigestive	upper_aerodigestive	Oral Cavity Carcinoma	Tongue Squamous Cell Carcinoma
+ACH-000780	NCIH1105_LUNG	SIDM00652	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
+ACH-000781	NCIH2023_LUNG	SIDM00753	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Non-Small Cell Lung Carcinoma
+ACH-000783	CAMA1_BREAST	SIDM00920	Breast	breast	breast	Breast Carcinoma	Breast Adenocarcinoma
+ACH-000784	KYSE70_OESOPHAGUS	SIDM01024	Oesophagus	esophagus	esophagus	Esophageal Squamous Cell Carcinoma	Esophageal Squamous Cell Carcinoma
+ACH-000787	LXF289_LUNG	SIDM00339	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
+ACH-000788	A2058_SKIN	SIDM00797	Skin	melanoma	melanoma	Melanoma	Amelanotic Melanoma
+ACH-000790	SHP77_LUNG	SIDM01078	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
+ACH-000792	BFTC909_KIDNEY	SIDM00988	Kidney	kidney	kidney	Kidney Carcinoma	Renal Cell Carcinoma
+ACH-000793	KATOIII_STOMACH	SIDM00687	Stomach	stomach	stomach	Gastric Carcinoma	Signet Ring Cell Gastric Adenocarcinoma
+ACH-000800	NCIH446_LUNG	SIDM00965	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
+ACH-000802	BFTC905_URINARY_TRACT	SIDM00989	Urinary_Tract	urinary_tract	urinary_tract	Bladder Carcinoma	Bladder Carcinoma
+ACH-000803	COLO668_LUNG	SIDM00143	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
+ACH-000809	KYSE410_OESOPHAGUS	SIDM01028	Oesophagus	esophagus	esophagus	Esophageal Squamous Cell Carcinoma	Esophageal Squamous Cell Carcinoma
+ACH-000810	SKMEL30_SKIN	SIDM00392	Skin	melanoma	melanoma	Melanoma	Cutaneous Melanoma
+ACH-000811	SKOV3_OVARY	SIDM00079	Ovary	ovary	ovary	Ovarian Carcinoma	Ovarian Serous Cystadenocarcinoma
+ACH-000812	COLO783_SKIN	SIDM00955	Skin	melanoma	melanoma	Melanoma	Melanoma
+ACH-000816	NCIH524_LUNG	SIDM01129	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
+ACH-000819	LN18_CENTRAL_NERVOUS_SYSTEM	SIDM00685	Central_Nervous_System	glioma	glioma	Glioblastoma	Glioblastoma
+ACH-000823	KYSE140_OESOPHAGUS	SIDM01032	Oesophagus	esophagus	esophagus	Esophageal Squamous Cell Carcinoma	Esophageal Squamous Cell Carcinoma
+ACH-000824	KYSE510_OESOPHAGUS	SIDM01026	Oesophagus	esophagus	esophagus	Esophageal Squamous Cell Carcinoma	Esophageal Squamous Cell Carcinoma
+ACH-000826	CAL12T_LUNG	SIDM00939	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Non-Small Cell Lung Carcinoma
+ACH-000827	WM793_SKIN	SIDM00973	Skin	melanoma	melanoma	Melanoma	Melanoma
+ACH-000830	NCIH1436_LUNG	SIDM00697	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
+ACH-000835	GCT_SOFT_TISSUE	SIDM00853	Soft_Tissue	soft_tissue	soft_tissue	Other Solid Carcinomas	Malignant Fibrous Histiocytoma
+ACH-000841	NCIH2087_LUNG	SIDM00708	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
+ACH-000843	HARA_LUNG	SIDM00598	Lung	lung_NSC	lung_NSC	Squamous Cell Lung Carcinoma	Squamous Cell Lung Carcinoma
+ACH-000846	FADU_UPPER_AERODIGESTIVE_TRACT	SIDM00860	Upper_Aerodigestive_Tract	upper_aerodigestive	upper_aerodigestive	Head and Neck Carcinoma	Hypopharyngeal Squamous Cell Carcinoma
+ACH-000847	HGC27_STOMACH	SIDM00290	Stomach	stomach	stomach	Gastric Carcinoma	Gastric Carcinoma
+ACH-000848	JHH7_LIVER	SIDM00614	Liver	liver	liver	Hepatocellular Carcinoma	Hepatocellular Carcinoma
+ACH-000849	MDAMB468_BREAST	SIDM00628	Breast	breast	breast	Breast Carcinoma	Breast Adenocarcinoma
+ACH-000853	NCIH661_LUNG	SIDM01122	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Large Cell Lung Carcinoma
+ACH-000855	KYSE150_OESOPHAGUS	SIDM01031	Oesophagus	esophagus	esophagus	Esophageal Squamous Cell Carcinoma	Esophageal Squamous Cell Carcinoma
+ACH-000857	CAL851_BREAST	SIDM00928	Breast	breast	breast	Breast Carcinoma	Breast Carcinoma
+ACH-000858	KNS62_LUNG	SIDM00606	Lung	lung_NSC	lung_NSC	Squamous Cell Lung Carcinoma	Squamous Cell Lung Carcinoma
+ACH-000859	HCC1954_BREAST	SIDM00872	Breast	breast	breast	Breast Carcinoma	Ductal Breast Carcinoma
+ACH-000860	NCIH358_LUNG	SIDM00718	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Bronchiolo-Alveolar Lung Carcinoma
+ACH-000861	HOP62_LUNG	SIDM00133	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
+ACH-000864	COLO684_ENDOMETRIUM	SIDM00142	Endometrium	endometrium	endometrium	Endometrial Carcinoma	Endometrial Adenocarcinoma
+ACH-000865	KYSE450_OESOPHAGUS	SIDM01027	Oesophagus	esophagus	esophagus	Esophageal Squamous Cell Carcinoma	Esophageal Squamous Cell Carcinoma
+ACH-000866	NCIH1048_LUNG	SIDM00654	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
+ACH-000867	CHAGOK1_LUNG	SIDM00924	Lung	lung_NSC	lung_NSC	Other Solid Carcinomas	Bronchogenic Carcinoma
+ACH-000869	NCIH1568_LUNG	SIDM00750	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
+ACH-000871	NCIH510_LUNG	SIDM00927	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
+ACH-000873	KYSE270_OESOPHAGUS	SIDM01029	Oesophagus	esophagus	esophagus	Esophageal Squamous Cell Carcinoma	Esophageal Squamous Cell Carcinoma
+ACH-000878	HCC15_LUNG	SIDM01072	Lung	lung_NSC	lung_NSC	Squamous Cell Lung Carcinoma	Squamous Cell Lung Carcinoma
+ACH-000880	AGS_STOMACH	SIDM00850	Stomach	stomach	stomach	Gastric Carcinoma	Gastric Adenocarcinoma
+ACH-000881	MELJUSO_SKIN	SIDM00336	Skin	melanoma	melanoma	Melanoma	Cutaneous Melanoma
+ACH-000882	IGR1_SKIN	SIDM01060	Skin	melanoma	melanoma	Melanoma	Melanoma
+ACH-000883	SW1783_CENTRAL_NERVOUS_SYSTEM	SIDM01164	Central_Nervous_System	glioma	glioma	Glioma	Anaplastic Astrocytoma
+ACH-000886	NCIH2009_LUNG	SIDM00756	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
+ACH-000890	SW1271_LUNG	SIDM01156	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
+ACH-000892	NCIH1563_LUNG	SIDM00751	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
+ACH-000893	NCIH1651_LUNG	SIDM00744	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
+ACH-000894	NCIH1869_LUNG	SIDM00768	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Non-Small Cell Lung Carcinoma
+ACH-000900	NCIH23_LUNG	SIDM00138	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
+ACH-000902	CAL148_BREAST	SIDM00938	Breast	breast	breast	Breast Carcinoma	Breast Carcinoma
+ACH-000903	FTC133_THYROID	SIDM00213	Thyroid	thyroid	thyroid	Thyroid Gland Carcinoma	Follicular Thyroid Carcinoma
+ACH-000906	ES2_OVARY	SIDM00861	Ovary	ovary	ovary	Ovarian Carcinoma	Ovarian Clear Cell Adenocarcinoma
+ACH-000910	MDAMB453_BREAST	SIDM00272	Breast	breast	breast	Breast Carcinoma	Breast Adenocarcinoma
+ACH-000911	NUGC3_STOMACH	SIDM00572	Stomach	stomach	stomach	Gastric Carcinoma	Gastric Adenocarcinoma
+ACH-000915	IPC298_SKIN	SIDM01059	Skin	melanoma	melanoma	Melanoma	Cutaneous Melanoma
+ACH-000916	NCIH1573_LUNG	SIDM00749	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
+ACH-000917	TE4_OESOPHAGUS	SIDM00250	Oesophagus	esophagus	esophagus	Esophageal Squamous Cell Carcinoma	Esophageal Squamous Cell Carcinoma
+ACH-000919	IM95_STOMACH	SIDM00602	Stomach	stomach	stomach	Gastric Carcinoma	Gastric Adenocarcinoma
+ACH-000926	HT55_LARGE_INTESTINE	SIDM00541	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Colon Carcinoma
+ACH-000927	BT474_BREAST	SIDM00963	Breast	breast	breast	Breast Carcinoma	Invasive Ductal Carcinoma not Otherwise Specified
+ACH-000929	NCIH2110_LUNG	SIDM00703	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Non-Small Cell Lung Carcinoma
+ACH-000930	HCC1569_BREAST	SIDM00878	Breast	breast	breast	Breast Carcinoma	Ductal Breast Carcinoma
+ACH-000940	AN3CA_ENDOMETRIUM	SIDM00901	Endometrium	endometrium	endometrium	Endometrial Carcinoma	Endometrial Adenocarcinoma
+ACH-000945	NCIH650_LUNG	SIDM01124	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
+ACH-000947	OVK18_OVARY	SIDM00238	Ovary	ovary	ovary	Ovarian Carcinoma	Ovarian Endometrioid Adenocarcinoma
+ACH-000949	TGBC11TKB_STOMACH	SIDM00251	Stomach	stomach	stomach	Gastric Carcinoma	Gastric Carcinoma
+ACH-000951	NCIH2342_LUNG	SIDM00727	Lung	lung_NSC	lung_NSC	Non-Small Cell Lung Carcinoma	Lung Adenocarcinoma
+ACH-000955	SNU407_LARGE_INTESTINE	SIDM00214	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Colon Adenocarcinoma
+ACH-000963	CCK81_LARGE_INTESTINE	SIDM00487	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Colon Adenocarcinoma
+ACH-000966	IGROV1_OVARY	SIDM00151	Ovary	ovary	ovary	Ovarian Carcinoma	Ovarian Endometrioid Adenocarcinoma
+ACH-000968	COLO792_SKIN	SIDM00140	Skin	melanoma	melanoma	Melanoma	Melanoma
+ACH-000971	HCT116_LARGE_INTESTINE	SIDM00783	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Colon Carcinoma
+ACH-000976	HUCCT1_BILIARY_TRACT	SIDM00587	Biliary_Tract	bile_duct	bile_duct	Biliary Tract Carcinoma	Intrahepatic Cholangiocarcinoma
+ACH-000979	DU145_PROSTATE	SIDM00120	Prostate	prostate	prostate	Prostate Carcinoma	Prostate Carcinoma
+ACH-000985	LS411N_LARGE_INTESTINE	SIDM00660	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Cecum Adenocarcinoma
+ACH-000986	HT115_LARGE_INTESTINE	SIDM00534	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Colon Carcinoma
+ACH-000989	SNU175_LARGE_INTESTINE	SIDM00216	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Colon Adenocarcinoma
+ACH-000991	SNU81_LARGE_INTESTINE	SIDM00193	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Colon Adenocarcinoma
+ACH-001016	BECKER_CENTRAL_NERVOUS_SYSTEM	SIDM00490	Central_Nervous_System	glioma	glioma	Glioma	Astrocytoma
+ACH-001023	CGTHW1_THYROID	SIDM01248	Thyroid	thyroid	thyroid	Thyroid Gland Carcinoma	Squamous Cell Thyroid Gland Carcinoma
+ACH-001024	CHL1_SKIN	SIDM01228	Skin	melanoma	melanoma	Melanoma	Melanoma
+ACH-001039	COLO205_LARGE_INTESTINE	SIDM00826	Large_Intestine	colorectal	colorectal	Colorectal Carcinoma	Colon Adenocarcinoma
+ACH-001049	CPCN_LUNG	SIDM00953	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
+ACH-001065	EVSAT_BREAST	SIDM01042	Breast	breast	breast	Breast Carcinoma	Breast Carcinoma
+ACH-001089	HLE_LIVER	SIDM00064	Liver	liver	liver	Hepatocellular Carcinoma	Hepatocellular Carcinoma
+ACH-001090	HN_UPPER_AERODIGESTIVE_TRACT	SIDM01061	Upper_Aerodigestive_Tract	upper_aerodigestive	upper_aerodigestive	Oral Cavity Carcinoma	Oral Cavity Squamous Cell Carcinoma
+ACH-001126	MOGGUVW_CENTRAL_NERVOUS_SYSTEM	SIDM00504	Central_Nervous_System	glioma	glioma	Glioma	Anaplastic Astrocytoma
+ACH-001138	NCIH2141_LUNG	SIDM00699	Lung	lung_small_cell	lung_small_cell	Small Cell Lung Carcinoma	Small Cell Lung Carcinoma
+ACH-001189	SJRH30_SOFT_TISSUE	SIDM01095	Soft_Tissue	soft_tissue	soft_tissue	Rhabdomyosarcoma	Alveolar Rhabdomyosarcoma
+ACH-001190	SKMEL2_SKIN	SIDM00082	Skin	melanoma	melanoma	Melanoma	Melanoma
