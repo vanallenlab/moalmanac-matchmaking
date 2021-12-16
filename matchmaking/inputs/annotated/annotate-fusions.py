@@ -279,8 +279,8 @@ def rreplace(string, old_value, new_value, occurrence):
     return new_value.join(revised)
 
 
-def write_df(df, handle):
-    df.to_csv(handle, sep='\t', index=False)
+def write_df(df, handle, columns):
+    df.loc[:, columns].to_csv(handle, sep='\t', index=False)
 
 
 if __name__ == "__main__":
@@ -315,7 +315,14 @@ if __name__ == "__main__":
     gene1 = annotate_gene_1(df_gene1, db_gene1, db_gene2, almanac_genes, dbs)
     gene2 = annotate_gene_2(df_gene2, db_gene1, db_gene2, almanac_genes, dbs)
 
+    use_columns = ['feature', 'partner', 'which_match', 'sample_name',
+                   'feature_match_1', 'feature_match_2', 'feature_match_3', 'feature_match_4',
+                   'evidence', 'cancerhotspots_bin', 'cancerhotspots3D_bin', 'cgc_bin',
+                   'cosmic_bin', 'gsea_pathways_bin', 'gsea_modules_bin']
+
     output = f"{args.directory}/{args.output}"
-    write_df(both_genes, output)
-    write_df(gene1, rreplace(output, '.', '.gene1.', 1))
-    write_df(gene2, rreplace(output, '.', '.gene2.', 1))
+    write_df(both_genes, output, use_columns)
+
+    use_columns.remove('which_match')
+    write_df(gene1, rreplace(output, '.', '.gene1.', 1), use_columns)
+    write_df(gene2, rreplace(output, '.', '.gene2.', 1), use_columns)

@@ -5,9 +5,9 @@ MOALMANAC_VENV=$2
 INPUT_SOMATIC=$3
 INPUT_COPY_NUMBER=$4
 INPUT_FUSION=$5
-OUTPUT_SOMATIC=${6-samples.variants.annotated.testing.txt}
-OUTPUT_COPY_NUMBER=${7-samples.copy_numbers.annotated.testing.txt}
-OUTPUT_FUSION=${8-samples.fusions.annotated.testing.txt}
+OUTPUT_SOMATIC=${6-samples.variants.annotated.txt}
+OUTPUT_COPY_NUMBER=${7-samples.copy_numbers.annotated.txt}
+OUTPUT_FUSION=${8-samples.fusions.annotated.txt}
 WD=$PWD
 
 cp annotate-variants.py annotate-copy-numbers.py annotate-fusions.py "$MOALMANAC_DIR"

@@ -144,8 +144,8 @@ def load_df(handle, feature_type):
     return df
 
 
-def write_df(df, handle):
-    df.to_csv(handle, sep='\t', index=False)
+def write_df(df, handle, columns):
+    df.loc[:, columns].to_csv(handle, sep='\t', index=False)
 
 
 if __name__ == "__main__":
@@ -173,5 +173,10 @@ if __name__ == "__main__":
     dataframe['evidence'] = dataframe['evidence'].fillna('').replace(INV_MAP)
     dataframe = annotate_other_datasources(dataframe, dbs)
 
+    use_columns = ['feature', 'alteration_type', 'sample_name',
+                   'feature_match_1', 'feature_match_2', 'feature_match_3', 'feature_match_4',
+                   'evidence', 'cancerhotspots_bin', 'cancerhotspots3D_bin', 'cgc_bin',
+                   'cosmic_bin', 'gsea_pathways_bin', 'gsea_modules_bin']
+
     output = f"{args.directory}/{args.output}"
-    write_df(dataframe, output)
+    write_df(dataframe, output, use_columns)
