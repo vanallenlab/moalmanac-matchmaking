@@ -18,12 +18,23 @@ Required arguments:
     INPUT_FUSION        <string>    Path to formatted fusions input
 ```
 
+Optional arguments:
+```
+    OUTPUT_SOMATIC       <string>    Path to annotated somatic variants output, default: samples.variants.annotated.txt
+    OUTPUT_COPY_NUMBER   <string>    Path to formatted copy number alterations output, default: samples.copy_numbers.annotated.txt
+    OUTPUT_FUSION        <string>    Path to formatted fusions output, default: samples.fusions.annotated.txt
+```
+
 Example:
 ```bash
 conda activate moalmanac
 moalmanac_dir="/Users/vanallenlab/Github/moalmanac/moalmanac"
 moalmanac_dir_env="/Users/vanallenlab/opt/miniconda3/envs/moalmanac/bin/python"
-bash annotate-molecular-features.sh "$moalmanac_dir" "$moalmanac_dir_env" ../formatted/samples.somatic_variants.txt ../formatted/samples.copy_numbers.txt ../formatted/samples.fusions.txt
+bash annotate-molecular-features.sh "$moalmanac_dir" \
+                                    "$moalmanac_dir_env" \
+                                    ../formatted/samples.somatic_variants.txt \
+                                    ../formatted/samples.copy_numbers.txt \
+                                    ../formatted/samples.fusions.txt
 ```
 
 This script will produce five output files, one each for somatic variants and copy number alterations and three for fusions. Output names for somatic variants, copy number alterations, and fusions can optionally be provided as arguments 6, 7, 8. 
@@ -31,7 +42,14 @@ This script will produce five output files, one each for somatic variants and co
 conda activate moalmanac
 moalmanac_dir="/Users/vanallenlab/Github/moalmanac/moalmanac"
 moalmanac_dir_env="/Users/vanallenlab/opt/miniconda3/envs/moalmanac/bin/python"
-bash annotate-molecular-features.sh "$moalmanac_dir" "$moalmanac_dir_env" ../formatted/samples.somatic_variants.txt ../formatted/samples.copy_numbers.txt ../formatted/samples.fusions.txt example-samples.variants.txt example-samples.copy_number_alterations.txt example-samples.fusions.txt
+bash annotate-molecular-features.sh "$moalmanac_dir" \
+                                    "$moalmanac_dir_env" \
+                                    ../formatted/samples.somatic_variants.txt \
+                                    ../formatted/samples.copy_numbers.txt \
+                                    ../formatted/samples.fusions.txt \
+                                    example-samples.variants.txt \
+                                    example-samples.copy_number_alterations.txt \
+                                    example-samples.fusions.txt
 ```
 
 Here, we provide detailed information on each output produced. 
