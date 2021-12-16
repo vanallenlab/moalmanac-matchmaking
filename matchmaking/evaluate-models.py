@@ -103,7 +103,7 @@ if __name__ == "__main__":
     arg_parser.add_argument('--pairwise', '-p',
                             help='File handle sample label pairwise comparisons',
                             default='inputs/formatted/samples.pairwise.txt')
-    arg_parser.add_argument('--almanac', '-a',
+    arg_parser.add_argument('--moalmanac', '-m',
                             help='File handle to molecular oncology almanac',
                             default='inputs/datasources/moalmanac.json')
     arg_parser.add_argument('--cgc', '-c',
@@ -120,7 +120,7 @@ if __name__ == "__main__":
         'samples': args.samples,
         'labels': args.labels,
         'pairwise': args.pairwise,
-        'almanac': args.almanac,
+        'almanac': args.moalmanac,
         'cgc': args.cgc
     }
 
