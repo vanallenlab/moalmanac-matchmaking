@@ -14,7 +14,7 @@ COLUMNS = [CASE, COMPARISON, N_CASE, N_COMPARISON, N_INTERSECTION, INTERSECTION]
 
 def import_samples(handle, **kwargs):
     dataframe = read_tsv(handle, **kwargs)
-    return dataframe[SAMPLE_COLUMN].tolist()
+    return dataframe[SAMPLE_COLUMN].astype(str).tolist()
 
 
 def list_intersection(list1, list2):
@@ -68,6 +68,7 @@ if __name__ == "__main__":
     data = read_tsv(args.input, usecols=[SAMPLE_COLUMN, args.column])
     all_samples = import_samples(args.samples)
     data = subset_by_samples(data, all_samples)
+    data['sample_name'] = data['sample_name'].astype(str)
 
     compared_data = compare(all_samples, data, args.column)
     write_data(compared_data, args.output)

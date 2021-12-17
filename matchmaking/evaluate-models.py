@@ -131,9 +131,10 @@ if __name__ == "__main__":
         inputs_dictionary[data_type] = pd.read_csv(input_handles[data_type], sep='\t')
     inputs_dictionary['almanac'] = input_handles['almanac']
 
-    samples_to_use = inputs_dictionary['samples'][SAMPLE_NAME].tolist()
+    samples_to_use = inputs_dictionary['samples'][SAMPLE_NAME].astype(str).tolist()
     for data_type in feature_data_types:
         dataframe = inputs_dictionary[data_type]
+        dataframe[SAMPLE_NAME] = [SAMPLE_NAME].astype(str)
         dataframe = dataframe[dataframe[SAMPLE_NAME].isin(samples_to_use)]
         inputs_dictionary[data_type] = dataframe
 
