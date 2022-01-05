@@ -18,6 +18,8 @@ Required arguments:
     INPUT_FUSION        <string>    Path to formatted fusions input
 ```
 
+To obtain the virtual environment path, you can activate the virtual environment and then type `which python`.
+
 Optional arguments:
 ```
     OUTPUT_SOMATIC       <string>    Path to annotated somatic variants output, default: samples.variants.annotated.txt
