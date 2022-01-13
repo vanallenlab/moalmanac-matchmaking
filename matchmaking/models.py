@@ -799,7 +799,7 @@ class NonsynVariantCount(Models):
     @classmethod
     def create_counts_series(cls, inputs, samples):
         variants = inputs[cls.variants]
-        series = variants[cls.model_id].value_counts().loc[samples].sort_values()
+        series = variants[cls.model_id].value_counts().reindex(samples, fill_value=0).sort_values()
         series.name = cls.label
         return series
 
@@ -1080,7 +1080,8 @@ class SNFTypesCGC(Models):
 class SNFTypesCGCwithEvidence(Models):
     label = 'snf_fda-cgc'
     label_output = Models.format_label_for_output(label)
-    description = 'We perform similarity network fusion (SNF, Bo Wang in the Goldenberg lab ' \
+    description = 'This model was used in the present study. ' \
+                  'We perform similarity network fusion (SNF, Bo Wang in the Goldenberg lab ' \
                   '(https://www.nature.com/articles/nmeth.2810)) using the python implementation by Ross Markello ' \
                   '(https://github.com/rmarkello/snfpy) to fuse networks that contain: ' \
                   '(1) CGC genes that contain a somatic variant, ' \
@@ -1123,10 +1124,7 @@ class SNFTypesCGCwithEvidence(Models):
                 boolean_dataframe_fusions.loc[samples_list, :],
                 boolean_dataframe_1.loc[samples_list, :],
                 ]
-        affinity_networks = snf.make_affinity(data,
-                                              metric='jaccard',
-                                              normalize=False,
-                                              K=20, mu=0.5)
+        affinity_networks = snf.make_affinity(data, metric='jaccard', normalize=False, K=20, mu=0.5)
         fused_network = snf.snf(affinity_networks, K=20)
         fused_dataframe = pd.DataFrame(fused_network, index=samples_list, columns=samples_list)
         distance_dataframe = pd.DataFrame(1, index=samples_list, columns=samples_list).subtract(fused_dataframe)
