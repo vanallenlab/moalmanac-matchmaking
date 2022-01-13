@@ -88,13 +88,12 @@ class Metrics:
 
     @classmethod
     def print_model(cls, models_dictionary, model_label):
-        print(f"model label: {model_label}, "
+        print(f"model label: {model_label}, \n"
               f"model description: {models_dictionary[model_label]['description']}, \n"
               f"AP@k=1: {models_dictionary[model_label][cls.avg_precision_at_k][1]}, "
               f"AP@k=2: {models_dictionary[model_label][cls.avg_precision_at_k][2]}, "
               f"AP@k=3: {models_dictionary[model_label][cls.avg_precision_at_k][3]}, "
-              f"mAP: {models_dictionary[model_label][cls.mean_avg_precision]} "
-              f"\n"
+              f"mAP: {models_dictionary[model_label][cls.mean_avg_precision]}.\n"
               )
 
     @classmethod
