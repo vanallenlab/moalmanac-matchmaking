@@ -121,6 +121,8 @@ The following column names are required for the labeled samples input file. Colu
 - `n_case`, number of labels present in the labeled samples file for `case`
 - `n_comparison`, number of labels present in the labeled samples file for `comparison`
 - `n_intersection`, number of labels present in the labeled samples file for both `case` and `comparison`
+- `case_unique`, labels present in the labeled samples file for only `case`, delimited by `, `
+- `comparison_unique`, labels present in the labeled samples file for only `comparison`, delimited by `, `
 - `intersection`, labels present in the labeled samples file for both `case` and `comparison`, delimited by `, `
 
 ### Example
