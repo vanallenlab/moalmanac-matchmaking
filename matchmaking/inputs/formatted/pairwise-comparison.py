@@ -8,13 +8,19 @@ N_CASE = "n_case"
 N_COMPARISON = "n_comparison"
 N_INTERSECTION = "n_intersection"
 INTERSECTION = "intersection"
+CASE_UNIQUE = "case_unique"
+COMPARISON_UNIQUE = "comparison_unique"
 
-COLUMNS = [CASE, COMPARISON, N_CASE, N_COMPARISON, N_INTERSECTION, INTERSECTION]
+COLUMNS = [CASE, COMPARISON, N_CASE, N_COMPARISON, N_INTERSECTION, INTERSECTION, CASE_UNIQUE, COMPARISON_UNIQUE]
 
 
 def import_samples(handle, **kwargs):
     dataframe = read_tsv(handle, **kwargs)
     return dataframe[SAMPLE_COLUMN].astype(str).tolist()
+
+
+def list_difference(list1, list2):
+    return [value for value in list1 if value not in list2]
 
 
 def list_intersection(list1, list2):
@@ -43,13 +49,16 @@ def compare(samples, dataframe, comparison_column):
             case_values = case_group[comparison_column].tolist()
             comparison_values = comparison_group[comparison_column].tolist()
             intersection = list_intersection(case_values, comparison_values)
-            intersection_string = ', '.join(intersection)
+            case_unique_values = list_difference(case_values, comparison_values)
+            comparison_unique_values = list_difference(comparison_values, case_values)
             result = (case,
                       comparison,
                       case_group.shape[0],
                       comparison_group.shape[0],
                       len(intersection),
-                      intersection_string
+                      ', '.join(intersection),
+                      ', '.join(case_unique_values),
+                      ', '.join(comparison_unique_values)
                       )
             results.append(result)
 
