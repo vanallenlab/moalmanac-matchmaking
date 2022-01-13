@@ -11,7 +11,7 @@ INTERSECTION = "intersection"
 CASE_UNIQUE = "case_unique"
 COMPARISON_UNIQUE = "comparison_unique"
 
-COLUMNS = [CASE, COMPARISON, N_CASE, N_COMPARISON, N_INTERSECTION, INTERSECTION, CASE_UNIQUE, COMPARISON_UNIQUE]
+COLUMNS = [CASE, COMPARISON, N_CASE, N_COMPARISON, N_INTERSECTION, CASE_UNIQUE, COMPARISON_UNIQUE, INTERSECTION]
 
 
 def import_samples(handle, **kwargs):
@@ -56,9 +56,9 @@ def compare(samples, dataframe, comparison_column):
                       case_group.shape[0],
                       comparison_group.shape[0],
                       len(intersection),
-                      ', '.join(intersection),
                       ', '.join(case_unique_values),
-                      ', '.join(comparison_unique_values)
+                      ', '.join(comparison_unique_values),
+                      ', '.join(intersection)
                       )
             results.append(result)
 

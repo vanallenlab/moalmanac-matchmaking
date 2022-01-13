@@ -114,11 +114,11 @@ The following column names are required for the labeled samples input file. Colu
 - `intersection`, labels present in the labeled samples file for both `case` and `comparison`, delimited by `, `
 
 ### Example
-| case | comparison | n_case | n_comparison | n_intersection | intersection | case_unique | comparison_unique | 
+| case | comparison | n_case | n_comparison | n_intersection | case_unique | comparison_unique | intersection |  
 | -- | -- | -- | -- | -- | -- | -- | -- |
-| A-001	| A-001 | 3 | 3 | 3 | AKT inhibitor VIII, Acetalax, rTRAIL | | |
-| A-001 | A-002 | 3 | 1 | 0 | | AKT inhibitor VIII, Acetalax, rTRAIL | Pemetrexed |
-| A-001 | A-010 | 3 | 2 | 1 | AKT inhibitor VIII | Acetalax, rTRAIL | Afatinib | 
+| A-001	| A-001 | 3 | 3 | 3 | | | AKT inhibitor VIII, Acetalax, rTRAIL |
+| A-001 | A-002 | 3 | 1 | 0 | AKT inhibitor VIII, Acetalax, rTRAIL | Pemetrexed |  | 
+| A-001 | A-010 | 3 | 2 | 1 | Acetalax, rTRAIL | Afatinib | AKT inhibitor VIII |
 
 This table was generated with the `pairwise-comparison.py` script found in this directory.
 
