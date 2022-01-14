@@ -4,6 +4,7 @@ import pandas as pd
 import pickle
 
 import models as models
+from features import Features
 from metrics import Metrics
 from plots import AveragePrecision, AveragePrecisionK
 
@@ -16,12 +17,10 @@ N_SHARED = 'n_shared'
 SAMPLE_NAME = 'sample_name'
 
 
-def format_pairs(dataframe):
-    return (
-        dataframe
-            .sort_values([CASE, COMPARISON], ascending=[True, False])
-            .set_index([CASE, COMPARISON]).rename(columns={N_INTERSECTION: N_SHARED})
-            .loc[:, N_SHARED]
+def format_pairs(df):
+    return (df.sort_values([CASE, COMPARISON], ascending=[True, False])
+                .set_index([CASE, COMPARISON]).rename(columns={N_INTERSECTION: N_SHARED})
+                .loc[:, N_SHARED]
     )
 
 
@@ -36,25 +35,25 @@ def write_pickle(handle, output):
     file.close()
 
 
-def main(inputs, samples):
+def main(inputs, samples, subset_features):
     np.random.seed(seed=42)
 
     models_list = [
-        models.AlmanacGenes,
-        models.AlmanacFeatureTypes,
-        models.AlmanacFeatures,
-        models.CGC,
-        models.CGCFeatureTypes,
+        #models.AlmanacGenes,
+        #models.AlmanacFeatureTypes,
+        #models.AlmanacFeatures,
+        #models.CGC,
+        #models.CGCFeatureTypes,
         #models.Compatibility,
         models.NonsynVariantCount,
-        models.PCAonAlmanac,
-        models.PCAonCGC,
-        models.RankedSortAlmanacEvidenceCGC,
-        models.SNFbyEvidenceCGC,
-        models.SNFTypesCGC,
+        #models.PCAonAlmanac,
+        #models.PCAonCGC,
+        #models.RankedSortAlmanacEvidenceCGC,
+        #models.SNFbyEvidenceCGC,
+        #models.SNFTypesCGC,
         models.SNFTypesCGCwithEvidence,
-        models.SNFTypesAlmanac,
-        models.Tree
+        #models.SNFTypesAlmanac,
+        #models.Tree
     ]
 
     calculated = [model.calculate(inputs, samples) for model in models_list]
@@ -74,6 +73,31 @@ def main(inputs, samples):
     write_pickle('outputs/models.evaluated.pkl', evaluated_models_dictionary)
     AveragePrecision.plot(evaluated_models_dictionary, model_names)
     AveragePrecisionK.plot(evaluated_models_dictionary, model_names)
+
+    pairwise_features = Features.compare_pairwise(inputs['variants'],
+                                                  inputs['copy_number_alterations'],
+                                                  inputs['fusions'],
+                                                  samples,
+                                                  inputs['pairwise'],
+                                                  subset_features)
+    for model in models_list:
+        df = evaluated_models_dictionary[model.label]['calculated']
+        therapies = inputs['pairwise'].set_index(['case', 'comparison'])
+        merged = pd.concat([df, therapies, pairwise_features], axis=1)
+        merged.rename(columns={
+            'n_case': 'labels_n_case',
+            'n_comparison': 'labels_n_comparison',
+            'n_intersection': 'labels_n_intersection',
+            'intersection': 'labels_intersection',
+            'case_unique': 'labels_unique_case',
+            'comparison_unique': 'labels_unique_comparison',
+        }, inplace=True)
+        columns = [model.label, 'k', 'p@k', 'r@k', 'tps@k',
+                   'labels_n_intersection', 'labels_intersection', 'features_intersection',
+                   'labels_n_case', 'labels_unique_case', 'features_unique_case',
+                   'labels_n_comparison', 'labels_unique_comparison', 'features_unique_comparison'
+                   ]
+        merged.loc[:, columns].to_csv(f'outputs/models/{model.label}.fully_annotated.result.txt', sep='\t')
 
 
 if __name__ == "__main__":
@@ -109,6 +133,8 @@ if __name__ == "__main__":
     arg_parser.add_argument('--cgc', '-c',
                             help='File handle to cancer gene census',
                             default='inputs/datasources/cancer_gene_census_v85.tsv')
+    arg_parser.add_argument('--subset_features', action="store_true",
+                            help='Subset shown features to be genes in either MOAlmanac or Cancer Gene Census')
     args = arg_parser.parse_args()
 
     input_handles = {
@@ -132,10 +158,16 @@ if __name__ == "__main__":
     inputs_dictionary['almanac'] = input_handles['almanac']
 
     samples_to_use = inputs_dictionary['samples'][SAMPLE_NAME].astype(str).tolist()
-    for data_type in feature_data_types:
+    for data_type in feature_data_types + ['labels']:
         dataframe = inputs_dictionary[data_type]
-        dataframe[SAMPLE_NAME] = [SAMPLE_NAME].astype(str)
+        dataframe[SAMPLE_NAME] = dataframe[SAMPLE_NAME].astype(str)
         dataframe = dataframe[dataframe[SAMPLE_NAME].isin(samples_to_use)]
+        inputs_dictionary[data_type] = dataframe
+    for data_type in ['pairwise']:
+        dataframe = inputs_dictionary[data_type]
+        dataframe[CASE] = dataframe[CASE].astype(str)
+        dataframe[COMPARISON] = dataframe[COMPARISON].astype(str)
+        dataframe = dataframe[dataframe[CASE].isin(samples_to_use) & dataframe[COMPARISON].isin(samples_to_use)]
         inputs_dictionary[data_type] = dataframe
 
     inputs_dictionary['variants'] = preallocate_column(inputs_dictionary['variants'],
@@ -153,4 +185,4 @@ if __name__ == "__main__":
         dataframe = preallocate_column(dataframe, 'alteration_type', 'Fusion')
         inputs_dictionary[data_type] = dataframe
 
-    main(inputs_dictionary, samples_to_use)
+    main(inputs_dictionary, samples_to_use, args.subset_features)
