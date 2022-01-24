@@ -1,0 +1,40 @@
+{
+  "description": "Cell line to cell line matchmaking inputs, as appeared in Reardon et al. 2020",
+  "samples": {
+    "handle": "inputs/formatted/samples.summary.txt",
+    "description": "File handle to sample information and which samples to use"
+  },
+  "variants": {
+    "handle": "inputs/annotated/samples.variants.annotated.txt", 
+    "description": "File handle to annotated somatic variants"
+  },
+  "copy_number_alterations": {
+    "handle": "inputs/annotated/samples.copy_numbers.annotated.txt",
+    "description": "File handle to annotated copy number alterations"
+  },
+  "fusions": {
+    "handle": "inputs/annotated/samples.fusions.annotated.txt",
+    "description": "File handle to annotated fusions"
+  },
+  "fusions-gene1": {
+    "handle": "inputs/annotated/samples.fusions.annotated.gene1.txt",
+    "description": "File handle to annotated fusions, just gene1"
+  },
+  "fusions-gene2": {
+    "handle": "inputs/annotated/samples.fusions.annotated.gene2.txt",
+    "description": "File handle to annotated fusions, just gene2"
+  },
+  "features": {
+    "handle": "inputs/pairwise-comparisons/samples.pairwise-features.txt",
+    "description": "Pairwise comparison of features"
+  },
+  "labels": {
+    "handle": "inputs/pairwise-comparisons/samples.pairwise-labels.txt",
+    "description": "Pairwise comparison of labels"
+  },
+  "datasources": {
+    "moalmanac": "inputs/datasources/moalmanac.json",
+    "cgc": "inputs/datasources/cancer_gene_census_v85.tsv"
+  },
+  "help": "Instructions for how these files were generated for the present study and how to generate them for your own data can be found on Github at https://github.com/vanallenlab/moalmanac-matchmaking/tree/main/matchmaking/inputs"
+}

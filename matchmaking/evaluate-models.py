@@ -1,32 +1,29 @@
 import argparse
+import json
 import numpy as np
 import pandas as pd
 import pickle
 
 import models as models
-from features import Features
 from metrics import Metrics
 from plots import AveragePrecision, AveragePrecisionK
 
 SEED = 42
 CASE = 'case'
 COMPARISON = 'comparison'
-INTERSECTION = 'intersection'
-N_INTERSECTION = 'n_intersection'
-N_SHARED = 'n_shared'
+INTERSECTION = 'labels_intersection'
+N_INTERSECTION = 'labels_n_intersection'
 SAMPLE_NAME = 'sample_name'
-
-
-def format_pairs(df):
-    return (df.sort_values([CASE, COMPARISON], ascending=[True, False])
-                .set_index([CASE, COMPARISON]).rename(columns={N_INTERSECTION: N_SHARED})
-                .loc[:, N_SHARED]
-    )
 
 
 def preallocate_column(df, column, value):
     df[column] = value
     return df
+
+
+def read_json(handle):
+    with open(handle) as file:
+        return json.load(file)
 
 
 def write_pickle(handle, output):
@@ -35,25 +32,25 @@ def write_pickle(handle, output):
     file.close()
 
 
-def main(inputs, samples, subset_features):
-    np.random.seed(seed=42)
+def main(inputs, samples, seed=SEED):
+    np.random.seed(seed=seed)
 
     models_list = [
-        #models.AlmanacGenes,
-        #models.AlmanacFeatureTypes,
-        #models.AlmanacFeatures,
-        #models.CGC,
-        #models.CGCFeatureTypes,
+        models.AlmanacGenes,
+        models.AlmanacFeatureTypes,
+        models.AlmanacFeatures,
+        models.CGC,
+        models.CGCFeatureTypes,
         #models.Compatibility,
         models.NonsynVariantCount,
-        #models.PCAonAlmanac,
-        #models.PCAonCGC,
-        #models.RankedSortAlmanacEvidenceCGC,
-        #models.SNFbyEvidenceCGC,
-        #models.SNFTypesCGC,
+        models.PCAonAlmanac,
+        models.PCAonCGC,
+        models.RankedSortAlmanacEvidenceCGC,
+        models.SNFbyEvidenceCGC,
+        models.SNFTypesCGC,
         models.SNFTypesCGCwithEvidence,
-        #models.SNFTypesAlmanac,
-        #models.Tree
+        models.SNFTypesAlmanac,
+        models.Tree
     ]
 
     calculated = [model.calculate(inputs, samples) for model in models_list]
@@ -63,112 +60,73 @@ def main(inputs, samples, subset_features):
         model_descriptions[model.label] = model.description
 
     distances = pd.concat(calculated, axis=1)
-    labels = format_pairs(inputs['pairwise'])
-
-    distances.loc[distances.index, N_SHARED] = labels.loc[distances.index]
-    labeled = distances
-    labeled.to_csv('outputs/models.labeled.txt', sep='\t')
+    labeled = pd.concat([distances, inputs['labels'], inputs['features']], axis=1)
 
     evaluated_models_dictionary = Metrics.evaluate_models(samples, labeled, model_names, model_descriptions)
     write_pickle('outputs/models.evaluated.pkl', evaluated_models_dictionary)
     AveragePrecision.plot(evaluated_models_dictionary, model_names)
     AveragePrecisionK.plot(evaluated_models_dictionary, model_names)
 
-    pairwise_features = Features.compare_pairwise(inputs['variants'],
-                                                  inputs['copy_number_alterations'],
-                                                  inputs['fusions'],
-                                                  samples,
-                                                  inputs['pairwise'],
-                                                  subset_features)
     for model in models_list:
+        output_columns = [
+            'case', 'comparison',
+            model.label, 'k', 'p@k', 'r@k', 'tps@k',
+            'labels_n_intersection', 'labels_intersection', 'features_intersection',
+            'labels_n_case', 'labels_unique_case', 'features_unique_case',
+            'labels_n_comparison', 'labels_unique_comparison', 'features_unique_comparison'
+        ]
+
         df = evaluated_models_dictionary[model.label]['calculated']
-        therapies = inputs['pairwise'].set_index(['case', 'comparison'])
-        merged = pd.concat([df, therapies, pairwise_features], axis=1)
-        merged.rename(columns={
-            'n_case': 'labels_n_case',
-            'n_comparison': 'labels_n_comparison',
-            'n_intersection': 'labels_n_intersection',
-            'intersection': 'labels_intersection',
-            'case_unique': 'labels_unique_case',
-            'comparison_unique': 'labels_unique_comparison',
-        }, inplace=True)
-        columns = [model.label, 'k', 'p@k', 'r@k', 'tps@k',
-                   'labels_n_intersection', 'labels_intersection', 'features_intersection',
-                   'labels_n_case', 'labels_unique_case', 'features_unique_case',
-                   'labels_n_comparison', 'labels_unique_comparison', 'features_unique_comparison'
-                   ]
-        merged.loc[:, columns].to_csv(f'outputs/models/{model.label}.fully_annotated.result.txt', sep='\t')
+        (df
+         .reset_index()
+         .loc[:, output_columns]
+         .to_csv(f'outputs/models/{model.label}.fully_annotated.result.txt', sep='\t')
+         )
 
 
 if __name__ == "__main__":
     arg_parser = argparse.ArgumentParser(prog='Matchmaking',
                                          description='Perform profile-to-profile matchmaking')
-    arg_parser.add_argument('--variants', '-v',
-                            help='File handle to annotated somatic variants',
-                            default='inputs/annotated/samples.variants.annotated.txt')
-    arg_parser.add_argument('--copy_number_alterations', '-cn',
-                            help='File handle to annotated copy number alterations',
-                            default='inputs/annotated/samples.copy_numbers.annotated.txt')
-    arg_parser.add_argument('--fusions', '-f',
-                            help='File handle to annotated fusions',
-                            default='inputs/annotated/samples.fusions.annotated.txt')
-    arg_parser.add_argument('--fusions_gene1', '-f1',
-                            help='File handle to annotated fusions, just gene1',
-                            default='inputs/annotated/samples.fusions.annotated.gene1.txt')
-    arg_parser.add_argument('--fusions_gene2', '-f2',
-                            help='File handle to annotated fusions, just gene2',
-                            default='inputs/annotated/samples.fusions.annotated.gene2.txt')
-    arg_parser.add_argument('--samples', '-s',
-                            help='File handle to sample information and which samples to use',
-                            default='inputs/formatted/samples.summary.txt')
-    arg_parser.add_argument('--labels', '-l',
-                            help='File handle sample labels',
-                            default='inputs/formatted/samples.sensitive_therapies.txt')
-    arg_parser.add_argument('--pairwise', '-p',
-                            help='File handle sample label pairwise comparisons',
-                            default='inputs/formatted/samples.pairwise.txt')
-    arg_parser.add_argument('--moalmanac', '-m',
-                            help='File handle to molecular oncology almanac',
-                            default='inputs/datasources/moalmanac.json')
-    arg_parser.add_argument('--cgc', '-c',
-                            help='File handle to cancer gene census',
-                            default='inputs/datasources/cancer_gene_census_v85.tsv')
-    arg_parser.add_argument('--subset_features', action="store_true",
-                            help='Subset shown features to be genes in either MOAlmanac or Cancer Gene Census')
+    arg_parser.add_argument('--config', '-c',
+                            help='File handle to input configuration',
+                            default='config.default.json')
     args = arg_parser.parse_args()
 
+    config = read_json(args.config)
     input_handles = {
-        'variants': args.variants,
-        'copy_number_alterations': args.copy_number_alterations,
-        'fusions': args.fusions,
-        'fusions_gene1': args.fusions_gene1,
-        'fusions_gene2': args.fusions_gene2,
-        'samples': args.samples,
-        'labels': args.labels,
-        'pairwise': args.pairwise,
-        'almanac': args.moalmanac,
-        'cgc': args.cgc
+        'variants': config['variants']['handle'],
+        'copy_number_alterations': config['copy_number_alterations']['handle'],
+        'fusions': config['fusions']['handle'],
+        'fusions_gene1': config['fusions-gene1']['handle'],
+        'fusions_gene2': config['fusions-gene2']['handle'],
+        'samples': config['samples']['handle'],
+        'features': config['features']['handle'],
+        'labels': config['labels']['handle'],
+        'almanac': config['datasources']['moalmanac'],
+        'cgc': config['datasources']['cgc']
     }
 
     inputs_dictionary = {}
     feature_data_types = ['variants', 'copy_number_alterations', 'fusions', 'fusions_gene1', 'fusions_gene2']
-    flat_data_structures = feature_data_types + ['samples', 'labels', 'pairwise', 'cgc']
+    flat_data_structures = feature_data_types + ['samples', 'labels', 'features', 'cgc']
     for data_type in flat_data_structures:
         inputs_dictionary[data_type] = pd.read_csv(input_handles[data_type], sep='\t')
     inputs_dictionary['almanac'] = input_handles['almanac']
 
     samples_to_use = inputs_dictionary['samples'][SAMPLE_NAME].astype(str).tolist()
-    for data_type in feature_data_types + ['labels']:
+    for data_type in feature_data_types:
         dataframe = inputs_dictionary[data_type]
         dataframe[SAMPLE_NAME] = dataframe[SAMPLE_NAME].astype(str)
         dataframe = dataframe[dataframe[SAMPLE_NAME].isin(samples_to_use)]
         inputs_dictionary[data_type] = dataframe
-    for data_type in ['pairwise']:
+    for data_type in ['labels', 'features']:
         dataframe = inputs_dictionary[data_type]
         dataframe[CASE] = dataframe[CASE].astype(str)
         dataframe[COMPARISON] = dataframe[COMPARISON].astype(str)
         dataframe = dataframe[dataframe[CASE].isin(samples_to_use) & dataframe[COMPARISON].isin(samples_to_use)]
-        inputs_dictionary[data_type] = dataframe
+        inputs_dictionary[data_type] = (dataframe
+                                        .sort_values([CASE, COMPARISON], ascending=True)
+                                        .set_index([CASE, COMPARISON]))
 
     inputs_dictionary['variants'] = preallocate_column(inputs_dictionary['variants'],
                                                        'feature_type',
@@ -185,4 +143,4 @@ if __name__ == "__main__":
         dataframe = preallocate_column(dataframe, 'alteration_type', 'Fusion')
         inputs_dictionary[data_type] = dataframe
 
-    main(inputs_dictionary, samples_to_use, args.subset_features)
+    main(inputs=inputs_dictionary, samples=samples_to_use)

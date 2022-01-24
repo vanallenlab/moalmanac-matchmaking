@@ -4,9 +4,9 @@ Input data must be formatted for annotation by the Molecular Oncology Almanac fo
 - [somatic variants](#somatic-variants)
 - [called copy number alterations](#called-copy-number-alterations)
 - [fusions](#fusions)
-- [samples labeled by therapy response (or the label used for matchmaking)](#pairwise-comparison-of-labeled-samples)
+- [samples labeled by therapy response (or the label used for matchmaking)](#labeled-samples)
 
-Samples also must be compared in a pairwise fashion to annotate for which samples share a label. This can be done with the `pairwise-comparison.py` script in this directory. File are passed to each script individually, so there is not an enforced naming convention. 
+File are passed to each script individually, so there is not an enforced naming convention. 
 
 Formatted example data, as used in the present study, are also found in this directory,
 - samples to consider: `samples.summary.txt`
@@ -14,7 +14,6 @@ Formatted example data, as used in the present study, are also found in this dir
 - called copy number alterations: `samples.copy_numbers.txt`
 - fusions: `samples.fusions.txt`
 - labeled samples: `samples.sensitive_therapies.txt`
-- pairwise comparisons between labeled samples: `samples.pairwise.txt`
 
 ## Samples
 A tab-delimited text file containing all samples to consider must be prepared. Samples should be labeled with the column `sample_name` and the file can contain as many other annotations or columns as you would like for your own organization, they will not be used by the code in this repository.
@@ -108,47 +107,5 @@ The following column names are required for the labeled samples input file. Colu
 | A-001 | Dabrafenib |	A-001 |
 | A-001 | Vemurafenib | A-001 |
 | A-002 | Imatinib | A-002 |
-
-[Return to top](#formatted-inputs)
-
-## Pairwise comparison of labeled samples
-A tab-delimited text file containing all pairwise comparisons of samples and noting the intersection between labels should be produced. The script `pairwise-comparison.py` can be used to perform this task. Pairwise comparisons of the same sample can either be kept or removed.
-
-### Required fields
-The following column names are required for the labeled samples input file. Column names are case-sensitive. 
-- `case`, `sample_name` associated with case sample in the pairwise comparison
-- `comparison`, `sample_name` associated with the comparison sample in the pairwise comparison
-- `n_case`, number of labels present in the labeled samples file for `case`
-- `n_comparison`, number of labels present in the labeled samples file for `comparison`
-- `n_intersection`, number of labels present in the labeled samples file for both `case` and `comparison`
-- `case_unique`, labels present in the labeled samples file for only `case`, delimited by `, `
-- `comparison_unique`, labels present in the labeled samples file for only `comparison`, delimited by `, `
-- `intersection`, labels present in the labeled samples file for both `case` and `comparison`, delimited by `, `
-
-### Example
-| case | comparison | n_case | n_comparison | n_intersection | case_unique | comparison_unique | intersection |  
-| -- | -- | -- | -- | -- | -- | -- | -- |
-| A-001	| A-001 | 3 | 3 | 3 | | | AKT inhibitor VIII, Acetalax, rTRAIL |
-| A-001 | A-002 | 3 | 1 | 0 | AKT inhibitor VIII, Acetalax, rTRAIL | Pemetrexed |  | 
-| A-001 | A-010 | 3 | 2 | 1 | Acetalax, rTRAIL | Afatinib | AKT inhibitor VIII |
-
-This table was generated with the `pairwise-comparison.py` script found in this directory.
-
-Required arguments:
-```bash
-    --input, -i    <string> input file of labeled samples
-    --column, -c   <string> column name of label in input
-    --samples, -s  <string> file path to samples input to list all samples
-```
-
-Optional arguments:
-```bash
-    --output, -o    <string> output filename for pairwise comparisons (default: samples.pairwise.txt)
-```
-
-Example:
-```bash
-python pairwise-comparison.py -i samples.sensitive_therapies.txt -c therapy_name -s samples.summary.txt
-```
 
 [Return to top](#formatted-inputs)

@@ -18,7 +18,7 @@ class Metrics:
 
     case = 'case'
     comparison = 'comparison'
-    n_shared = 'n_shared'
+    n_shared = 'labels_n_intersection'
 
     @classmethod
     def calculate_average_precision(cls, samples, df):

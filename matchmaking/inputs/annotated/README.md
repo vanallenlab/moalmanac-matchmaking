@@ -56,6 +56,8 @@ bash annotate-molecular-features.sh "$moalmanac_dir" \
 
 Here, we provide detailed information on each output produced. 
 
+[Return to top](#annotated-inputs)
+
 ## Annotated somatic variants
 Somatic variants will be annotated with MOAlmanac, producing an output named by default as `samples.variants.annotated.txt`. Details of the datasource columns (e.g. `cgc_bin`) can be found in the MOAlmanac documentation [description of outputs](https://github.com/vanallenlab/moalmanac/blob/main/docs/description-of-outputs.md#sorting-somatic-molecular-features).
 
@@ -70,6 +72,8 @@ Somatic variants will be annotated with MOAlmanac, producing an output named by 
 - `feature_match_4`, 0 of the molecular feature's gene, alteration, and alteration is catalogued under Somatic Variants and 1 if it is
 - `evidence`, [associated evidence](https://github.com/vanallenlab/moalmanac/blob/main/docs/description-of-outputs.md#associated-evidence-predictive-implication) with the molecular feature
 
+[Return to top](#annotated-inputs)
+
 ## Annotated copy number alterations
 Copy number alterations will be annotated with MOAlmanac, producing an output named by default as `samples.copy_numbers.annotated.txt`. Details of the datasource columns (e.g. `cgc_bin`) can be found in the MOAlmanac documentation [description of outputs](https://github.com/vanallenlab/moalmanac/blob/main/docs/description-of-outputs.md#sorting-somatic-molecular-features).
 
@@ -82,6 +86,8 @@ Copy number alterations will be annotated with MOAlmanac, producing an output na
 - `feature_match_3`, 0 if the molecular feature's gene and alteration type is not catalogued under Copy Number and 1 if it is
 - `feature_match_4`, 0 for all rows
 - `evidence`, [associated evidence](https://github.com/vanallenlab/moalmanac/blob/main/docs/description-of-outputs.md#associated-evidence-predictive-implication) with the molecular feature
+
+[Return to top](#annotated-inputs)
 
 ## Annotated fusions, gene 1
 Fusions are processed twice, once using provided feature partner values for each row and then with the two swapped. For each row, the "strongest" annotations for each row is also output. Annotating fusions based on the default configuration will produce an output named by default as `samples.fusions.annotated.gene1.txt`. Details of the datasource columns (e.g. `cgc_bin`) can be found in the MOAlmanac documentation [description of outputs](https://github.com/vanallenlab/moalmanac/blob/main/docs/description-of-outputs.md#sorting-somatic-molecular-features).
@@ -97,6 +103,8 @@ Fusions are processed twice, once using provided feature partner values for each
 - `feature_match`, valued 1-4 and reflects the sum of other feature_match columns, used for faster compute in matchmaking
 - `evidence`, [associated evidence](https://github.com/vanallenlab/moalmanac/blob/main/docs/description-of-outputs.md#associated-evidence-predictive-implication) with the molecular feature
 
+[Return to top](#annotated-inputs)
+
 ## Annotated fusions, gene 2
 Fusions are processed twice, once using provided feature partner values for each row and then with the two swapped. This iteration annotates the fusions after swapping the `feature` and `partner` values. For each row, the "strongest" annotations for each row is also output. Annotating fusions based on the default configuration will produce an output named by default as `samples.fusions.annotated.gene2.txt`. Details of the datasource columns (e.g. `cgc_bin`) can be found in the MOAlmanac documentation [description of outputs](https://github.com/vanallenlab/moalmanac/blob/main/docs/description-of-outputs.md#sorting-somatic-molecular-features).
 
@@ -110,6 +118,8 @@ Fusions are processed twice, once using provided feature partner values for each
 - `feature_match_4`, 1 if feature and the fusion partner are both catalogued as a fusion pair within MOAlmanac and 0 otherwise
 - `feature_match`, valued 1-4 and reflects the sum of other feature_match columns, used for faster compute in matchmaking
 - `evidence`, [associated evidence](https://github.com/vanallenlab/moalmanac/blob/main/docs/description-of-outputs.md#associated-evidence-predictive-implication) with the molecular feature
+
+[Return to top](#annotated-inputs)
 
 ## Annotated fusions
 Fusions are processed twice, once using provided feature partner values for each row and then with the two swapped. For each row, the "strongest" annotations for each row is produced, creating this output named by default as `samples.fusions.annotated.txt`. Details of the datasource columns (e.g. `cgc_bin`) can be found in the MOAlmanac documentation [description of outputs](https://github.com/vanallenlab/moalmanac/blob/main/docs/description-of-outputs.md#sorting-somatic-molecular-features).
@@ -125,3 +135,5 @@ Fusions are processed twice, once using provided feature partner values for each
 - `feature_match_4`, 1 if feature and the fusion partner are both catalogued as a fusion pair within MOAlmanac and 0 otherwise
 - `feature_match`, valued 1-4 and reflects the sum of other feature_match columns, used for faster compute in matchmaking
 - `evidence`, [associated evidence](https://github.com/vanallenlab/moalmanac/blob/main/docs/description-of-outputs.md#associated-evidence-predictive-implication) with the molecular feature
+
+[Return to top](#annotated-inputs)
