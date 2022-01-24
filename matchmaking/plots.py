@@ -14,7 +14,7 @@ class Plots:
 
 class AveragePrecision(Plots):
     @classmethod
-    def plot(cls, models_dictionary, models_list, outname='models'):
+    def plot(cls, models_dictionary, models_list, output_directory, outname='models'):
         list_avg_ps = []
         for model in models_list:
             series = pd.Series(models_dictionary[model][Metrics.avg_precision], name=model)
@@ -37,12 +37,12 @@ class AveragePrecision(Plots):
 
         # plt.title("Boxplot with jitter", loc="left")
         plt.xticks(rotation=45, fontsize=14, ha='right')
-        plt.savefig(f'outputs/img/{outname}.avg_precision.png', bbox_inches='tight', dpi=300)
+        plt.savefig(f'{output_directory}/img/{outname}.avg_precision.png', bbox_inches='tight', dpi=300)
 
 
 class AveragePrecisionK(Plots):
     @classmethod
-    def plot(cls, models_dictionary, models_list, outname='models', ylim=0.20):
+    def plot(cls, models_dictionary, models_list, output_directory, outname='models', ylim=0.20):
         columns = ['model', 'k', 'ap@k']
         list_ = []
         for model in models_list:
@@ -65,4 +65,4 @@ class AveragePrecisionK(Plots):
         ax.set_xlabel('Rank (k)', fontsize=16)
         ax.set_title('Average Precision @ K performance', fontsize=18)
         ax.legend(fontsize=14, frameon=False)
-        plt.savefig(f'outputs/img/{outname}.avg_precision_at_k.png', bbox_inches='tight', dpi=300)
+        plt.savefig(f'{output_directory}/img/{outname}.avg_precision_at_k.png', bbox_inches='tight', dpi=300)

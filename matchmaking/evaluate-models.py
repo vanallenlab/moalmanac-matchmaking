@@ -3,6 +3,7 @@ import json
 import numpy as np
 import pandas as pd
 import pickle
+import subprocess
 
 import models as models
 from metrics import Metrics
@@ -32,7 +33,7 @@ def write_pickle(handle, output):
     file.close()
 
 
-def main(inputs, samples, seed=SEED):
+def main(inputs, samples, seed=SEED, output_directory="outputs"):
     np.random.seed(seed=seed)
 
     models_list = [
@@ -53,7 +54,7 @@ def main(inputs, samples, seed=SEED):
         models.Tree
     ]
 
-    calculated = [model.calculate(inputs, samples) for model in models_list]
+    calculated = [model.calculate(inputs, samples, output_directory) for model in models_list]
     model_names = [model.label for model in models_list]
     model_descriptions = {}
     for model in models_list:
@@ -63,9 +64,9 @@ def main(inputs, samples, seed=SEED):
     labeled = pd.concat([distances, inputs['labels'], inputs['features']], axis=1)
 
     evaluated_models_dictionary = Metrics.evaluate_models(samples, labeled, model_names, model_descriptions)
-    write_pickle('outputs/models.evaluated.pkl', evaluated_models_dictionary)
-    AveragePrecision.plot(evaluated_models_dictionary, model_names)
-    AveragePrecisionK.plot(evaluated_models_dictionary, model_names)
+    write_pickle(f'{output_directory}/models.evaluated.pkl', evaluated_models_dictionary)
+    AveragePrecision.plot(evaluated_models_dictionary, model_names, output_directory)
+    AveragePrecisionK.plot(evaluated_models_dictionary, model_names, output_directory)
 
     for model in models_list:
         output_columns = [
@@ -80,7 +81,7 @@ def main(inputs, samples, seed=SEED):
         (df
          .reset_index()
          .loc[:, output_columns]
-         .to_csv(f'outputs/models/{model.label}.fully_annotated.result.txt', sep='\t')
+         .to_csv(f'{output_directory}/models/{model.label}.fully_annotated.result.txt', sep='\t')
          )
 
 
@@ -103,7 +104,8 @@ if __name__ == "__main__":
         'features': config['features']['handle'],
         'labels': config['labels']['handle'],
         'almanac': config['datasources']['moalmanac'],
-        'cgc': config['datasources']['cgc']
+        'cgc': config['datasources']['cgc'],
+        'output_directory': config['output_directory']
     }
 
     inputs_dictionary = {}
@@ -143,4 +145,10 @@ if __name__ == "__main__":
         dataframe = preallocate_column(dataframe, 'alteration_type', 'Fusion')
         inputs_dictionary[data_type] = dataframe
 
-    main(inputs=inputs_dictionary, samples=samples_to_use)
+    output_directory = config['output_directory']
+    subprocess.call(f"mkdir -p {output_directory}", shell=True)
+    subprocess.call(f"mkdir -p {output_directory}/distances", shell=True)
+    subprocess.call(f"mkdir -p {output_directory}/features", shell=True)
+    subprocess.call(f"mkdir -p {output_directory}/img", shell=True)
+    subprocess.call(f"mkdir -p {output_directory}/models", shell=True)
+    main(inputs=inputs_dictionary, samples=samples_to_use, output_directory=output_directory)

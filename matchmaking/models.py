@@ -56,13 +56,13 @@ class Models:
             return series.dropna().sort_values().tolist()
 
     @classmethod
-    def stack_distances(cls, dataframe, label):
+    def stack_distances(cls, dataframe, label, output_directory):
         # Commented out sorting and dropping of duplicates to leave all N x N comparisons
         stacked = dataframe.stack().reset_index()
         # stacked.drop_duplicates(subset=[cls.case, cls.comparison], keep='first', inplace=True)
         stacked.rename(columns={'level_0': cls.case, 'level_1': cls.comparison, 0: label}, inplace=True)
 
-        stacked.to_csv('outputs/distances/{}.stacked.txt'.format(label), sep='\t')
+        stacked.to_csv(f'{output_directory}/distances/{label}.stacked.txt', sep='\t')
         stacked.set_index([cls.case, cls.comparison], inplace=True)
         return stacked.loc[stacked.index, label]
 
@@ -209,13 +209,13 @@ class AlmanacFeatures(Almanac):
                   'rearrangement molecular features catalogued in the Molecular Oncology Almanac.'
 
     @classmethod
-    def calculate(cls, input_dtypes, samples_list):
+    def calculate(cls, input_dtypes, samples_list, output_directory):
         almanac = cls.import_dbs(input_dtypes)
         boolean_dataframe = cls.create_boolean_table(input_dtypes, samples_list, almanac)
         distance_dataframe = cls.calculate_distance(boolean_dataframe, cls.jaccard.pairwise)
-        stacked_dataframe = cls.stack_distances(distance_dataframe, cls.label)
+        stacked_dataframe = cls.stack_distances(distance_dataframe, cls.label, output_directory)
 
-        boolean_dataframe.to_csv('outputs/features/{}.boolean.txt'.format(cls.label_output), sep='\t')
+        boolean_dataframe.to_csv(f'{output_directory}/features/{cls.label_output}.boolean.txt', sep='\t')
         return stacked_dataframe
 
     @classmethod
@@ -318,13 +318,13 @@ class AlmanacFeatureTypes(Almanac):
         return df.set_index([cls.feature, cls.model_id])
 
     @classmethod
-    def calculate(cls, input_dtypes, samples_list):
+    def calculate(cls, input_dtypes, samples_list, output_directory):
         almanac = cls.import_dbs(input_dtypes)
         boolean_dataframe = cls.create_boolean_table(input_dtypes, samples_list, almanac)
         distance_dataframe = cls.calculate_distance(boolean_dataframe, cls.jaccard.pairwise)
-        stacked_dataframe = cls.stack_distances(distance_dataframe, cls.label)
+        stacked_dataframe = cls.stack_distances(distance_dataframe, cls.label, output_directory)
 
-        boolean_dataframe.to_csv('outputs/features/{}.boolean.txt'.format(cls.label_output), sep='\t')
+        boolean_dataframe.to_csv(f'{output_directory}/features/{cls.label_output}.boolean.txt', sep='\t')
         return stacked_dataframe
 
     @classmethod
@@ -359,13 +359,13 @@ class AlmanacGenes(Almanac):
                   'copy number alteration, and rearrangement in any gene catalogued in Molecular Oncology Almanac.'
 
     @classmethod
-    def calculate(cls, input_dtypes, samples_list):
+    def calculate(cls, input_dtypes, samples_list, output_directory):
         almanac = cls.import_dbs(input_dtypes)
         boolean_dataframe = cls.create_boolean_table(input_dtypes, samples_list, almanac)
         distance_dataframe = cls.calculate_distance(boolean_dataframe, cls.jaccard.pairwise)
-        stacked_dataframe = cls.stack_distances(distance_dataframe, cls.label)
+        stacked_dataframe = cls.stack_distances(distance_dataframe, cls.label, output_directory)
 
-        boolean_dataframe.to_csv('outputs/features/{}.boolean.txt'.format(cls.label_output), sep='\t')
+        boolean_dataframe.to_csv(f'{output_directory}/features/{cls.label_output}.boolean.txt', sep='\t')
         return stacked_dataframe
 
     @classmethod
@@ -401,12 +401,12 @@ class AlmanacEvidence(Almanac):
     predictive_implication = 'predictive_implication'
 
     @classmethod
-    def calculate(cls, input_dtypes, samples_list):
+    def calculate(cls, input_dtypes, samples_list, output_directory):
         almanac = cls.import_dbs(input_dtypes)
         almanac_subset = cls.subset_almanac_by_evidence(almanac, ['FDA-Approved'])
         boolean_dataframe = AlmanacFeatures.create_boolean_table(input_dtypes, samples_list, almanac_subset)
         distance_dataframe = AlmanacFeatures.calculate_distance(boolean_dataframe, cls.jaccard.pairwise)
-        stacked_dataframe = cls.stack_distances(distance_dataframe, cls.label)
+        stacked_dataframe = cls.stack_distances(distance_dataframe, cls.label, output_directory)
         return stacked_dataframe
 
     @classmethod
@@ -428,12 +428,12 @@ class CGC(Models):
     gene = 'Gene Symbol'
 
     @classmethod
-    def calculate(cls, input_dtypes, samples_list):
+    def calculate(cls, input_dtypes, samples_list, output_directory):
         boolean_dataframe = cls.create_boolean_table(input_dtypes, samples_list)
         distance_dataframe = cls.calculate_distance(boolean_dataframe, cls.jaccard.pairwise)
-        stacked_dataframe = cls.stack_distances(distance_dataframe, cls.label)
+        stacked_dataframe = cls.stack_distances(distance_dataframe, cls.label, output_directory)
 
-        boolean_dataframe.to_csv('outputs/features/{}.boolean.txt'.format(cls.label_output), sep='\t')
+        boolean_dataframe.to_csv(f'{output_directory}/features/{cls.label_output}.boolean.txt', sep='\t')
         return stacked_dataframe
 
     @classmethod
@@ -480,12 +480,12 @@ class CGCFeatureTypes(Models):
     gene = 'Gene Symbol'
 
     @classmethod
-    def calculate(cls, input_dtypes, samples_list):
+    def calculate(cls, input_dtypes, samples_list, output_directory):
         boolean_dataframe = cls.create_boolean_table(input_dtypes, samples_list)
         distance_dataframe = cls.calculate_distance(boolean_dataframe, cls.jaccard.pairwise)
-        stacked_dataframe = cls.stack_distances(distance_dataframe, cls.label)
+        stacked_dataframe = cls.stack_distances(distance_dataframe, cls.label, output_directory)
 
-        boolean_dataframe.to_csv('outputs/features/{}.boolean.txt'.format(cls.label_output), sep='\t')
+        boolean_dataframe.to_csv(f'{output_directory}/features/{cls.label_output}.boolean.txt', sep='\t')
         return stacked_dataframe
 
     @classmethod
@@ -556,13 +556,13 @@ class Compatibility(Almanac):
         return df
 
     @classmethod
-    def calculate(cls, input_dtypes, samples_list):
+    def calculate(cls, input_dtypes, samples_list, output_directory):
         distance_dataframe = cls.calculate_compatibility(input_dtypes)
         distance_dataframe = distance_dataframe.loc[samples_list, samples_list]
         distance_dataframe.index = distance_dataframe.index.tolist()
-        stacked_dataframe = cls.stack_distances(distance_dataframe, cls.label)
+        stacked_dataframe = cls.stack_distances(distance_dataframe, cls.label, output_directory)
 
-        distance_dataframe.to_csv(f'outputs/distances/{cls.label_output}.txt', sep='\t')
+        distance_dataframe.to_csv(f'{output_directory}/distances/{cls.label_output}.txt', sep='\t')
         return stacked_dataframe
 
     @classmethod
@@ -784,12 +784,12 @@ class NonsynVariantCount(Models):
     n_nonsyn_variants = 'n_nonsyn_variants'
 
     @classmethod
-    def calculate(cls, inputs, samples):
+    def calculate(cls, inputs, samples, output_directory):
         counts_series = cls.create_counts_series(inputs, samples)
         distance_dataframe = cls.create_difference_dataframe(counts_series)
-        stacked_dataframe = cls.stack_distances(distance_dataframe, cls.label)
+        stacked_dataframe = cls.stack_distances(distance_dataframe, cls.label, output_directory)
 
-        counts_series.to_csv('outputs/features/{}.txt'.format(cls.label_output), sep='\t')
+        counts_series.to_csv(f'{output_directory}/features/{cls.label_output}.txt', sep='\t')
         return stacked_dataframe
 
     @staticmethod
@@ -835,11 +835,11 @@ class PCAonAlmanac(PCA):
         return AlmanacGenes.create_boolean_table(inputs, samples, almanac)
 
     @classmethod
-    def calculate(cls, input_dtypes, samples_list):
+    def calculate(cls, input_dtypes, samples_list, output_directory):
         boolean_dataframe = cls.create_boolean_table(input_dtypes, samples_list)
         pca_dataframe = cls.run_pca(boolean_dataframe, boolean_dataframe.index.tolist())
         distance_dataframe = cls.calculate_euclidean_distance(pca_dataframe, boolean_dataframe.index.tolist())
-        stacked_dataframe = cls.stack_distances(distance_dataframe, cls.label)
+        stacked_dataframe = cls.stack_distances(distance_dataframe, cls.label, output_directory)
         return stacked_dataframe
 
 
@@ -854,11 +854,11 @@ class PCAonCGC(PCA):
         return CGC.create_boolean_table(inputs, samples)
 
     @classmethod
-    def calculate(cls, input_dtypes, samples_list):
+    def calculate(cls, input_dtypes, samples_list, output_directory):
         boolean_dataframe = cls.create_boolean_table(input_dtypes, samples_list)
         pca_dataframe = cls.run_pca(boolean_dataframe, boolean_dataframe.index.tolist())
         distance_dataframe = cls.calculate_euclidean_distance(pca_dataframe, boolean_dataframe.index.tolist())
-        stacked_dataframe = cls.stack_distances(distance_dataframe, cls.label)
+        stacked_dataframe = cls.stack_distances(distance_dataframe, cls.label, output_directory)
         return stacked_dataframe
 
 
@@ -887,9 +887,9 @@ class RankedSortAlmanacEvidenceCGC(RankedSort):
                   'using similarity based on CGC genes.'
 
     @classmethod
-    def calculate(cls, input_dtypes, samples_list):
-        almanac_evidence = AlmanacEvidence.calculate(input_dtypes, samples_list)
-        cgc = CGCFeatureTypes.calculate(input_dtypes, samples_list)
+    def calculate(cls, input_dtypes, samples_list, output_directory):
+        almanac_evidence = AlmanacEvidence.calculate(input_dtypes, samples_list, output_directory)
+        cgc = CGCFeatureTypes.calculate(input_dtypes, samples_list, output_directory)
         combined = cls.sort(
             pd.concat([almanac_evidence, cgc], axis=1),
             [AlmanacEvidence.label, CGCFeatureTypes.label],
@@ -908,12 +908,12 @@ class RelativeSubstitutionRates(Models):
     s = 'syn_variant_count'
 
     @classmethod
-    def calculate(cls, inputs, samples):
+    def calculate(cls, inputs, samples, output_directory):
         counts_series = cls.create_counts_series(inputs, samples)
         distance_dataframe = cls.create_difference_dataframe(counts_series)
-        stacked_dataframe = cls.stack_distances(distance_dataframe, cls.label)
+        stacked_dataframe = cls.stack_distances(distance_dataframe, cls.label, output_directory)
 
-        counts_series.to_csv('outputs/features/{}.txt'.format(cls.label_output), sep='\t')
+        counts_series.to_csv(f'{output_directory}/features/{cls.label_output}.txt', sep='\t')
         return stacked_dataframe
 
     @staticmethod
@@ -950,7 +950,7 @@ class SNFbyEvidenceCGC(Models):
                   'variant occurring in a Cancer Gene Census gene.'
 
     @classmethod
-    def calculate(cls, input_dtypes, samples_list):
+    def calculate(cls, input_dtypes, samples_list, output_directory):
         almanac = AlmanacEvidence.import_dbs(input_dtypes)
         almanac_subset = AlmanacEvidence.subset_almanac_by_evidence(almanac, ['FDA-Approved'])
         boolean_dataframe_1 = AlmanacFeatures.create_boolean_table(input_dtypes, samples_list, almanac_subset)
@@ -966,7 +966,7 @@ class SNFbyEvidenceCGC(Models):
         fused_network = snf.snf(affinity_networks, K=20)
         fused_dataframe = pd.DataFrame(fused_network, index=samples_list, columns=samples_list)
         distance_dataframe = pd.DataFrame(1, index=samples_list, columns=samples_list).subtract(fused_dataframe)
-        stacked_dataframe = cls.stack_distances(distance_dataframe, cls.label)
+        stacked_dataframe = cls.stack_distances(distance_dataframe, cls.label, output_directory)
 
         # boolean_dataframe.to_csv('outputs/distances/{}.boolean.txt'.format(cls.label_output), sep='\t')
         return stacked_dataframe
@@ -1002,7 +1002,7 @@ class SNFTypesAlmanac(Models):
         return df.pivot_table(index=cls.model_id, columns=cls.feature, values=cls.label)
 
     @classmethod
-    def calculate(cls, input_dtypes, samples_list):
+    def calculate(cls, input_dtypes, samples_list, output_directory):
         boolean_dataframe_variants = cls.create_boolean_table(input_dtypes, cls.variants, samples_list)
         boolean_dataframe_copy_numbers = cls.create_boolean_table(input_dtypes, cls.cnas, samples_list)
         boolean_dataframe_fusions = cls.create_boolean_table(input_dtypes, cls.fusions, samples_list)
@@ -1018,7 +1018,7 @@ class SNFTypesAlmanac(Models):
         fused_network = snf.snf(affinity_networks, K=20)
         fused_dataframe = pd.DataFrame(fused_network, index=samples_list, columns=samples_list)
         distance_dataframe = pd.DataFrame(1, index=samples_list, columns=samples_list).subtract(fused_dataframe)
-        stacked_dataframe = cls.stack_distances(distance_dataframe, cls.label)
+        stacked_dataframe = cls.stack_distances(distance_dataframe, cls.label, output_directory)
 
         # boolean_dataframe.to_csv('outputs/distances/{}.boolean.txt'.format(cls.label_output), sep='\t')
         return stacked_dataframe
@@ -1055,7 +1055,7 @@ class SNFTypesCGC(Models):
         return df.pivot_table(index=cls.model_id, columns=cls.feature, values=cls.label)
 
     @classmethod
-    def calculate(cls, input_dtypes, samples_list):
+    def calculate(cls, input_dtypes, samples_list, output_directory):
         boolean_dataframe_variants = cls.create_boolean_table(input_dtypes, cls.variants, samples_list)
         boolean_dataframe_copy_numbers = cls.create_boolean_table(input_dtypes, cls.cnas, samples_list)
         boolean_dataframe_fusions = cls.create_boolean_table(input_dtypes, cls.fusions, samples_list)
@@ -1071,7 +1071,7 @@ class SNFTypesCGC(Models):
         fused_network = snf.snf(affinity_networks, K=20)
         fused_dataframe = pd.DataFrame(fused_network, index=samples_list, columns=samples_list)
         distance_dataframe = pd.DataFrame(1, index=samples_list, columns=samples_list).subtract(fused_dataframe)
-        stacked_dataframe = cls.stack_distances(distance_dataframe, cls.label)
+        stacked_dataframe = cls.stack_distances(distance_dataframe, cls.label, output_directory)
 
         # boolean_dataframe.to_csv('outputs/distances/{}.boolean.txt'.format(cls.label_output), sep='\t')
         return stacked_dataframe
@@ -1110,7 +1110,7 @@ class SNFTypesCGCwithEvidence(Models):
         return df.pivot_table(index=cls.model_id, columns=cls.feature, values=cls.label)
 
     @classmethod
-    def calculate(cls, input_dtypes, samples_list):
+    def calculate(cls, input_dtypes, samples_list, output_directory):
         boolean_dataframe_variants = cls.create_boolean_table(input_dtypes, cls.variants, samples_list)
         boolean_dataframe_copy_numbers = cls.create_boolean_table(input_dtypes, cls.cnas, samples_list)
         boolean_dataframe_fusions = cls.create_boolean_table(input_dtypes, cls.fusions, samples_list)
@@ -1128,7 +1128,7 @@ class SNFTypesCGCwithEvidence(Models):
         fused_network = snf.snf(affinity_networks, K=20)
         fused_dataframe = pd.DataFrame(fused_network, index=samples_list, columns=samples_list)
         distance_dataframe = pd.DataFrame(1, index=samples_list, columns=samples_list).subtract(fused_dataframe)
-        stacked_dataframe = cls.stack_distances(distance_dataframe, cls.label)
+        stacked_dataframe = cls.stack_distances(distance_dataframe, cls.label, output_directory)
 
         # boolean_dataframe.to_csv('outputs/distances/{}.boolean.txt'.format(cls.label_output), sep='\t')
         return stacked_dataframe
@@ -1148,7 +1148,7 @@ class Tree(Models):
                   'other samples are then sorted by their mutant / wild type status of these genes.'
 
     @classmethod
-    def calculate(cls, input_dtypes, samples_list):
+    def calculate(cls, input_dtypes, samples_list, output_directory):
         sorted_dataframe = cls.create_sorted_table(input_dtypes, samples_list)
         sorted_dataframe = sorted_dataframe[sorted_dataframe[cls.model_id].isin(samples_list)]
         features = sorted_dataframe['feature'].drop_duplicates().sort_values().tolist()
@@ -1169,7 +1169,7 @@ class Tree(Models):
                 empty_counter += 1
                 print(sample, empty_counter)
                 continue
-            relative_booleans = tmp_booleans.loc[:, features]
+            relative_booleans = tmp_booleans.reindex(columns=features, fill_value=0)
             relative_booleans = (relative_booleans
                                  .sort_values(by=relative_booleans.columns.tolist(), ascending=False)
                                  .reset_index()

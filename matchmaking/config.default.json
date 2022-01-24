@@ -1,5 +1,7 @@
 {
   "description": "Cell line to cell line matchmaking inputs, as appeared in Reardon et al. 2020",
+  "label": "therapy_name",
+  "output_directory": "outputs",
   "samples": {
     "handle": "inputs/formatted/samples.summary.txt",
     "description": "File handle to sample information and which samples to use"
