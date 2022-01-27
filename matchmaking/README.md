@@ -3,35 +3,41 @@ Matchmaking identifies genomic similarity between provided molecular profiles wi
 
 To adapt your own data for matchmaking, follow instructions under [`inputs/`](inputs) to format and annotate molecular data, sample information, and labels for your cohort. Datasources as used in the present study are found in the [`inputs/datasources/`](inputs/datasources) folder.
 
-The script `evaluate-models.py` is used to evaluate matchmaking models on a provided cohort. Annotated data is further processed for individual models, as implemented in [`models.py`](models.py) and called in the main function of [`evaluate-models.py`](evaluate-models.py). A description for each model is provided in the [`models.py`](models.py) file and additional information can be found in the [protocol](https://protocolexchange.researchsquare.com/article/pex-1539).
-
 Documentation detailing outputs can be found in the [`outputs/`](outputs) folder. All outputs committed to Github were generated using a subset of cell lines used in the present study (n=50) to ensure that output files are less than the Github file size limit.
 
-## Usage
+## Evaluate models
+The script `evaluate-models.py` is used to evaluate matchmaking models on a provided cohort. Annotated data is further processed for individual models, as implemented in [`models.py`](models.py) and called in the main function of [`evaluate-models.py`](evaluate-models.py). A description for each model is provided in the [`models.py`](models.py) file and additional information can be found in the [protocol](https://protocolexchange.researchsquare.com/article/pex-1539). 
+
+To run this script, edit or copy and edit the `handle` fields of all keys within `config.default.json` to suit your data.
+
+### Usage
 Required arguments:
 ```bash
-    --variants, -v                    <string>  File handle to annotated somatic variants
-    --copy_number_alterations, -cn    <string>  File handle to annotated copy number copy_number_alterations
-    --fusions, -f                     <string>  File handle to annotated fusions
-    --fusions_gene1, -f1              <string>  File handle to annotated fusions, focusing on gene1
-    --fusions_gene2, -f2              <string>  File handle to annotated fusions, focusing on gene2
-    --samples, -s                     <string>  File handle to sample information and which samples to use
-    --labels, -l                      <string>  File handle to sample labels
-    --pairwise, -p                    <string>  File handle to pairwise comparisons of sample labels
-    --moalmanac, -m                   <string>  File handle to molecular oncology almanac json
-    --cgc, -c                         <string>  File handle to cancer gene census                   
+    --config, -c    <string>  File handle to annotated somatic variants                
 ```
 
 Example:
 ```bash
-python evaluate-models.py --samples inputs/formatted/summary.txt \
-                          --labels inputs/formatted/samples.sensitive_therapies.txt \
-                          --pairwise inputs/formatted/samples.pairwise.txt \
-                          --variants inputs/annotated/samples.variants.annotated.txt \
-                          --copy_number_alterations inputs/annotated/samples.copy_numbers.annotated.txt \
-                          --fusions inputs/annotated/samples.fusions.annotated.txt \
-                          --fusions_gene1 inputs/annotated/samples.fusions.annotated.gene1.txt \
-                          --fusions_gene2 inputs/annotated/samples.fusions.annotated.gene2.txt 
+python evaluate-models.py --config config.default.json 
+```
+
+## Compare models
+The script `compare-models.py` is used to perform two tasks from the `.pkl` produced by `evaluate-models.py`,
+1. Create a summary table of model performance, [`outputs/models.summary.txt`](outputs/models.summary.txt)
+2. Perform pairwise comparison of models to see if models significantly differ from one another, [`outputs/models.pairwise-comparison.txt`](outputs/models.pairwise-comparison.txt)
+
+The second task of this script can take up to tens of minutes to run. 
+
+### Usage
+Required arguments:
+```bash
+   --input, -i              <string> File handle to .pkl output from `evaluate-models.py`
+   --output_directory, -o   <string> Output path to write produced files to
+```
+
+Example:
+```bash
+python compare-models.py --input outputs/modes.evaluated.pkl --output_directory outputs/
 ```
 
 ## Modifying code in this repository
