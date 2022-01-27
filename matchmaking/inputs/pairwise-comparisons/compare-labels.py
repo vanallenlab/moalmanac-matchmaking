@@ -14,6 +14,12 @@ INTERSECTION = "labels_intersection"
 COLUMNS = [CASE, COMPARISON, N_CASE, N_COMPARISON, N_INTERSECTION, CASE_UNIQUE, COMPARISON_UNIQUE, INTERSECTION]
 
 
+def calculate_upper_bound(total_samples, df):
+    n_samples = df[~df[N_INTERSECTION].eq(0)][CASE].drop_duplicates().shape[0]
+    pct_samples = round(100 * (total_samples / n_samples), 2)
+    return n_samples, pct_samples
+
+
 def import_samples(handle, **kwargs):
     dataframe = read_tsv(handle, **kwargs)
     return dataframe[SAMPLE_COLUMN].astype(str).tolist()
@@ -81,3 +87,6 @@ if __name__ == "__main__":
 
     compared_data = compare(all_samples, data, args.column, COLUMNS)
     write_data(compared_data, args.output)
+
+    n, pct = calculate_upper_bound(len(all_samples), compared_data)
+    print(f"Of {len(all_samples)} samples considered, {pct}% ({n}) share a label with at least one other sample")
