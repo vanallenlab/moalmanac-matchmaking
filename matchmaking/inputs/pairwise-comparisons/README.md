@@ -64,7 +64,7 @@ python compare-features.py -s ../formatted/samples.summary.txt \
                            -v ../annotated/samples.variants.annotated.txt \
                            -c ../annotated/samples.copy_numbers.annotated.txt \
                            -f ../annotated/samples.fusions.annotated.txt \
-                           -o samples.pairwise-features.txt
+                           -o samples.pairwise-features.txt \
                            --subset_features
 ```
 
