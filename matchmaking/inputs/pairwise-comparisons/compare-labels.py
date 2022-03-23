@@ -46,9 +46,10 @@ def write_data(dataframe, handle):
     dataframe.to_csv(handle, sep='\t', index=False)
 
 
-def compare(samples, dataframe, comparison_column, display_columns):
+def compare(samples, dataframe, comparison_column, display_columns, case_sample):
     results = []
-    for case in samples:
+    #for case in samples:
+    for case in [case_sample]:
         for comparison in samples:
             case_group = dataframe[dataframe[SAMPLE_COLUMN].eq(case)]
             comparison_group = dataframe[dataframe[SAMPLE_COLUMN].eq(comparison)]
@@ -74,6 +75,7 @@ def compare(samples, dataframe, comparison_column, display_columns):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(prog="Pairwise compare therapies",
                                      description="Perform pairwise comparison of samples to identify overlap")
+    parser.add_argument('--case', help='Case sample name')
     parser.add_argument('--input', '-i', required=True, help="input file")
     parser.add_argument('--column', '-c', required=True, default='therapy_name', help='column with comparison values')
     parser.add_argument('--samples', '-s', required=True, help='dataframe of sample names, will subset if passed')
@@ -85,7 +87,7 @@ if __name__ == "__main__":
     data = subset_by_samples(data, all_samples)
     data['sample_name'] = data['sample_name'].astype(str)
 
-    compared_data = compare(all_samples, data, args.column, COLUMNS)
+    compared_data = compare(all_samples, data, args.column, COLUMNS, args.case)
     write_data(compared_data, args.output)
 
     n, pct = calculate_upper_bound(len(all_samples), compared_data)

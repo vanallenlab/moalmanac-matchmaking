@@ -72,6 +72,7 @@ def subset_dataframe_by_samples(dataframe, samples):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(prog="Compare molecular features pairwise",
                                      description="Perform pairwise comparison of samples to identify overlap")
+    parser.add_argument('--case', help='Case sample name')
     parser.add_argument('--variants', '-v', required=False, help="Annotated somatic variants")
     parser.add_argument('--copy_number_alterations', '-c', required=False, help="Annotated copy number alterations")
     parser.add_argument('--fusions', '-f', required=False, help="Annotated fusions")
@@ -85,5 +86,5 @@ if __name__ == "__main__":
     data = import_and_format_features(args.variants, args.copy_number_alterations, args.fusions, all_samples)
     data["sample_name"] = data["sample_name"].astype(str)
 
-    compared_data = compare_labels.compare(all_samples, data, "feature_string", COLUMNS)
+    compared_data = compare_labels.compare(all_samples, data, "feature_string", COLUMNS, args.case)
     compare_labels.write_data(compared_data, args.output)

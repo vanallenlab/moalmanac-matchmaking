@@ -61,28 +61,29 @@ def main(inputs, samples, seed=SEED, output_directory="outputs"):
         model_descriptions[model.label] = model.description
 
     distances = pd.concat(calculated, axis=1)
-    labeled = pd.concat([distances, inputs['labels'], inputs['features']], axis=1)
+    labeled = distances
+    #labeled = pd.concat([distances, inputs['labels'], inputs['features']], axis=1)
 
     evaluated_models_dictionary = Metrics.evaluate_models(samples, labeled, model_names, model_descriptions)
     write_pickle(f'{output_directory}/models.evaluated.pkl', evaluated_models_dictionary)
-    AveragePrecision.plot(evaluated_models_dictionary, model_names, output_directory)
-    AveragePrecisionK.plot(evaluated_models_dictionary, model_names, output_directory)
+    #AveragePrecision.plot(evaluated_models_dictionary, model_names, output_directory)
+    #AveragePrecisionK.plot(evaluated_models_dictionary, model_names, output_directory)
 
-    for model in models_list:
-        output_columns = [
-            'case', 'comparison',
-            model.label, 'k', 'p@k', 'r@k', 'tps@k',
-            'labels_n_intersection', 'labels_intersection', 'features_intersection',
-            'labels_n_case', 'labels_unique_case', 'features_unique_case',
-            'labels_n_comparison', 'labels_unique_comparison', 'features_unique_comparison'
-        ]
+    #for model in models_list:
+    #    output_columns = [
+    #        'case', 'comparison',
+    #        model.label, 'k', 'p@k', 'r@k', 'tps@k',
+    #        'labels_n_intersection', 'labels_intersection', 'features_intersection',
+    #        'labels_n_case', 'labels_unique_case', 'features_unique_case',
+    #        'labels_n_comparison', 'labels_unique_comparison', 'features_unique_comparison'
+    #    ]
 
-        df = evaluated_models_dictionary[model.label]['calculated']
-        (df
-         .reset_index()
-         .loc[:, output_columns]
-         .to_csv(f'{output_directory}/models/{model.label}.fully_annotated.result.txt', sep='\t')
-         )
+    #    df = evaluated_models_dictionary[model.label]['calculated']
+    #    (df
+    #     .reset_index()
+    #     .loc[:, output_columns]
+    #     .to_csv(f'{output_directory}/models/{model.label}.fully_annotated.result.txt', sep='\t')
+    #     )
 
 
 if __name__ == "__main__":
