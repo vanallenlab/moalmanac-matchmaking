@@ -5,7 +5,7 @@ To adapt your own data for matchmaking, follow instructions under [`inputs/`](in
 
 Documentation detailing outputs can be found in the [`outputs/`](outputs) folder. All outputs committed to Github were generated using a subset of cell lines used in the present study (n=50) to ensure that output files are less than the Github file size limit.
 
-## Evaluate models
+## Calculate and evaluate models
 The script `evaluate-models.py` is used to evaluate matchmaking models on a provided cohort. Annotated data is further processed for individual models, as implemented in [`models.py`](models.py) and called in the main function of [`evaluate-models.py`](evaluate-models.py). A description for each model is provided in the [`models.py`](models.py) file and additional information can be found in the [protocol](https://protocolexchange.researchsquare.com/article/pex-1539). 
 
 To run this script, edit or copy and edit the `handle` fields of all keys within `config.default.json` to suit your data.
@@ -18,7 +18,7 @@ Required arguments:
 
 Example:
 ```bash
-python evaluate-models.py --config config.default.json 
+python calculate-and-evaluate-models.py --config config.default.json 
 ```
 
 ## Compare models
