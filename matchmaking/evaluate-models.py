@@ -21,14 +21,19 @@ def write_pickle(handle, output):
     file.close()
 
 
+def merge_dataframes(left_dataframe, right_dataframe, on_columns, how='left', set_index_to_on_columns=True):
+    dataframe = pd.merge(left=left_dataframe, right=right_dataframe, on=on_columns, how=how)
+    if set_index_to_on_columns:
+        dataframe.set_index(on_columns, inplace=True)
+    return dataframe
+
+
 def main(samples, distances, labels, output_directory, features=None, seed=42):
     np.random.seed(seed=seed)
 
-    labeled = pd.concat([distances, labels], axis=1)
+    labeled = merge_dataframes(distances.reset_index(), labels.reset_index(), ['case', 'comparison'])
     if features:
-        labeled = pd.concat([labeled, features], axis=1)
-
-    labeled.to_csv('labeled.new.txt', sep='\t')
+        labeled = merge_dataframes(labeled.reset_index(), features.reset_index(), ['case', 'comparison'])
 
     model_names = distances.columns.tolist()
     model_descriptions = {}
@@ -86,6 +91,7 @@ if __name__ == "__main__":
     handles = args.distance
     samples = pd.read_csv(args.samples, sep='\t', usecols=['sample_name']).loc[:, 'sample_name'].tolist()
     df = pd.concat([pd.read_csv(handle, sep='\t').set_index(['case', 'comparison']) for handle in handles], axis=1)
+
     labels = pd.read_csv(args.labels, sep='\t').set_index(['case', 'comparison'])
     if args.features:
         features = pd.read_csv(args.features, sep='\t').set_index(['case', 'comparison'])
