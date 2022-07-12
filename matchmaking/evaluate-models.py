@@ -38,20 +38,20 @@ def main(inputs, samples, seed=SEED, output_directory="outputs"):
 
     models_list = [
         models.AlmanacGenes,
-        models.AlmanacFeatureTypes,
-        models.AlmanacFeatures,
-        models.CGC,
-        models.CGCFeatureTypes,
+        #models.AlmanacFeatureTypes,
+        #models.AlmanacFeatures,
+        #models.CGC,
+        #models.CGCFeatureTypes,
         #models.Compatibility,
-        models.NonsynVariantCount,
-        models.PCAonAlmanac,
-        models.PCAonCGC,
-        models.RankedSortAlmanacEvidenceCGC,
+        #models.NonsynVariantCount,
+        #models.PCAonAlmanac,
+        #models.PCAonCGC,
+        #models.RankedSortAlmanacEvidenceCGC,
         models.SNFbyEvidenceCGC,
-        models.SNFTypesCGC,
+        #models.SNFTypesCGC,
         models.SNFTypesCGCwithEvidence,
-        models.SNFTypesAlmanac,
-        models.Tree
+        #models.SNFTypesAlmanac,
+        #models.Tree
     ]
 
     calculated = [model.calculate(inputs, samples, output_directory) for model in models_list]
@@ -81,7 +81,7 @@ def main(inputs, samples, seed=SEED, output_directory="outputs"):
         (df
          .reset_index()
          .loc[:, output_columns]
-         .to_csv(f'{output_directory}/models/{model.label}.fully_annotated.result.txt', sep='\t')
+         .to_csv(f'{output_directory}/models/{model.label}.fully_annotated.result.txt', sep='\t', index=False)
          )
 
 
