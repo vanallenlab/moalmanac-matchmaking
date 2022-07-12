@@ -62,7 +62,7 @@ class Models:
         # stacked.drop_duplicates(subset=[cls.case, cls.comparison], keep='first', inplace=True)
         stacked.rename(columns={'level_0': cls.case, 'level_1': cls.comparison, 0: label}, inplace=True)
 
-        stacked.to_csv(f'{output_directory}/distances/{label}.stacked.txt', sep='\t')
+        stacked.to_csv(f'{output_directory}/distances/{label}.stacked.txt', sep='\t', index=False)
         stacked.set_index([cls.case, cls.comparison], inplace=True)
         return stacked.loc[stacked.index, label]
 
@@ -562,7 +562,7 @@ class Compatibility(Almanac):
         distance_dataframe.index = distance_dataframe.index.tolist()
         stacked_dataframe = cls.stack_distances(distance_dataframe, cls.label, output_directory)
 
-        distance_dataframe.to_csv(f'{output_directory}/distances/{cls.label_output}.txt', sep='\t')
+        distance_dataframe.to_csv(f'{output_directory}/distances/{cls.label_output}.txt', sep='\t', index=False)
         return stacked_dataframe
 
     @classmethod

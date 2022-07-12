@@ -46,19 +46,26 @@ A tab-delimited text file containing all pairwise comparisons of samples and not
 ### Usage
 Required arguments:
 ```bash
-    --input, -i    <string> input file of labeled samples
-    --column, -c   <string> column name of label in input
     --samples, -s  <string> file path to samples input to list all samples
 ```
 
 Optional arguments:
 ```bash
-    --output, -o    <string> output filename for pairwise comparisons (default: samples.pairwise.txt)
+    --variants, -v                  <string> input file of annotated somatic variants
+    --copy_number_alterations, -c   <string> input file of annotated copy number alterations
+    --fusions, -f                   <string> input file of annotated fusions
+    --output, -o                    <string> output filename for pairwise comparisons (default: samples.pairwise-features.txt)
+    --subset_features               <boolean> subset shown features to be genes either in MOAlmanac or Cancer Gene Census
 ```
 
 Example:
 ```bash
-python compare-labels.py -i samples.sensitive_therapies.txt -c therapy_name -s samples.summary.txt
+python compare-features.py -s ../formatted/samples.summary.txt \ 
+                           -v ../annotated/samples.variants.annotated.txt \
+                           -c ../annotated/samples.copy_numbers.annotated.txt \
+                           -f ../annotated/samples.fusions.annotated.txt \
+                           -o samples.pairwise-features.txt \
+                           --subset_features
 ```
 
 ### Output fields

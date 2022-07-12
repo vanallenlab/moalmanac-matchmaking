@@ -67,7 +67,7 @@ def main(samples, distances, labels, output_directory, features=None, seed=42):
         (df
          .reset_index()
          .loc[:, output_columns]
-         .to_csv(f'{output_directory}/models/{model_name}.fully_annotated.result.txt', sep='\t')
+         .to_csv(f'{output_directory}/models/{model_name}.fully_annotated.result.txt', sep='\t', index=False)
          )
 
 
