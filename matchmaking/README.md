@@ -37,7 +37,7 @@ Required arguments:
 
 Example:
 ```bash
-python compare-models.py --input outputs/modes.evaluated.pkl --output_directory outputs/
+python compare-models.py --input outputs/models.evaluated.pkl --output_directory outputs/
 ```
 
 ## Modifying code in this repository
