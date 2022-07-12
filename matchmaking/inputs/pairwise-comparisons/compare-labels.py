@@ -16,7 +16,7 @@ COLUMNS = [CASE, COMPARISON, N_CASE, N_COMPARISON, N_INTERSECTION, CASE_UNIQUE, 
 
 def calculate_upper_bound(total_samples, df):
     n_samples = df[~df[N_INTERSECTION].eq(0)][CASE].drop_duplicates().shape[0]
-    pct_samples = round(100 * (total_samples / n_samples), 2)
+    pct_samples = round(100 * (n_samples / total_samples), 2)
     return n_samples, pct_samples
 
 
