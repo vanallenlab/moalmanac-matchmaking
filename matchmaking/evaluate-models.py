@@ -28,6 +28,8 @@ def main(samples, distances, labels, output_directory, features=None, seed=42):
     if features:
         labeled = pd.concat([labeled, features], axis=1)
 
+    labeled.to_csv('labeled.new.txt', sep='\t')
+
     model_names = distances.columns.tolist()
     model_descriptions = {}
     for model_name in model_names:
@@ -83,7 +85,7 @@ if __name__ == "__main__":
 
     handles = args.distance
     samples = pd.read_csv(args.samples, sep='\t', usecols=['sample_name']).loc[:, 'sample_name'].tolist()
-    df = pd.concat([pd.read_csv(handle, sep='\t', index_col=[0]).set_index(['case', 'comparison']) for handle in handles], axis=1)
+    df = pd.concat([pd.read_csv(handle, sep='\t').set_index(['case', 'comparison']) for handle in handles], axis=1)
     labels = pd.read_csv(args.labels, sep='\t').set_index(['case', 'comparison'])
     if args.features:
         features = pd.read_csv(args.features, sep='\t').set_index(['case', 'comparison'])
