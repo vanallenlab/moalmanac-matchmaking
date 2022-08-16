@@ -52,8 +52,8 @@ def compare(samples, dataframe, comparison_column, display_columns):
         for comparison in samples:
             case_group = dataframe[dataframe[SAMPLE_COLUMN].eq(case)]
             comparison_group = dataframe[dataframe[SAMPLE_COLUMN].eq(comparison)]
-            case_values = case_group[comparison_column].tolist()
-            comparison_values = comparison_group[comparison_column].tolist()
+            case_values = case_group[comparison_column].drop_duplicates().tolist()
+            comparison_values = comparison_group[comparison_column].drop_duplicates().tolist()
             intersection = list_intersection(case_values, comparison_values)
             case_unique_values = list_difference(case_values, comparison_values)
             comparison_unique_values = list_difference(comparison_values, case_values)
