@@ -1,11 +1,9 @@
 import argparse
-import json
 import numpy as np
 import pandas as pd
 import pickle
 import subprocess
 
-import models as models
 from metrics import Metrics
 from plots import AveragePrecision, AveragePrecisionK
 
@@ -17,14 +15,28 @@ N_INTERSECTION = 'labels_n_intersection'
 SAMPLE_NAME = 'sample_name'
 
 
-def preallocate_column(df, column, value):
-    df[column] = value
-    return df
+def merge_dataframes(left_dataframe, right_dataframe, on_columns, how='left', set_index_to_on_columns=True):
+    dataframe = pd.merge(left=left_dataframe, right=right_dataframe, on=on_columns, how=how)
+    if set_index_to_on_columns:
+        dataframe.set_index(on_columns, inplace=True)
+    return dataframe
 
 
-def read_json(handle):
-    with open(handle) as file:
-        return json.load(file)
+def read_models(list_of_files, measure='distance'):
+    measures = ['distance', 'similarity']
+    if measure not in measures:
+        raise ValueError(f"Invalid measure. Expected one of: {', '.join(measures)}")
+
+    dataframes = [pd.read_csv(handle, sep='\t').set_index(['case', 'comparison']) for handle in list_of_files]
+    dataframe = pd.concat(dataframes, axis=1)
+
+    if dataframe.columns.duplicated().sum() > 0:
+        raise ValueError(f"Multiple columns of the same name observed: {', '.join(dataframe.columns)}")
+
+    if measure == 'similarity':
+        return pd.DataFrame(1, columns=dataframe.columns, index=dataframe.index).subtract(dataframe)
+    else:
+        return dataframe
 
 
 def write_pickle(handle, output):
@@ -33,122 +45,82 @@ def write_pickle(handle, output):
     file.close()
 
 
-def main(inputs, samples, seed=SEED, output_directory="outputs"):
+def main(samples, distances, labels, output_directory, features=None, seed=42):
     np.random.seed(seed=seed)
 
-    models_list = [
-        models.AlmanacGenes,
-        #models.AlmanacFeatureTypes,
-        #models.AlmanacFeatures,
-        #models.CGC,
-        #models.CGCFeatureTypes,
-        #models.Compatibility,
-        #models.NonsynVariantCount,
-        #models.PCAonAlmanac,
-        #models.PCAonCGC,
-        #models.RankedSortAlmanacEvidenceCGC,
-        models.SNFbyEvidenceCGC,
-        #models.SNFTypesCGC,
-        models.SNFTypesCGCwithEvidence,
-        #models.SNFTypesAlmanac,
-        #models.Tree
-    ]
+    labeled = merge_dataframes(distances.reset_index(), labels.reset_index(), ['case', 'comparison'])
+    if features:
+        labeled = merge_dataframes(labeled.reset_index(), features.reset_index(), ['case', 'comparison'])
 
-    calculated = [model.calculate(inputs, samples, output_directory) for model in models_list]
-    model_names = [model.label for model in models_list]
+    model_names = distances.columns.tolist()
     model_descriptions = {}
-    for model in models_list:
-        model_descriptions[model.label] = model.description
-
-    distances = pd.concat(calculated, axis=1)
-    labeled = pd.concat([distances, inputs['labels'], inputs['features']], axis=1)
+    for model_name in model_names:
+        model_descriptions[model_name] = ""
 
     evaluated_models_dictionary = Metrics.evaluate_models(samples, labeled, model_names, model_descriptions)
     write_pickle(f'{output_directory}/models.evaluated.pkl', evaluated_models_dictionary)
     AveragePrecision.plot(evaluated_models_dictionary, model_names, output_directory)
     AveragePrecisionK.plot(evaluated_models_dictionary, model_names, output_directory)
 
-    for model in models_list:
-        output_columns = [
-            'case', 'comparison',
-            model.label, 'k', 'p@k', 'r@k', 'tps@k',
-            'labels_n_intersection', 'labels_intersection', 'features_intersection',
-            'labels_n_case', 'labels_unique_case', 'features_unique_case',
-            'labels_n_comparison', 'labels_unique_comparison', 'features_unique_comparison'
-        ]
+    for model_name in model_names:
+        print(model_name)
+        if features:
+            output_columns = [
+                'case', 'comparison',
+                model_name, 'k', 'p@k', 'r@k', 'tps@k',
+                'labels_n_intersection', 'labels_intersection', 'features_intersection',
+                'labels_n_case', 'labels_unique_case', 'features_unique_case',
+                'labels_n_comparison', 'labels_unique_comparison', 'features_unique_comparison'
+            ]
+        else:
+            output_columns = [
+                'case', 'comparison',
+                model_name, 'k', 'p@k', 'r@k', 'tps@k',
+                'labels_n_intersection', 'labels_intersection',
+                'labels_n_case', 'labels_unique_case',
+                'labels_n_comparison', 'labels_unique_comparison'
+            ]
 
-        df = evaluated_models_dictionary[model.label]['calculated']
+        df = evaluated_models_dictionary[model_name]['calculated']
         (df
          .reset_index()
          .loc[:, output_columns]
-         .to_csv(f'{output_directory}/models/{model.label}.fully_annotated.result.txt', sep='\t', index=False)
+         .to_csv(f'{output_directory}/models/{model_name}.fully_annotated.result.txt', sep='\t', index=False)
          )
 
 
 if __name__ == "__main__":
-    arg_parser = argparse.ArgumentParser(prog='Matchmaking',
-                                         description='Perform profile-to-profile matchmaking')
-    arg_parser.add_argument('--config', '-c',
-                            help='File handle to input configuration',
-                            default='config.default.json')
+    arg_parser = argparse.ArgumentParser(prog='Evaluate distances',
+                                         description='Evaluate model distances')
+    arg_parser.add_argument('--distance', '-d', action="append", help="Distance models, closer to zero = more similar")
+    arg_parser.add_argument('--affinity', '-a', action="append", help="Affinity models, closer to one = more similar")
+    arg_parser.add_argument('--labels', '-l', required=True, help='pairwise comparison of labels')
+    arg_parser.add_argument('--features', '-f', required=False, help='pairwise comparison of features')
+    arg_parser.add_argument('--samples', '-s', required=True, help='list of all samples considered')
+    arg_parser.add_argument('--output-directory', '-o', default='output', help='Output directory')
     args = arg_parser.parse_args()
 
-    config = read_json(args.config)
-    input_handles = {
-        'variants': config['variants']['handle'],
-        'copy_number_alterations': config['copy_number_alterations']['handle'],
-        'fusions': config['fusions']['handle'],
-        'fusions_gene1': config['fusions-gene1']['handle'],
-        'fusions_gene2': config['fusions-gene2']['handle'],
-        'samples': config['samples']['handle'],
-        'features': config['features']['handle'],
-        'labels': config['labels']['handle'],
-        'almanac': config['datasources']['moalmanac'],
-        'cgc': config['datasources']['cgc'],
-        'output_directory': config['output_directory']
-    }
-
-    inputs_dictionary = {}
-    feature_data_types = ['variants', 'copy_number_alterations', 'fusions', 'fusions_gene1', 'fusions_gene2']
-    flat_data_structures = feature_data_types + ['samples', 'labels', 'features', 'cgc']
-    for data_type in flat_data_structures:
-        inputs_dictionary[data_type] = pd.read_csv(input_handles[data_type], sep='\t')
-    inputs_dictionary['almanac'] = input_handles['almanac']
-
-    samples_to_use = inputs_dictionary['samples'][SAMPLE_NAME].astype(str).tolist()
-    for data_type in feature_data_types:
-        dataframe = inputs_dictionary[data_type]
-        dataframe[SAMPLE_NAME] = dataframe[SAMPLE_NAME].astype(str)
-        dataframe = dataframe[dataframe[SAMPLE_NAME].isin(samples_to_use)]
-        inputs_dictionary[data_type] = dataframe
-    for data_type in ['labels', 'features']:
-        dataframe = inputs_dictionary[data_type]
-        dataframe[CASE] = dataframe[CASE].astype(str)
-        dataframe[COMPARISON] = dataframe[COMPARISON].astype(str)
-        dataframe = dataframe[dataframe[CASE].isin(samples_to_use) & dataframe[COMPARISON].isin(samples_to_use)]
-        inputs_dictionary[data_type] = (dataframe
-                                        .sort_values([CASE, COMPARISON], ascending=True)
-                                        .set_index([CASE, COMPARISON]))
-
-    inputs_dictionary['variants'] = preallocate_column(inputs_dictionary['variants'],
-                                                       'feature_type',
-                                                       models.Models.variant)
-    inputs_dictionary['copy_number_alterations'] = preallocate_column(inputs_dictionary['copy_number_alterations'],
-                                                                      'feature_type',
-                                                                      models.Models.copy_number)
-    inputs_dictionary['copy_number_alterations'] = preallocate_column(inputs_dictionary['copy_number_alterations'],
-                                                                      'alteration',
-                                                                      '')
-    for data_type in ['fusions', 'fusions_gene1', 'fusions_gene2']:
-        dataframe = inputs_dictionary[data_type]
-        dataframe = preallocate_column(dataframe, 'feature_type', models.Models.rearrangement)
-        dataframe = preallocate_column(dataframe, 'alteration_type', 'Fusion')
-        inputs_dictionary[data_type] = dataframe
-
-    output_directory = config['output_directory']
+    output_directory = args.output_directory
     subprocess.call(f"mkdir -p {output_directory}", shell=True)
     subprocess.call(f"mkdir -p {output_directory}/distances", shell=True)
     subprocess.call(f"mkdir -p {output_directory}/features", shell=True)
     subprocess.call(f"mkdir -p {output_directory}/img", shell=True)
     subprocess.call(f"mkdir -p {output_directory}/models", shell=True)
-    main(inputs=inputs_dictionary, samples=samples_to_use, output_directory=output_directory)
+
+    samples_list = pd.read_csv(args.samples, sep='\t', usecols=['sample_name']).loc[:, 'sample_name'].tolist()
+
+    models = []
+    if args.distance:
+        distance_models = read_models(args.distance, measure='distance')
+        models.append(distance_models)
+    if args.affinity:
+        similarity_models = read_models(args.affinity, measure='similarity')
+        models.append(similarity_models)
+    model_results = pd.concat(models, axis=1)
+
+    sample_labels = pd.read_csv(args.labels, sep='\t').set_index(['case', 'comparison'])
+    if args.features:
+        sample_features = pd.read_csv(args.features, sep='\t').set_index(['case', 'comparison'])
+        main(samples_list, model_results, sample_labels, output_directory, features=sample_features)
+    else:
+        main(samples_list, model_results, sample_labels, output_directory)
