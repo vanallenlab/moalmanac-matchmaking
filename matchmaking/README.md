@@ -3,10 +3,10 @@ Matchmaking identifies genomic similarity between provided molecular profiles wi
 
 To adapt your own data for matchmaking, follow instructions under [`inputs/`](inputs) to format and annotate molecular data, sample information, and labels for your cohort. Datasources as used in the present study are found in the [`inputs/datasources/`](inputs/datasources) folder.
 
-Documentation detailing outputs can be found in the [`outputs/`](outputs) folder. All outputs committed to Github were generated using a subset of cell lines used in the present study (n=50) to ensure that output files are less than the Github file size limit.
+Documentation detailing outputs can be found in the [`outputs/`](outputs) folder. All outputs committed to GitHub were generated using a subset of cell lines used in the present study (n=50) to ensure that output files are less than the GitHub file size limit.
 
-## Calculate and evaluate models
-The script `evaluate-models.py` is used to evaluate matchmaking models on a provided cohort. Annotated data is further processed for individual models, as implemented in [`models.py`](models.py) and called in the main function of [`evaluate-models.py`](evaluate-models.py). A description for each model is provided in the [`models.py`](models.py) file and additional information can be found in the [protocol](https://protocolexchange.researchsquare.com/article/pex-1539). 
+## Calculate genomic distances from models
+The script `calculate-distances.py` is used to calculate the genomic similarity of a provided cohort using all models that were evaluated for the present study. Annotated data is further processed for individual models, as implemented in [`models.py`](models.py) and called in the main function of [`calculate-distances.py`](calculate-distances.py). A description for each model is provided in the [`models.py`](models.py) file and additional information can be found in the [protocol](https://protocolexchange.researchsquare.com/article/pex-1539). 
 
 To run this script, edit or copy and edit the `handle` fields of all keys within `config.default.json` to suit your data.
 
@@ -18,8 +18,41 @@ Required arguments:
 
 Example:
 ```bash
-python calculate-and-evaluate-models.py --config config.default.json 
+python calculate-distances.py --config config.default.json 
 ```
+
+## Evaluate genomic similarity models
+The script `evaluate-models.py` will compare the results of genomic distance and/or similarity models applied to a provided cohort, generated from [calculate-distances.py](#calculate-genomic-distances-from-models). Genomic comparisons between two samples are evaluated as relevant or not relevant based on if they share a provided label. For more details, see the slides on [evaluation metrics](../docs/matchmaking-evaluation-metrics.pdf) or the [protocol](https://protocolexchange.researchsquare.com/article/pex-1539). 
+
+To run this script, 
+
+### Usage
+Required arguments:
+```bash
+    --labels, -l    <string>  A tab delimited file containing pairwise comparison of sample labels of interest
+    --samples, -s   <string>  A tab delimited file containing which samples to use, listed in a column with a column name sample_name
+```
+
+Optional arguments:
+```bash
+    --distance, -d            <string>  A tab delimited file containing a column for the case sample name, comparison sample name, and at least one column containing distance values (0 = more similar) for sample comparisons
+    --affinity, -a            <string>  A tab delimited file containing a column for the case sample name, comparison sample name, and at least one column containing similarity values (1 = more similiar) for sample comparisons
+    --features, -f            <string>  A tab delimited file containing pairwise comparison of features
+    --output_directory, -o    <string>  Name of output directory to create, if it does not already exist, and place output files
+```
+
+Example:
+```bash
+python evaluate_models.py \
+  -l inputs/pairwise-comparisons/samples.pairwise-labels.txt \
+  -s inputs/formatted/samples.summary.txt \
+  -d outputs/distances/jaccard-almanac-genes.stacked.txt \
+  -d outputs/distances/jaccard-cgc-genes.stacked.txt \
+  -f inputs/pairwise-comparisons/samples.pairwise-features.txt \
+  -o outputs
+```
+
+Here, we compare two distance models generated: jaccard-almanac-genes and jaccard-cgc-genes. Currently, these two models are defined in [models.py](models.py) within the `AlmanacGenes` and `CGC` classes. Rather than pass two distance files, we could horizontally concatenate the two files together and pass a single file with this argument. Models passed with the `--affinity` argument will have their similarity values changed to distances by subtracting the observed value from 1.  
 
 ## Compare models
 The script `compare-models.py` is used to perform two tasks from the `.pkl` produced by `evaluate-models.py`,

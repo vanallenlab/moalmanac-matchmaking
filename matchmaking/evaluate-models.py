@@ -15,17 +15,34 @@ N_INTERSECTION = 'labels_n_intersection'
 SAMPLE_NAME = 'sample_name'
 
 
-def write_pickle(handle, output):
-    file = open(handle, 'wb')
-    pickle.dump(output, file)
-    file.close()
-
-
 def merge_dataframes(left_dataframe, right_dataframe, on_columns, how='left', set_index_to_on_columns=True):
     dataframe = pd.merge(left=left_dataframe, right=right_dataframe, on=on_columns, how=how)
     if set_index_to_on_columns:
         dataframe.set_index(on_columns, inplace=True)
     return dataframe
+
+
+def read_models(list_of_files, measure='distance'):
+    measures = ['distance', 'similarity']
+    if measure not in measures:
+        raise ValueError(f"Invalid measure. Expected one of: {', '.join(measures)}")
+
+    dataframes = [pd.read_csv(handle, sep='\t').set_index(['case', 'comparison']) for handle in list_of_files]
+    dataframe = pd.concat(dataframes, axis=1)
+
+    if dataframe.columns.duplicated().sum() > 0:
+        raise ValueError(f"Multiple columns of the same name observed: {', '.join(dataframe.columns)}")
+
+    if measure == 'similarity':
+        return pd.DataFrame(1, columns=dataframe.columns, index=dataframe.index).subtract(dataframe)
+    else:
+        return dataframe
+
+
+def write_pickle(handle, output):
+    file = open(handle, 'wb')
+    pickle.dump(output, file)
+    file.close()
 
 
 def main(samples, distances, labels, output_directory, features=None, seed=42):
@@ -46,6 +63,7 @@ def main(samples, distances, labels, output_directory, features=None, seed=42):
     AveragePrecisionK.plot(evaluated_models_dictionary, model_names, output_directory)
 
     for model_name in model_names:
+        print(model_name)
         if features:
             output_columns = [
                 'case', 'comparison',
@@ -74,7 +92,8 @@ def main(samples, distances, labels, output_directory, features=None, seed=42):
 if __name__ == "__main__":
     arg_parser = argparse.ArgumentParser(prog='Evaluate distances',
                                          description='Evaluate model distances')
-    arg_parser.add_argument('--distance', '-d', action="append", help="Distance files")
+    arg_parser.add_argument('--distance', '-d', action="append", help="Distance models, closer to zero = more similar")
+    arg_parser.add_argument('--affinity', '-a', action="append", help="Affinity models, closer to one = more similar")
     arg_parser.add_argument('--labels', '-l', required=True, help='pairwise comparison of labels')
     arg_parser.add_argument('--features', '-f', required=False, help='pairwise comparison of features')
     arg_parser.add_argument('--samples', '-s', required=True, help='list of all samples considered')
@@ -88,13 +107,20 @@ if __name__ == "__main__":
     subprocess.call(f"mkdir -p {output_directory}/img", shell=True)
     subprocess.call(f"mkdir -p {output_directory}/models", shell=True)
 
-    handles = args.distance
-    samples = pd.read_csv(args.samples, sep='\t', usecols=['sample_name']).loc[:, 'sample_name'].tolist()
-    df = pd.concat([pd.read_csv(handle, sep='\t').set_index(['case', 'comparison']) for handle in handles], axis=1)
+    samples_list = pd.read_csv(args.samples, sep='\t', usecols=['sample_name']).loc[:, 'sample_name'].tolist()
 
-    labels = pd.read_csv(args.labels, sep='\t').set_index(['case', 'comparison'])
+    models = []
+    if args.distance:
+        distance_models = read_models(args.distance, measure='distance')
+        models.append(distance_models)
+    if args.affinity:
+        similarity_models = read_models(args.affinity, measure='similarity')
+        models.append(similarity_models)
+    model_results = pd.concat(models, axis=1)
+
+    sample_labels = pd.read_csv(args.labels, sep='\t').set_index(['case', 'comparison'])
     if args.features:
-        features = pd.read_csv(args.features, sep='\t').set_index(['case', 'comparison'])
-        main(samples, df, labels, output_directory, features=features)
+        sample_features = pd.read_csv(args.features, sep='\t').set_index(['case', 'comparison'])
+        main(samples_list, model_results, sample_labels, output_directory, features=sample_features)
     else:
-        main(samples, df, labels, output_directory)
+        main(samples_list, model_results, sample_labels, output_directory)
