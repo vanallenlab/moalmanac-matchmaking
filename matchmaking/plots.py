@@ -42,7 +42,7 @@ class AveragePrecision(Plots):
 
 class AveragePrecisionK(Plots):
     @classmethod
-    def plot(cls, models_dictionary, models_list, output_directory, outname='models', ylim=0.20):
+    def plot(cls, models_dictionary, models_list, output_directory, outname='models', ylim=None):
         columns = ['model', 'k', 'ap@k']
         list_ = []
         for model in models_list:
@@ -60,7 +60,8 @@ class AveragePrecisionK(Plots):
         ax.spines['right'].set_visible(False)
         ax.spines['left'].set_visible(False)
 
-        ax.set_ylim([0, ylim])
+        if ylim is not None:
+            ax.set_ylim([0, ylim])
         ax.set_ylabel('Average Precision @ K', fontsize=16)
         ax.set_xlabel('Rank (k)', fontsize=16)
         ax.set_title('Average Precision @ K performance', fontsize=18)
