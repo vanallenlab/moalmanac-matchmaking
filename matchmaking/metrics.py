@@ -42,7 +42,7 @@ class Metrics:
             idx = group.index
             df.loc[idx, cls.true_positives_at_k] = df.loc[idx, cls.relevant].astype(int).cumsum()
             df.loc[idx, cls.precision_at_k] = df.loc[idx, cls.true_positives_at_k].divide(df.loc[idx, cls.k])
-            df.loc[idx, cls.recall_at_k] = df.loc[idx, cls.true_positives_at_k].divide(true_positives.loc[name])
+            df.loc[idx, cls.recall_at_k] = df.loc[idx, cls.true_positives_at_k].divide(true_positives.loc[name].astype(float))
         return df
 
     @classmethod

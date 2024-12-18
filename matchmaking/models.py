@@ -24,7 +24,8 @@ class Models:
     copy_number = 'Copy Number'
     rearrangement = 'Rearrangement'
 
-    jaccard = neighbors.DistanceMetric.get_metric('jaccard')
+    #jaccard = neighbors.DistanceMetric.get_metric('jaccard')
+    jaccard = sklearn.metrics.DistanceMetric.get_metric('jaccard')
 
     @staticmethod
     def aggregate_columns_by_row(dataframe, delimiter):
@@ -58,6 +59,8 @@ class Models:
     @classmethod
     def stack_distances(cls, dataframe, label, output_directory):
         # Commented out sorting and dropping of duplicates to leave all N x N comparisons
+        dataframe.index.name = None
+        dataframe.columns.name = None
         stacked = dataframe.stack().reset_index()
         # stacked.drop_duplicates(subset=[cls.case, cls.comparison], keep='first', inplace=True)
         stacked.rename(columns={'level_0': cls.case, 'level_1': cls.comparison, 0: label}, inplace=True)
