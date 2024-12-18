@@ -1,3 +1,4 @@
+import matplotlib.cm
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
@@ -53,7 +54,7 @@ class AveragePrecisionK(Plots):
         data = pd.DataFrame(list_, columns=columns)
 
         fig, ax = plt.subplots(figsize=(7.5, 10))
-        ax = sns.pointplot(x="k", y="ap@k", hue="model", data=data, ax=ax, fontsize=12)
+        ax = sns.pointplot(x="k", y="ap@k", hue="model", data=data, ax=ax) #, fontsize=12)
 
         ax.spines['top'].set_visible(False)
         ax.spines['bottom'].set_visible(False)

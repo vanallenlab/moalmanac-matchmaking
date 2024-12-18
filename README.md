@@ -15,11 +15,11 @@ cd moalmanac-matchmaking
 ```
 
 ### Python dependencies
-This repository uses Python 3.9. We recommend using a [virtual environment](https://docs.python.org/3/tutorial/venv.html) and running Python with either [Anaconda](https://www.anaconda.com/download/) or  [Miniconda](https://conda.io/miniconda.html). 
+This repository uses Python 3.12. We recommend using a [virtual environment](https://docs.python.org/3/tutorial/venv.html) and running Python with either [Anaconda](https://www.anaconda.com/download/) or  [Miniconda](https://conda.io/miniconda.html). 
 
 Run the following from this repository's directory to create a virtual environment and install dependencies with Anaconda or Miniconda,
 ```bash
-conda create -y -n matchmaking python=3.9
+conda create -y -n matchmaking python=3.12
 conda activate matchmaking
 pip install -r requirements.txt
 ```
