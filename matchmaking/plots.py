@@ -1,5 +1,6 @@
 import matplotlib.cm
 import matplotlib.pyplot as plt
+import os
 import pandas as pd
 import seaborn as sns
 
@@ -38,7 +39,11 @@ class AveragePrecision(Plots):
 
         # plt.title("Boxplot with jitter", loc="left")
         plt.xticks(rotation=45, fontsize=14, ha='right')
-        plt.savefig(f'{output_directory}/img/{outname}.avg_precision.png', bbox_inches='tight', dpi=300)
+        plt.savefig(
+            fname=os.path.join(output_directory, 'img', f'{outname}.avg_precision.png'),
+            bbox_inches='tight',
+            dpi=300
+        )
 
 
 class AveragePrecisionK(Plots):
@@ -67,4 +72,8 @@ class AveragePrecisionK(Plots):
         ax.set_xlabel('Rank (k)', fontsize=16)
         ax.set_title('Average Precision @ K performance', fontsize=18)
         ax.legend(fontsize=14, frameon=False)
-        plt.savefig(f'{output_directory}/img/{outname}.avg_precision_at_k.png', bbox_inches='tight', dpi=300)
+        plt.savefig(
+            fname=os.path.join(output_directory, 'img', f'{outname}.avg_precision_at_k.png'),
+            bbox_inches='tight',
+            dpi=300
+        )
