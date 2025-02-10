@@ -1,5 +1,6 @@
 import argparse
 import numpy as np
+import os
 import pandas as pd
 import pickle
 import subprocess
@@ -49,7 +50,7 @@ def main(samples, distances, labels, output_directory, features=None, seed=42):
     np.random.seed(seed=seed)
 
     labeled = merge_dataframes(distances.reset_index(), labels.reset_index(), ['case', 'comparison'])
-    if features:
+    if features is not None:
         labeled = merge_dataframes(labeled.reset_index(), features.reset_index(), ['case', 'comparison'])
 
     model_names = distances.columns.tolist()
@@ -58,13 +59,16 @@ def main(samples, distances, labels, output_directory, features=None, seed=42):
         model_descriptions[model_name] = ""
 
     evaluated_models_dictionary = Metrics.evaluate_models(samples, labeled, model_names, model_descriptions)
-    write_pickle(f'{output_directory}/models.evaluated.pkl', evaluated_models_dictionary)
+    write_pickle(
+        handle=os.path.join(output_directory, 'models.evaluated.pkl'),
+        output=evaluated_models_dictionary
+    )
     AveragePrecision.plot(evaluated_models_dictionary, model_names, output_directory)
     AveragePrecisionK.plot(evaluated_models_dictionary, model_names, output_directory)
 
     for model_name in model_names:
         print(model_name)
-        if features:
+        if features is not None:
             output_columns = [
                 'case', 'comparison',
                 model_name, 'k', 'p@k', 'r@k', 'tps@k',
@@ -82,11 +86,16 @@ def main(samples, distances, labels, output_directory, features=None, seed=42):
             ]
 
         df = evaluated_models_dictionary[model_name]['calculated']
-        (df
-         .reset_index()
-         .loc[:, output_columns]
-         .to_csv(f'{output_directory}/models/{model_name}.fully_annotated.result.txt', sep='\t', index=False)
-         )
+        (
+            df
+            .reset_index()
+            .loc[:, output_columns]
+            .to_csv(
+                os.path.join(output_directory, 'models', f'{model_name}.fully_annotated.result.txt'),
+                sep='\t',
+                index=False
+            )
+        )
 
 
 if __name__ == "__main__":

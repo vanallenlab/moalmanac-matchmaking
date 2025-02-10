@@ -1,5 +1,6 @@
 import argparse
 import numpy as np
+import os
 import pandas as pd
 import pickle
 
@@ -96,7 +97,8 @@ if __name__ == "__main__":
 
     models = read_pickle(args.input)
     summary = summarize_models(models)
-    write_file(summary, f"{args.output_directory}/models.summary.txt")
+
+    write_file(summary, handle=os.path.join(args.output_directory, 'models.summary.txt'))
 
     model_pairwise_comparison = compare_all_models(models)
-    write_file(model_pairwise_comparison, f"{args.output_directory}/models.pairwise-comparison.txt")
+    write_file(model_pairwise_comparison, handle=os.path.join(args.output_directory, 'models.pairwise-comparison.txt'))

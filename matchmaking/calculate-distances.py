@@ -1,9 +1,9 @@
 import argparse
 import json
 import numpy as np
+import os
 import pandas as pd
 import pickle
-import subprocess
 
 import models as models
 from metrics import Metrics
@@ -64,7 +64,10 @@ def main(inputs, samples, seed=SEED, output_directory="outputs"):
     labeled = pd.concat([distances, inputs['labels'], inputs['features']], axis=1)
 
     evaluated_models_dictionary = Metrics.evaluate_models(samples, labeled, model_names, model_descriptions)
-    write_pickle(f'{output_directory}/models.evaluated.pkl', evaluated_models_dictionary)
+    write_pickle(
+        handle=os.path.join(output_directory, 'models.evaluated.pkl'),
+        output=evaluated_models_dictionary
+    )
     AveragePrecision.plot(evaluated_models_dictionary, model_names, output_directory)
     AveragePrecisionK.plot(evaluated_models_dictionary, model_names, output_directory)
 
@@ -78,11 +81,15 @@ def main(inputs, samples, seed=SEED, output_directory="outputs"):
         ]
 
         df = evaluated_models_dictionary[model.label]['calculated']
-        (df
-         .reset_index()
-         .loc[:, output_columns]
-         .to_csv(f'{output_directory}/models/{model.label}.fully_annotated.result.txt', sep='\t')
-         )
+        (
+            df
+            .reset_index()
+            .loc[:, output_columns]
+            .to_csv(
+                os.path.join(output_directory, 'models', f'{model.label}.fully_annotated.result.txt'),
+                sep='\t'
+            )
+        )
 
 
 if __name__ == "__main__":
@@ -146,9 +153,24 @@ if __name__ == "__main__":
         inputs_dictionary[data_type] = dataframe
 
     output_directory = config['output_directory']
-    subprocess.call(f"mkdir -p {output_directory}", shell=True)
-    subprocess.call(f"mkdir -p {output_directory}/distances", shell=True)
-    subprocess.call(f"mkdir -p {output_directory}/features", shell=True)
-    subprocess.call(f"mkdir -p {output_directory}/img", shell=True)
-    subprocess.call(f"mkdir -p {output_directory}/models", shell=True)
+    os.makedirs(
+        name=output_directory,
+        exist_ok=True
+    )
+    os.makedirs(
+        name=os.path.join(output_directory, 'distances'),
+        exist_ok=True
+    )
+    os.makedirs(
+        name=os.path.join(output_directory, 'features'),
+        exist_ok=True
+    )
+    os.makedirs(
+        name=os.path.join(output_directory, 'img'),
+        exist_ok=True
+    )
+    os.makedirs(
+        name=os.path.join(output_directory, 'models'),
+        exist_ok=True
+    )
     main(inputs=inputs_dictionary, samples=samples_to_use, output_directory=output_directory)
