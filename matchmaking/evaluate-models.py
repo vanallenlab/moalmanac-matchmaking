@@ -50,7 +50,7 @@ def main(samples, distances, labels, output_directory, features=None, seed=42):
     np.random.seed(seed=seed)
 
     labeled = merge_dataframes(distances.reset_index(), labels.reset_index(), ['case', 'comparison'])
-    if features:
+    if features is not None:
         labeled = merge_dataframes(labeled.reset_index(), features.reset_index(), ['case', 'comparison'])
 
     model_names = distances.columns.tolist()
@@ -68,7 +68,7 @@ def main(samples, distances, labels, output_directory, features=None, seed=42):
 
     for model_name in model_names:
         print(model_name)
-        if features:
+        if features is not None:
             output_columns = [
                 'case', 'comparison',
                 model_name, 'k', 'p@k', 'r@k', 'tps@k',
