@@ -1,6 +1,7 @@
 # RUN THIS FROM moalmanac/moalmanac
 
 import argparse
+import os
 import pandas as pd
 
 import annotator
@@ -201,5 +202,5 @@ if __name__ == "__main__":
                    'evidence', 'cancerhotspots_bin', 'cancerhotspots3D_bin', 'cgc_bin',
                    'cosmic_bin', 'gsea_pathways_bin', 'gsea_modules_bin']
 
-    output = f"{args.directory}/{args.output}"
+    output = os.path.join(args.directory, args.output)
     write_df(dataframe, output, use_columns)
