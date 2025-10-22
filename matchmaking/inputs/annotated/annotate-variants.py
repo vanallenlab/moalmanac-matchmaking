@@ -226,7 +226,7 @@ if __name__ == "__main__":
 
     dataframe["evidence_map"] = dataframe["evidence"].copy(deep=True)
     dataframe["evidence"] = dataframe["evidence"].fillna("").replace(INV_MAP)
-    dataframe = annotate_other_datasources(dataframe, dbs, config)
+    dataframe = annotate_other_datasources(dataframe, dbs)
 
     use_columns = [
         "feature",
